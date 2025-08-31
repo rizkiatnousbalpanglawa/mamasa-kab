@@ -56,7 +56,7 @@
                                     </div>
 
                                     <!-- Link Card -->
-                                    <a href="/dinas-pariwisata" class="stretched-link"></a>
+                                    <a href="http://bpkd.mamasakab.go.id/" class="stretched-link"></a>
                                 </div>
 
                             </div>
@@ -90,7 +90,7 @@
                                     </div>
 
                                     <!-- Link Card -->
-                                    <a href="/dinas-pariwisata" class="stretched-link"></a>
+                                    <a href="https://dinkes.mamasakab.go.id" class="stretched-link"></a>
                                 </div>
 
                             </div>
@@ -124,7 +124,7 @@
                                     </div>
 
                                     <!-- Link Card -->
-                                    <a href="/dinas-pariwisata" class="stretched-link"></a>
+                                    <a href="https://dinaspertanian.mamasakab.go.id" class="stretched-link"></a>
                                 </div>
 
                             </div>
@@ -161,7 +161,7 @@
                                     </div>
 
                                     <!-- Link Card -->
-                                    <a href="/dinas-pariwisata" class="stretched-link"></a>
+                                    <a href="https://disdikbud.mamasakab.go.id/" class="stretched-link"></a>
                                 </div>
 
                             </div>
