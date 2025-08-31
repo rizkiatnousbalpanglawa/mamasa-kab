@@ -12,4 +12,5 @@ Route::get('/kegiatan/show', App\Livewire\Kegiatan\Show::class);
 Route::get('/visi-misi', App\Livewire\Visimisi::class);
 Route::get('/sejarah', App\Livewire\Sejarah::class);
 Route::get('/lambang', App\Livewire\Lambang::class);
+Route::get('/web-opd', App\Livewire\Opd::class);
 

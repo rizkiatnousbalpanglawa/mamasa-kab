@@ -35,6 +35,7 @@
                     </ul>
                 </li>
                 <x-nav-link :active="request()->is('info')" href="/info">Info Mamasa</x-nav-link>
+                <x-nav-link :active="request()->is('opd')" href="/web-opd">Web OPD</x-nav-link>
 
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
