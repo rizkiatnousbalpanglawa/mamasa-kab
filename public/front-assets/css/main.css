@@ -9392,6 +9392,33 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
 }
+.btn-accent {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 0px solid var(--accent-color);
+}
+
+.btn-accent:hover {
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    transform: translateY(-2px);
+}
+
+.bg-accent {
+    background-color: #04415f;
+    color: white;
+}
+
+.text-accent {
+    color: #04415f;
+}
+
+.text-dark-blue {
+    color: #003399;
+}
 
 .news-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;

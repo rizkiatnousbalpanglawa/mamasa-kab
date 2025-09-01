@@ -58,7 +58,7 @@
                                     </select>
                                 </div>
 
-                                <button class="btn btn-primary w-100 rounded-pill shadow-sm">Terapkan Filter</button>
+                                <button class="btn btn-accent w-100 rounded-pill shadow-sm">Terapkan Filter</button>
                             </div>
                         </div>
                     </div>
@@ -80,18 +80,20 @@
                             <div class="col">
                                 <div class="card info-card shadow-sm border-0 rounded-4">
                                     <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <h5 class="fw-bold mb-0">Pengumuman Beasiswa Daerah</h5>
-                                            <span class="badge bg-info text-dark">Pengumuman</span>
+                                        <div class="mb-2">
+                                            <p class="text-muted small mb-2 d-flex align-items-center ">
+
+                                                <span class="badge bg-accent me-2">Pengumuman</span>
+                                                |
+                                                <i class="ms-2 me-1 bi bi-calendar-event"></i> 20 Maret 2024
+
+                                            </p>
+                                            <h5 class="fw-bold mb-0">Pengumuman hasil tes PPPK</h5>
                                         </div>
-                                        <p class="text-muted small mb-2"><i class="bi bi-calendar-event"></i> 15 Januari
-                                            2025</p>
-                                        <div class="text-end">
-                                            <a href="/storage/pdf/beasiswa.pdf" target="_blank"
-                                                class="btn btn-outline-primary btn-sm rounded-pill">
-                                                📄 Lihat PDF
-                                            </a>
-                                        </div>
+
+                                        <a href="/storage/pdf/infrastruktur.pdf" target="_blank" class="text-dark-blue">
+                                            Lihat <i class="bi bi-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -100,18 +102,21 @@
                             <div class="col">
                                 <div class="card info-card shadow-sm border-0 rounded-4">
                                     <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <h5 class="fw-bold mb-0">Laporan Kegiatan Gotong Royong</h5>
-                                            <span class="badge bg-success">Laporan</span>
+                                        <div class="mb-2">
+                                            <p class="text-muted small mb-2 d-flex align-items-center ">
+
+                                                <span class="badge bg-accent me-2">Realisasi
+                                                    Anggaran</span>
+                                                |
+                                                <i class="ms-2 me-1 bi bi-calendar-event"></i> 20 Maret 2024
+
+                                            </p>
+                                            <h5 class="fw-bold mb-0">Laporan Realisasi Anggaran 2024</h5>
                                         </div>
-                                        <p class="text-muted small mb-2"><i class="bi bi-calendar-event"></i> 20
-                                            Februari 2025</p>
-                                        <div class="text-end">
-                                            <a href="/storage/pdf/gotong_royong.pdf" target="_blank"
-                                                class="btn btn-outline-success btn-sm rounded-pill">
-                                                📄 Lihat PDF
-                                            </a>
-                                        </div>
+
+                                        <a href="/storage/pdf/infrastruktur.pdf" target="_blank" class="text-dark-blue">
+                                            Lihat <i class="bi bi-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -120,18 +125,19 @@
                             <div class="col">
                                 <div class="card info-card shadow-sm border-0 rounded-4">
                                     <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <div class="mb-2">
+                                            <p class="text-muted small mb-2 d-flex align-items-center ">
+
+                                                <span class="badge bg-accent me-2">Kegiatan</span> |
+                                                <i class="ms-2 me-1 bi bi-calendar-event"></i> 10 Maret 2024
+
+                                            </p>
                                             <h5 class="fw-bold mb-0">Update Infrastruktur Jalan</h5>
-                                            <span class="badge bg-warning text-dark">Kegiatan</span>
                                         </div>
-                                        <p class="text-muted small mb-2"><i class="bi bi-calendar-event"></i> 10 Maret
-                                            2024</p>
-                                        <div class="text-end">
-                                            <a href="/storage/pdf/infrastruktur.pdf" target="_blank"
-                                                class="btn btn-outline-warning btn-sm rounded-pill">
-                                                📄 Lihat PDF
-                                            </a>
-                                        </div>
+
+                                        <a href="/storage/pdf/infrastruktur.pdf" target="_blank" class="text-dark-blue">
+                                            Lihat <i class="bi bi-arrow-right"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
