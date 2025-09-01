@@ -141,23 +141,6 @@
                 </div>
             </div>
 
-            <!-- CSS tambahan -->
-            <style>
-                .info-card {
-                    transition: all 0.3s ease;
-                    border-left: 4px solid transparent;
-                }
-
-                .info-card:hover {
-                    transform: translateY(-5px) scale(1.02);
-                    border-left: 4px solid #0d6efd;
-                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-                }
-            </style>
-
-            <!-- Bootstrap Icons -->
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
         </div>
 
     </section><!-- /Privacy Section -->
