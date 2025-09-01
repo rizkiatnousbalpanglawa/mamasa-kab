@@ -9391,7 +9391,40 @@ section,
 # Starter Section Section
 --------------------------------------------------------------*/
 .starter-section {
-    /* Add your styles here */
 }
 
+.news-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+    .gallery-item {
+                overflow: hidden;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #f8f9fa;
+                min-height: 180px;
+                /* batas minimal */
+                max-height: 220px;
+                /* batas maksimal */
+            }
+
+            .gallery-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.4s ease, filter 0.4s ease;
+                cursor: pointer;
+            }
+
+            .gallery-img:hover {
+                transform: scale(1.1);
+                filter: brightness(85%);
+            }
 /* -------- */

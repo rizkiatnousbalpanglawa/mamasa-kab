@@ -86,6 +86,19 @@
         window.addEventListener("load", removePreloader, { once: true });
     }
 
+    // gallery
+    document.addEventListener("DOMContentLoaded", function () {
+        const modalImage = document.getElementById("modalImage");
+        const galleryImages = document.querySelectorAll(".gallery-img");
+
+        galleryImages.forEach((img) => {
+            img.addEventListener("click", function () {
+                const src = this.getAttribute("data-bs-src");
+                modalImage.setAttribute("src", src);
+            });
+        });
+    });
+
     // SPA navigation
     document.addEventListener("livewire:navigated", removePreloader);
 

@@ -1,47 +1,53 @@
 <main class="main">
     <section id="hero" class="hero section">
-        <div class="hero-wrapper">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-delay="100">
-                        <h1>Website Pemerintah Kabupaten Mamasa</h1>
-                        <p>
-                            Website Resmi Pemerintah Kabupaten Mamasa Hadir sebagai Wadah Informasi, Transparansi, dan
-                            Pelayanan Publik untuk Mendorong Partisipasi Masyarakat dalam Membangun Daerah yang
-                            Sejahtera dan Berbudaya
-                        </p>
-                        <div class="stats-row">
-                            <div class="stat-item">
-                                <span class="stat-number">50+</span>
-                                <span class="stat-label">Destinasi Wisata</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">10+</span>
-                                <span class="stat-label">Festival Budaya</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">100K+</span>
-                                <span class="stat-label">Kunjungan per Tahun</span>
-                            </div>
-                        </div>
-                        <div class="action-buttons">
-                            <a href="#" class="btn-primary">Jelajahi Destinasi</a>
-                            <a href="#" class="btn-secondary">Lihat Event Terdekat</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 hero-media" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="">
-                            <img src="{{ asset('front-assets/img/bupati_wakil.png') }}" alt="Bupati dan Wakil Bupati"
-                                class="img-fluid main-image" />
-                        </div>
-                    </div>
+        <div id="carouselExampleIndicators" class="carousel slide shadow overflow-hidden" data-bs-ride="carousel"
+            data-aos="fade-up">
+
+            <!-- Indicator (titik navigasi) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Isi Carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ asset('front-assets/img/blog/blog-hero-1.webp') }}" class="d-block w-100"
+                        alt="Slide 1">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="{{ asset('front-assets/img/blog/blog-hero-2.webp') }}" class="d-block w-100"
+                        alt="Slide 2">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="{{ asset('front-assets/img/blog/blog-hero-9.webp') }}" class="d-block w-100"
+                        alt="Slide 3">
                 </div>
             </div>
+
+            <!-- Tombol Navigasi -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Sebelumnya</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Berikutnya</span>
+            </button>
         </div>
+
 
         <div class="feature-cards-wrapper" data-aos="fade-up" data-aos-delay="300"></div>
 
-        <div class="upcoming-event" data-aos="fade-up" data-aos-delay="400">
+        {{-- <div class="upcoming-event" data-aos="fade-up" data-aos-delay="400">
             <div class="container">
                 <div class="event-content">
                     <div class="event-date">
@@ -63,140 +69,238 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section>
 
     <!-- Recent News Section -->
     <section id="recent-news" class="recent-news section">
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
+        <div class="container section-title my-4" data-aos="fade-up">
             <h2>Berita Terbaru</h2>
         </div>
         <!-- End Section Title -->
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row featured-programs">
-                <div class="col-xl-6 featured-programs mb-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="container">
+            <!-- Carousel untuk mobile -->
+            <div id="newsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+                <div class="carousel-inner">
 
-                    <div class="programs-grid">
-                        <div class="row g-3">
-
-                            <div class="col-12" data-aos="fade-left" data-aos-delay="200">
-                                <div class="program-item">
-                                    <div class="item-icon">
-                                        <img src="{{ asset('front-assets/img/blog/blog-post-square-1.webp') }}"
-                                            alt="Program" class="img-fluid" />
-                                    </div>
-                                    <div class="item-content">
-                                        <h4>Tempat Ziarah Bukit Pena</h4>
-                                        <p>
-                                            Menampilkan patung Bunda Maria tertinggi di Indonesia
-                                            dan ramai dikunjungi umat Katolik dari berbagai
-                                            daerah.
-                                        </p>
-                                        <div class="meta-info">
-                                            <span>Terbaik: Desember - Januari</span>
-                                            <span>Wisata Religi</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-arrow">
-                                        <i class="bi bi-arrow-right"></i>
-                                    </div>
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <a href="/berita/banjir-luwu-utara" class="text-decoration-none text-dark">
+                            <div class="card news-card border-0 shadow-sm h-100">
+                                <img src="https://picsum.photos/id/1011/600/400" class="card-img-top" alt="Berita 1">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold">Atasi Banjir, Bupati Luwu Utara Usulkan 5 Program
+                                        Prioritas</h6>
+                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
+                                    <p class="card-text text-muted small">
+                                        MAKASSAR — Bupati Luwu Utara, Andi Abdullah Rahim menunjukkan keseriusan dalam
+                                        menangani banjir…
+                                    </p>
+                                </div>
+                                <div
+                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                    <span><i class="bi bi-calendar-event me-1"></i>26 Agu 2025</span>
+                                    <span><i class="bi bi-person-circle me-1"></i>Admin</span>
                                 </div>
                             </div>
+                        </a>
+                    </div>
 
-                            <div class="col-12" data-aos="fade-left" data-aos-delay="300">
-                                <div class="program-item">
-                                    <div class="item-icon">
-                                        <img src="{{ asset('front-assets/img/education/education-6.webp') }}"
-                                            alt="Program" class="img-fluid" />
-                                    </div>
-                                    <div class="item-content">
-                                        <h4>Kuburan Tedong-tedong</h4>
-                                        <p>
-                                            makam tua berusia ratusan tahun yang berbentuk
-                                            seperti kerbau, yang melambangkan kekayaan
-                                            dan status sosial dalam budaya setempat
-                                        </p>
-                                        <div class="meta-info">
-                                            <span>Terbaik: Juli - September</span>
-                                            <span>Wisata Budaya</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-arrow">
-                                        <i class="bi bi-arrow-right"></i>
-                                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <a href="/berita/pariwisata-toraja" class="text-decoration-none text-dark">
+                            <div class="card news-card border-0 shadow-sm h-100">
+                                <img src="https://picsum.photos/id/1015/600/400" class="card-img-top" alt="Berita 2">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold">Toraja Promosikan Wisata Budaya ke Tingkat
+                                        Internasional</h6>
+                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
+                                    <p class="card-text text-muted small">
+                                        TORAJA — Pemerintah daerah gencar mempromosikan budaya Tongkonan dan upacara
+                                        adat ke mancanegara…
+                                    </p>
+                                </div>
+                                <div
+                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                    <span><i class="bi bi-calendar-event me-1"></i>28 Agu 2025</span>
+                                    <span><i class="bi bi-person-circle me-1"></i>Admin</span>
                                 </div>
                             </div>
+                        </a>
+                    </div>
 
+                    <!-- Slide 3 -->
+                    <div class="carousel-item">
+                        <a href="/berita/ekonomi-sulsel" class="text-decoration-none text-dark">
+                            <div class="card news-card border-0 shadow-sm h-100">
+                                <img src="https://picsum.photos/id/1021/600/400" class="card-img-top" alt="Berita 3">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold">Pertumbuhan Ekonomi Sulsel Naik 5,3% di Kuartal II
+                                    </h6>
+                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
+                                    <p class="card-text text-muted small">
+                                        MAKASSAR — Badan Pusat Statistik mencatat pertumbuhan ekonomi Sulawesi Selatan
+                                        mencapai 5,3%…
+                                    </p>
+                                </div>
+                                <div
+                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                    <span><i class="bi bi-calendar-event me-1"></i>30 Agu 2025</span>
+                                    <span><i class="bi bi-person-circle me-1"></i>Admin</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="carousel-item">
+                        <a href="/berita/pendidikan-sulbar" class="text-decoration-none text-dark">
+                            <div class="card news-card border-0 shadow-sm h-100">
+                                <img src="https://picsum.photos/id/1025/600/400" class="card-img-top" alt="Berita 4">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold">Program Beasiswa Sulbar Jangkau 1.000 Mahasiswa</h6>
+                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
+                                    <p class="card-text text-muted small">
+                                        MAMUJU — Pemerintah Sulawesi Barat meluncurkan program beasiswa untuk
+                                        meningkatkan akses pendidikan tinggi…
+                                    </p>
+                                </div>
+                                <div
+                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                    <span><i class="bi bi-calendar-event me-1"></i>01 Sep 2025</span>
+                                    <span><i class="bi bi-person-circle me-1"></i>Admin</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigasi carousel -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+
+            <!-- Grid untuk desktop -->
+            <div class="row d-none d-md-flex g-3">
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <a href="/berita/banjir-luwu-utara" class="text-decoration-none text-dark">
+                                <div class="card news-card border-0 shadow-sm h-100">
+                                    <img src="https://picsum.photos/id/1011/600/400" class="card-img-top"
+                                        alt="Berita 1">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">
+                                            Atasi Banjir, Bupati Luwu Utara Usulkan 5 Program Prioritas
+                                        </h6>
+                                        <div class="mb-2" style="width:50px; height:3px; background-color:black;">
+                                        </div>
+                                        <p class="card-text text-muted small">
+                                            MAKASSAR — Bupati Luwu Utara, Andi Abdullah Rahim menunjukkan keseriusan
+                                            dalam
+                                            menangani
+                                            permasalahan banjir dan irigasi…
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                        <span><i class="bi bi-calendar-event me-1"></i>26 Agu 2025</span>
+                                        <span><i class="bi bi-person-circle me-1"></i>Admin</span>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
+
+                        <!-- Card 2 -->
+                        <div class="col-md-3">
+                            <div class="card news-card border-0 shadow-sm h-100">
+                                <img src="https://picsum.photos/id/1005/600/400" class="card-img-top" alt="Berita 2">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold">
+                                        DPR Bahas RUU Baru Terkait Perlindungan Data Pribadi
+                                    </h6>
+                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
+                                    <p class="card-text text-muted small">
+                                        JAKARTA — Rancangan Undang-Undang Perlindungan Data Pribadi resmi dibahas dalam
+                                        rapat
+                                        paripurna DPR hari ini…
+                                    </p>
+                                </div>
+                                <div
+                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                    <span><i class="bi bi-calendar-event me-1"></i>25 Agu 2025</span>
+                                    <span><i class="bi bi-person-circle me-1"></i>Redaksi</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col-md-3">
+                            <div class="card news-card border-0 shadow-sm h-100">
+                                <img src="https://picsum.photos/id/1020/600/400" class="card-img-top" alt="Berita 3">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold">
+                                        Startup Lokal Rilis Aplikasi AI untuk UMKM
+                                    </h6>
+                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
+                                    <p class="card-text text-muted small">
+                                        BANDUNG — Sebuah startup teknologi lokal meluncurkan aplikasi berbasis AI untuk
+                                        mendukung pertumbuhan UMKM…
+                                    </p>
+                                </div>
+                                <div
+                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                    <span><i class="bi bi-calendar-event me-1"></i>24 Agu 2025</span>
+                                    <span><i class="bi bi-person-circle me-1"></i>Reporter</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="col-md-3">
+                            <div class="card news-card border-0 shadow-sm h-100">
+                                <img src="https://picsum.photos/id/1035/600/400" class="card-img-top" alt="Berita 4">
+                                <div class="card-body">
+                                    <h6 class="card-title fw-bold">
+                                        Timnas U-23 Lolos ke Final Piala Asia
+                                    </h6>
+                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
+                                    <p class="card-text text-muted small">
+                                        DOHA — Timnas Indonesia U-23 berhasil menaklukkan lawan berat di semifinal dan
+                                        melaju ke
+                                        final Piala Asia…
+                                    </p>
+                                </div>
+                                <div
+                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                    <span><i class="bi bi-calendar-event me-1"></i>23 Agu 2025</span>
+                                    <span><i class="bi bi-person-circle me-1"></i>Sport</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
-                <div class="col-xl-6 featured-programs mb-3" data-aos="fade-up" data-aos-delay="100">
-
-                    <div class="programs-grid">
-                        <div class="row g-3">
-
-                            <div class="col-12" data-aos="fade-left" data-aos-delay="400">
-                                <div class="program-item">
-                                    <div class="item-icon">
-                                        <img src="{{ asset('front-assets/img/education/education-8.webp') }}"
-                                            alt="Program" class="img-fluid" />
-                                    </div>
-                                    <div class="item-content">
-                                        <h4>Health Sciences</h4>
-                                        <p>
-                                            Temporibus autem quibusdam et aut officiis debitis aut
-                                            rerum necessitatibus saepe.
-                                        </p>
-                                        <div class="meta-info">
-                                            <span>5 Years</span>
-                                            <span>Bachelor's Degree</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-arrow">
-                                        <i class="bi bi-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12" data-aos="fade-left" data-aos-delay="500">
-                                <div class="program-item">
-                                    <div class="item-icon">
-                                        <img src="{{ asset('front-assets/img/education/education-10.webp') }}"
-                                            alt="Program" class="img-fluid" />
-                                    </div>
-                                    <div class="item-content">
-                                        <h4>Creative Arts</h4>
-                                        <p>
-                                            Et harum quidem rerum facilis est et expedita
-                                            distinctio nam libero tempore.
-                                        </p>
-                                        <div class="meta-info">
-                                            <span>3 Years</span>
-                                            <span>Bachelor's Degree</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-arrow">
-                                        <i class="bi bi-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
         </div>
+
+
     </section>
     <!-- /Recent News Section -->
 
     <!-- About Section -->
     <section id="about" class="about section">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="container my-4" data-aos="fade-up" data-aos-delay="100">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6">
                     <div class="about-content" data-aos="fade-up" data-aos-delay="200">
@@ -251,7 +355,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 d-none d-md-flex">
                     <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
                         <img src="{{ asset('front-assets/img/tari-mamasa.jpg') }}" alt="Campus"
                             class="img-fluid rounded" />
@@ -264,157 +368,102 @@
     </section>
     <!-- /About Section -->
 
-    <!-- Featured Programs Section -->
-    <section id="featured-programs" class="featured-programs section">
+    <!-- Gallery -->
+    <section>
         <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Tempat Wisata</h2>
-            <p>Rasakan pengalaman wisata yang tak terlupakan di Mamasa</p>
+        <div class="container section-title my-4" data-aos="fade-up">
+            <h2>Galeri Foto</h2>
         </div>
         <!-- End Section Title -->
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="row gy-5">
-                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                    <div class="program-banner">
-                        <div class="banner-image">
-                            <img src="{{ asset('front-assets/img/objek-wisata/buntu-liarra.webp') }}" alt="Program"
-                                class="img-fluid" />
-                            <div class="banner-badge">
-                                <span class="badge-text">Popular</span>
-                            </div>
-                        </div>
-                        <div class="banner-info">
-                            <div class="program-header">
-                                <h3>Negeri Diatas Awan Buntu Liarra</h3>
-                            </div>
-                            <p>
-                                Buntu (gunung) Liarra (sejenis rumput tajam), berada kurang
-                                lebih 20 Km di sebelah barat Kota Mamasa. Di atas ketinggian
-                                kurang lebih 1.200 MDPL. Puncak Buntu Liarra, tepat berada
-                                di perbatasan Desa Balla Tumuka, Kecamatan Balla dan Desa
-                                Talimbung, Tanduk Kalua.
-                            </p>
-                            <div class="program-details">
-                                <div class="detail-item">
-                                    <i class="bi bi-calendar-event"></i>
-                                    <span>Terbaik: Juli – September</span>
-                                </div>
-                                <div class="detail-item">
-                                    <i class="bi bi-tree-fill"></i>
-                                    <span>Wisata Alam</span>
-                                </div>
-                            </div>
-                            <a href="#" class="discover-btn">
-                                <i class="bi bi-geo-alt"></i> Lihat Peta
-                            </a>
-                        </div>
+        <div class="container">
+            <div class="row g-1">
+
+                <!-- Foto 1 -->
+                <div class="col-6 col-md-3">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/id/1015/400/300"
+                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 1" data-bs-toggle="modal"
+                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1015/1200/800">
                     </div>
                 </div>
-                <!-- End Program Banner -->
 
-                <div class="col-lg-6">
-                    <div class="programs-grid">
-                        <div class="row g-3">
-                            <div class="col-12" data-aos="fade-left" data-aos-delay="200">
-                                <div class="program-item">
-                                    <div class="item-icon">
-                                        <img src="{{ asset('front-assets/img/objek-wisata/bukit-pena.jpg') }}"
-                                            alt="Program" class="img-fluid" />
-                                    </div>
-                                    <div class="item-content">
-                                        <h4>Tempat Ziarah Bukit Pena</h4>
-                                        <p>
-                                            Menampilkan patung Bunda Maria tertinggi di Indonesia
-                                            dan ramai dikunjungi umat Katolik dari berbagai
-                                            daerah.
-                                        </p>
-                                        <div class="meta-info">
-                                            <span>Terbaik: Desember - Januari</span>
-                                            <span>Wisata Religi</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-arrow">
-                                        <i class="bi bi-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12" data-aos="fade-left" data-aos-delay="300">
-                                <div class="program-item">
-                                    <div class="item-icon">
-                                        <img src="{{ asset('front-assets/img/education/education-6.webp') }}"
-                                            alt="Program" class="img-fluid" />
-                                    </div>
-                                    <div class="item-content">
-                                        <h4>Kuburan Tedong-tedong</h4>
-                                        <p>
-                                            makam tua berusia ratusan tahun yang berbentuk
-                                            seperti kerbau, yang melambangkan kekayaan
-                                            dan status sosial dalam budaya setempat
-                                        </p>
-                                        <div class="meta-info">
-                                            <span>Terbaik: Juli - September</span>
-                                            <span>Wisata Budaya</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-arrow">
-                                        <i class="bi bi-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12" data-aos="fade-left" data-aos-delay="400">
-                                <div class="program-item">
-                                    <div class="item-icon">
-                                        <img src="{{ asset('front-assets/img/education/education-8.webp') }}"
-                                            alt="Program" class="img-fluid" />
-                                    </div>
-                                    <div class="item-content">
-                                        <h4>Health Sciences</h4>
-                                        <p>
-                                            Temporibus autem quibusdam et aut officiis debitis aut
-                                            rerum necessitatibus saepe.
-                                        </p>
-                                        <div class="meta-info">
-                                            <span>5 Years</span>
-                                            <span>Bachelor's Degree</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-arrow">
-                                        <i class="bi bi-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12" data-aos="fade-left" data-aos-delay="500">
-                                <div class="program-item">
-                                    <div class="item-icon">
-                                        <img src="{{ asset('front-assets/img/education/education-10.webp') }}"
-                                            alt="Program" class="img-fluid" />
-                                    </div>
-                                    <div class="item-content">
-                                        <h4>Creative Arts</h4>
-                                        <p>
-                                            Et harum quidem rerum facilis est et expedita
-                                            distinctio nam libero tempore.
-                                        </p>
-                                        <div class="meta-info">
-                                            <span>3 Years</span>
-                                            <span>Bachelor's Degree</span>
-                                        </div>
-                                    </div>
-                                    <div class="item-arrow">
-                                        <i class="bi bi-arrow-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Foto 2 -->
+                <div class="col-6 col-md-3">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/id/1025/400/300"
+                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 2" data-bs-toggle="modal"
+                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1025/1200/800">
                     </div>
                 </div>
-                <!-- End Programs Grid -->
+
+                <!-- Foto 3 -->
+                <div class="col-6 col-md-3">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/id/1035/400/300"
+                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 3" data-bs-toggle="modal"
+                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1035/1200/800">
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="col-6 col-md-3">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/id/1045/400/300"
+                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 4" data-bs-toggle="modal"
+                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1045/1200/800">
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="col-6 col-md-3">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/id/1055/400/300"
+                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 5" data-bs-toggle="modal"
+                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1055/1200/800">
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="col-6 col-md-3">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/id/1065/400/300"
+                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 6" data-bs-toggle="modal"
+                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1065/1200/800">
+                    </div>
+                </div>
+
+                <!-- Foto 7 -->
+                <div class="col-6 col-md-3">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/id/1075/400/300"
+                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 7" data-bs-toggle="modal"
+                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1075/1200/800">
+                    </div>
+                </div>
+
+                <!-- Foto 8 -->
+                <div class="col-6 col-md-3">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/400/300?random=8"
+                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 8" data-bs-toggle="modal"
+                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/1200/800?random=8">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Modal Foto -->
+        <div class="modal fade" id="photoModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-transparent border-0">
+                    <div class="modal-body text-center p-0">
+                        <img src="" id="modalImage" class="img-fluid rounded shadow">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- /Featured Programs Section -->
+
 </main>
