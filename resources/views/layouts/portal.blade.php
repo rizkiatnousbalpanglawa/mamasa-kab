@@ -136,7 +136,7 @@
             <div class="row justify-content-center">
 
                 <div class="col-4 col-md-2 mb-4">
-                    <a href="#" class="menu-item">
+                    <a href="{{ url('/beranda') }}" class="menu-item">
                         <div class="icon-circle">
                             <i class="bi bi-house-door" style="font-size: 2rem; color: white;"></i>
                         </div>
