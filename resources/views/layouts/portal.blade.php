@@ -171,7 +171,7 @@
         }
 
         /* Card device */
-        .device-item {
+        /* .device-item {
             background: #fff;
             border-radius: 12px;
             padding: 15px;
@@ -183,13 +183,23 @@
         .device-item:hover {
             transform: translateY(-6px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
+        } */
 
         /* Ikon */
-        .device-icon {
-            font-size: 2rem;
-            margin-right: 15px;
-            color: #0d6efd;
+        .device-icon img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .device-item {
+            background: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .device-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
