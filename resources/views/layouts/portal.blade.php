@@ -103,11 +103,11 @@
 <body>
 
     <!-- Preloader -->
-    {{-- <div id="preloader">
+    <div id="preloader">
         <div class="spinner-border text-light" style="width: 3rem; height: 3rem;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
-    </div> --}}
+    </div>
 
     {{ $slot }}
 
