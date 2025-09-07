@@ -79,7 +79,7 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
         }
 
-        Preloader #preloader {
+        #preloader {
             position: fixed;
             top: 0;
             left: 0;
@@ -108,6 +108,7 @@
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
+
 
     {{ $slot }}
 
