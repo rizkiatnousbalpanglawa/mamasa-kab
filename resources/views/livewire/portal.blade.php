@@ -70,498 +70,527 @@
 
                     <div class="container">
                         <div class="row">
-
-                            <!-- 1. Sekretariat Daerah -->
+                            <!-- 1 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://setda.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://setda.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo OPD">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" class="img-fluid"
+                                                width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Sekretariat Daerah</h6>
-                                            <small class="text-muted">https://setda.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 2. Sekretariat Dewan -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://setwan.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Sekretariat Dewan</h6>
-                                            <small class="text-muted">https://setwan.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 3. Inspektorat Daerah -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://inspektorat.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Inspektorat Daerah</h6>
-                                            <small class="text-muted">https://inspektorat.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 4. Dinas Pendidikan dan Kebudayaan -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://disdikbud.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Pendidikan dan Kebudayaan</h6>
-                                            <small class="text-muted">https://disdikbud.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 5. Dinas Kesehatan -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://dinkes.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Kesehatan</h6>
-                                            <small class="text-muted">https://dinkes.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 6. Dinas Pekerjaan Umum dan Penataan Ruang -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://dinaspupr.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Pekerjaan Umum dan Penataan Ruang</h6>
-                                            <small class="text-muted">https://dinaspupr.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 7. Dinas Perumahan, Kawasan Pemukiman dan Pertanahan -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://disperkim.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Perumahan, Kawasan Pemukiman dan Pertanahan
-                                            </h6>
-                                            <small class="text-muted">https://disperkim.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 8. Dinas Sosial -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.dinsos.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Sosial</h6>
-                                            <small class="text-muted">https://www.dinsos.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 9. Dinas Transmigrasi dan Tenaga Kerja -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.disnakertrans.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">DISNAKER</h6>
-                                            <small class="text-muted">https://www.disnakertrans.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 10. Dinas Pertanian -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.distan.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Pertanian</h6>
-                                            <small class="text-muted">https://www.distan.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 11. Dinas Perikanan -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.disper.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Perikanan</h6>
-                                            <small class="text-muted">https://www.disper.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 12. Dinas Pangan -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.dispan.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Pangan</h6>
-                                            <small class="text-muted">https://www.dispan.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 13. Dinas Pengendalian Penduduk, KB, Pemberdayaan Perempuan dan Perlindungan Anak -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.dppkbp3a.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Pengendalian Penduduk, KB, Pemberdayaan
-                                                Perempuan dan Perlindungan Anak</h6>
-                                            <small class="text-muted">https://www.dppkbp3a.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 14. Dinas Lingkungan Hidup dan Kehutanan -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.dlhk.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Lingkungan Hidup dan Kehutanan</h6>
-                                            <small class="text-muted">https://www.dlhk.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 15. Dinas Kependudukan dan Catatan Sipil -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.disdukcapil.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Kependudukan dan Catatan Sipil</h6>
-                                            <small class="text-muted">https://www.disdukcapil.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 16. Dinas Pemberdayaan Masyarakat dan Pemerintah Desa -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.dispemdes.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Pemberdayaan Masyarakat dan Pemerintah Desa
-                                            </h6>
-                                            <small class="text-muted">https://www.dispemdes.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 17. Dinas Perhubungan -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.dishub.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Perhubungan</h6>
-                                            <small class="text-muted">https://www.dishub.mamasakab.go.id</small>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <!-- 18. Dinas Komunikasi, Informatika dan Persandian -->
-                            <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.diskominfosandi.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
-                                        <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
-                                        </div>
-                                        <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Komunikasi, Informatika dan Persandian</h6>
+                                            <h6>Sekretariat Daerah</h6>
                                             <small
-                                                class="text-muted">https://www.diskominfosandi.mamasakab.go.id</small>
+                                                class="text-muted">{{ Str::limit('https://setda.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 19. Dinas Koperasi, UMKM, Perindustrian dan Perdagangan -->
+                            <!-- 2 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.diskuperindag.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://setwan.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" class="img-fluid"
+                                                width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Koperasi, UMKM, Perindustrian dan
-                                                Perdagangan</h6>
-                                            <small class="text-muted">https://www.diskuperindag.mamasakab.go.id</small>
+                                            <h6>Sekretariat Dewan</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://setwan.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 20. Dinas Penanaman Modal dan PTSP -->
+                            <!-- 3 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.dpmtsp.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://inspektorat.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" class="img-fluid"
+                                                width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Penanaman Modal dan PTSP</h6>
-                                            <small class="text-muted">https://www.dpmtsp.mamasakab.go.id</small>
+                                            <h6>Inspektorat Daerah</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://inspektorat.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 21. Dinas Pariwisata, Kepemudaan dan Olahraga -->
+                            <!-- 4 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.disparpora.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://disdikbud.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
                                             <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                                class="img-fluid" width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Pariwisata, Kepemudaan dan Olahraga</h6>
-                                            <small class="text-muted">https://www.disparpora.mamasakab.go.id</small>
+                                            <h6>Dinas Pendidikan dan Kebudayaan</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://disdikbud.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 22. Dinas Kearsipan dan Perpustakaan Daerah -->
+                            <!-- 5 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.dkapd.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://dinkes.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
                                             <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                                class="img-fluid" width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Dinas Kearsipan dan Perpustakaan Daerah</h6>
-                                            <small class="text-muted">https://www.dkapd.mamasakab.go.id</small>
+                                            <h6>Dinas Kesehatan</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://dinkes.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 23. Bappeda (Badan Perencanaan Pembangunan Daerah) -->
+                            <!-- 6 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.bapelitbangda.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://dinaspupr.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
                                             <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                                class="img-fluid" width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Bappeda</h6>
-                                            <small class="text-muted">https://www.bapelitbangda.mamasakab.go.id</small>
+                                            <h6>Dinas Pekerjaan Umum dan Penataan Ruang</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://dinaspupr.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 24. Badan Pengelolaan Keuangan Daerah -->
+                            <!-- 7 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.bpkd.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://disperkim.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
                                             <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                                class="img-fluid" width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Badan Pengelolaan Keuangan Daerah</h6>
-                                            <small class="text-muted">https://www.bpkd.mamasakab.go.id</small>
+                                            <h6>Dinas Perumahan, Kawasan Pemukiman dan Pertanahan</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://disperkim.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 25. Badan Pendapatan Daerah -->
+                            <!-- 8 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.bapenda.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://www.dinsos.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
                                             <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                                class="img-fluid" width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Badan Pendapatan Daerah</h6>
-                                            <small class="text-muted">https://www.bapenda.mamasakab.go.id</small>
+                                            <h6>Dinas Sosial</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://www.dinsos.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 26. Badan Kepegawaian, Pendidikan dan Pelatihan -->
+                            <!-- 9 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.bkpp.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://www.disnakertrans.mamasakab.go.id"
+                                    class="text-decoration-none text-dark" target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
                                             <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                                class="img-fluid" width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Badan Kepegawaian, Pendidikan dan Pelatihan</h6>
-                                            <small class="text-muted">https://www.bkpp.mamasakab.go.id</small>
+                                            <h6>Dinas Transmigrasi dan Tenaga Kerja</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://www.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 27. Badan Penanggulangan Bencana -->
+                            <!-- 10 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.bpbd.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://disdukcapil.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
                                             <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                                class="img-fluid" width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Badan Penanggulangan Bencana</h6>
-                                            <small class="text-muted">https://www.bpbd.mamasakab.go.id</small>
+                                            <h6>Dinas Kependudukan dan Pencatatan Sipil</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://disdukcapil.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 28. Badan Kesbangpol -->
+                            <!-- 11 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.kesbangpol.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://dpmptsp.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
                                             <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                                class="img-fluid" width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Badan Kesbangpol</h6>
-                                            <small class="text-muted">https://www.kesbangpol.mamasakab.go.id</small>
+                                            <h6>Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://dpmptsp.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
-                            <!-- 29. Satuan Polisi Pamong Praja -->
+                            <!-- 12 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://www.satpolpp.mamasakab.go.id" target="_blank"
-                                    class="text-decoration-none text-dark">
-                                    <div class="device-item shadow-sm p-3 rounded-4 d-flex align-items-center">
+                                <a href="https://disperindag.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
                                             <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                alt="Logo OPD">
+                                                class="img-fluid" width="50" alt="">
                                         </div>
                                         <div class="device-info">
-                                            <h6 class="fw-bold mb-1">Satuan Polisi Pamong Praja</h6>
-                                            <small class="text-muted">https://www.satpolpp.mamasakab.go.id</small>
+                                            <h6>Dinas Perindustrian, Perdagangan, Koperasi dan UKM</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://disperindag.mamasakab.go.id', 100) }}</small>
                                         </div>
                                     </div>
                                 </a>
                             </div>
 
+                            <!-- 13 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://dispar.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Dinas Pariwisata, Kepemudaan dan Olahraga</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://dispar.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 14 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://dlh.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Dinas Lingkungan Hidup</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://dlh.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 15 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://dppkb.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Dinas Pengendalian Penduduk dan KB</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://dppkb.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 16 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://dpkp.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Dinas Pertanian dan Ketahanan Pangan</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://dpkp.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 17 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://disnak.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Dinas Peternakan dan Perikanan</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://disnak.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 18 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://dpk.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Dinas Perpustakaan dan Kearsipan</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://dpk.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 19 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://satpolpp.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Satuan Polisi Pamong Praja</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://satpolpp.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 20 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://bpbd.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Badan Penanggulangan Bencana Daerah</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://bpbd.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 21 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://bappeda.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Badan Perencanaan Pembangunan Daerah</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://bappeda.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 22 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://bkd.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Badan Kepegawaian dan Pengembangan SDM</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://bkd.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 23 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://bpkad.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Badan Pengelola Keuangan dan Aset Daerah</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://bpkad.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 24 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://kesbangpol.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Badan Kesatuan Bangsa dan Politik</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://kesbangpol.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 25 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://sekretariat-korpri.mamasakab.go.id"
+                                    class="text-decoration-none text-dark" target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Sekretariat Korpri</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://sekretariat-korpri.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 26 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://ppid.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Pejabat Pengelola Informasi dan Dokumentasi</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://ppid.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 27 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://diskominfo.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Dinas Komunikasi dan Informatika</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://diskominfo.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 28 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://rsud-mamasa.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>RSUD Kondosapata’ Mamasa</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://rsud-mamasa.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <!-- 29 -->
+                            <div class="col-12 col-md-4 mb-3">
+                                <a href="https://baznas.mamasakab.go.id" class="text-decoration-none text-dark"
+                                    target="_blank">
+                                    <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
+                                        <div class="device-icon me-3">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                class="img-fluid" width="50" alt="">
+                                        </div>
+                                        <div class="device-info">
+                                            <h6>Badan Amil Zakat Nasional</h6>
+                                            <small
+                                                class="text-muted">{{ Str::limit('https://baznas.mamasakab.go.id', 100) }}</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
