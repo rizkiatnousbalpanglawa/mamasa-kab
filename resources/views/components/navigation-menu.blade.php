@@ -1,7 +1,7 @@
 <header id="header" class="header d-flex align-items-center sticky-top">
     <div
         class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-end">
-        <a href="{{ url('/beranda') }}" class="d-flex align-items-center me-auto">
+        <a href="{{ url('/') }}" class="d-flex align-items-center me-auto">
             <img src="{{ asset('front-assets/img/logo-website.png') }}" class="img-fluid" style="width: 300px"
                 alt="Logo Website Pemkab Mamasa" />
             {{-- <h3 class="ms-2 fw-bold my-auto" style="color: #04415f">KAB. MAMASA</h3> --}}

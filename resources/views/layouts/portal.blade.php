@@ -56,6 +56,15 @@
             border-radius: 2px;
         }
 
+        .custom-divider-2 {
+            width: 80px;
+            height: 4px;
+            border: none;
+            background: linear-gradient(to right, #0f0c29, #302b63);
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
         .menu-item {
             text-decoration: none;
             color: #fff;
@@ -96,6 +105,91 @@
         #preloader.fade-out {
             opacity: 0;
             visibility: hidden;
+        }
+
+        .device-item {
+            border-radius: 15px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                box-shadow 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .device-icon {
+            font-size: 24px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            margin-right: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .device-info {
+            flex-grow: 1;
+        }
+
+        .device-info h6 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .device-info small {
+            color: #6c757d;
+        }
+
+        .device-item:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tombol close custom */
+        .btn-close-custom {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1051;
+        }
+
+        .btn-close-custom:hover {
+            background: #ff4d4d;
+            color: #fff;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        /* Card device */
+        .device-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .device-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Ikon */
+        .device-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            color: #0d6efd;
         }
     </style>
 </head>
