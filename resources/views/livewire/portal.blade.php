@@ -71,7 +71,7 @@
                     <div class="container">
                         <div class="row">
                             <!-- 1 -->
-                            <div class="col-12 col-md-4 mb-3">
+                            {{-- <div class="col-12 col-md-4 mb-3">
                                 <a href="https://setda.mamasakab.go.id" class="text-decoration-none text-dark"
                                     target="_blank">
                                     <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
@@ -536,16 +536,15 @@
                                         </div>
                                     </div>
                                 </a>
-                            </div>
+                            </div> --}}
 
-                            <!-- 27 -->
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://diskominfo.mamasakab.go.id" class="text-decoration-none text-dark"
+                                <a href="https://mamasa-opd.mamasa.usbal.xyz" class="text-decoration-none text-dark"
                                     target="_blank">
                                     <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
-                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
-                                                class="img-fluid" width="50" alt="">
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" class="img-fluid"
+                                                width="50" alt="">
                                         </div>
                                         <div class="device-info">
                                             <h6>Dinas Komunikasi dan Informatika</h6>
@@ -556,8 +555,7 @@
                                 </a>
                             </div>
 
-                            <!-- 28 -->
-                            <div class="col-12 col-md-4 mb-3">
+                            {{-- <div class="col-12 col-md-4 mb-3">
                                 <a href="https://rsud-mamasa.mamasakab.go.id" class="text-decoration-none text-dark"
                                     target="_blank">
                                     <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
@@ -574,7 +572,6 @@
                                 </a>
                             </div>
 
-                            <!-- 29 -->
                             <div class="col-12 col-md-4 mb-3">
                                 <a href="https://baznas.mamasakab.go.id" class="text-decoration-none text-dark"
                                     target="_blank">
@@ -590,7 +587,7 @@
                                         </div>
                                     </div>
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
