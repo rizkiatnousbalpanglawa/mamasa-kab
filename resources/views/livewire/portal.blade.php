@@ -539,7 +539,7 @@
                             </div> --}}
 
                             <div class="col-12 col-md-4 mb-3">
-                                <a href="https://mamasa-opd.mamasa.usbal.xyz" class="text-decoration-none text-dark"
+                                <a href="https://mamasa-opd.usbal.xyz" class="text-decoration-none text-dark"
                                     target="_blank">
                                     <div class="device-item shadow-sm rounded p-3 d-flex align-items-center">
                                         <div class="device-icon me-3">
