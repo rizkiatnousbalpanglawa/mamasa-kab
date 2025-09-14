@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('portals', function (Blueprint $table) {
+        Schema::create('statistik_harians', function (Blueprint $table) {
             $table->id();
-            $table->string('logo');
-            $table->string('judul');
-            $table->string('subjudul');
-            $table->string('background');
+            $table->date('tanggal')->unique();
+            $table->unsignedBigInteger('pengunjung')->default(0);
+            $table->unsignedBigInteger('hits')->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('portals');
+        Schema::dropIfExists('statistik_harians');
     }
 };

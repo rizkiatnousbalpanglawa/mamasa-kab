@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('portals', function (Blueprint $table) {
+        Schema::create('statistik_onlines', function (Blueprint $table) {
             $table->id();
-            $table->string('logo');
-            $table->string('judul');
-            $table->string('subjudul');
-            $table->string('background');
-            $table->timestamps();
+            $table->string('ip_address', 45);
+            $table->timestamp('last_activity');
         });
     }
 
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('portals');
+        Schema::dropIfExists('statistik_onlines');
     }
 };
