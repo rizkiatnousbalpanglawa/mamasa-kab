@@ -4,6 +4,7 @@ namespace App\Filament\Resources\PortalMenus;
 
 use App\Filament\Resources\PortalMenus\Pages\ManagePortalMenus;
 use App\Models\PortalMenu;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -15,12 +16,19 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class PortalMenuResource extends Resource
 {
     protected static ?string $model = PortalMenu::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::PORTAL;
+
+    protected static ?string $pluralModelLabel = 'Menu';
+
+    protected static ?string $label = 'Menu';
 
     public static function form(Schema $schema): Schema
     {

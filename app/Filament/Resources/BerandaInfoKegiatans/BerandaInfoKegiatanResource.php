@@ -4,6 +4,7 @@ namespace App\Filament\Resources\BerandaInfoKegiatans;
 
 use App\Filament\Resources\BerandaInfoKegiatans\Pages\ManageBerandaInfoKegiatans;
 use App\Models\BerandaInfoKegiatan;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -18,12 +19,19 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Storage;
+use UnitEnum;
 
 class BerandaInfoKegiatanResource extends Resource
 {
     protected static ?string $model = BerandaInfoKegiatan::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::BERANDA;
+
+    protected static ?string $pluralModelLabel = 'Kegiatan';
+
+    protected static ?string $label = 'Kegiatan';
 
     public static function form(Schema $schema): Schema
     {

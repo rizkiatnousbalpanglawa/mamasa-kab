@@ -8,17 +8,25 @@ use App\Filament\Resources\Beritas\Pages\ListBeritas;
 use App\Filament\Resources\Beritas\Schemas\BeritaForm;
 use App\Filament\Resources\Beritas\Tables\BeritasTable;
 use App\Models\Berita;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use UnitEnum;
 
 class BeritaResource extends Resource
 {
     protected static ?string $model = Berita::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::BERITA;
+
+    protected static ?string $pluralModelLabel = 'Berita';
+
+    protected static ?string $label = 'Berita';
 
     public static function form(Schema $schema): Schema
     {

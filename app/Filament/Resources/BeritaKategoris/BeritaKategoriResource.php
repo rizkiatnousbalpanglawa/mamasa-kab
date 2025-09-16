@@ -4,6 +4,7 @@ namespace App\Filament\Resources\BeritaKategoris;
 
 use App\Filament\Resources\BeritaKategoris\Pages\ManageBeritaKategoris;
 use App\Models\BeritaKategori;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -16,12 +17,18 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use UnitEnum;
 
 class BeritaKategoriResource extends Resource
 {
     protected static ?string $model = BeritaKategori::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static ?string $pluralModelLabel = 'Kategori';
+    protected static ?string $label = 'Kategori';
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::BERITA;
 
     public static function form(Schema $schema): Schema
     {

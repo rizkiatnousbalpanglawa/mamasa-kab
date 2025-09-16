@@ -4,6 +4,7 @@ namespace App\Filament\Resources\BerandaSliders;
 
 use App\Filament\Resources\BerandaSliders\Pages\ManageBerandaSliders;
 use App\Models\BerandaSlider;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -17,12 +18,19 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Storage;
+use UnitEnum;
 
 class BerandaSliderResource extends Resource
 {
     protected static ?string $model = BerandaSlider::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::BERANDA;
+
+    protected static ?string $pluralModelLabel = 'Slider';
+
+    protected static ?string $label = 'Slider';
 
     public static function form(Schema $schema): Schema
     {

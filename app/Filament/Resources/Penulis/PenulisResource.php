@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Penulis;
 
 use App\Filament\Resources\Penulis\Pages\ManagePenulis;
 use App\Models\Penulis;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -17,12 +18,19 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Storage;
+use UnitEnum;
 
 class PenulisResource extends Resource
 {
     protected static ?string $model = Penulis::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::BERITA;
+
+    protected static ?string $pluralModelLabel = 'Penulis';
+
+    protected static ?string $label = 'Penulis';
 
     public static function form(Schema $schema): Schema
     {

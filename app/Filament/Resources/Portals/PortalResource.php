@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Portals;
 
 use App\Filament\Resources\Portals\Pages\ManagePortals;
 use App\Models\Portal;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -18,12 +19,19 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Storage;
+use UnitEnum;
 
 class PortalResource extends Resource
 {
     protected static ?string $model = Portal::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::PORTAL;
+
+    protected static ?string $pluralModelLabel = 'Portal';
+
+    protected static ?string $label = 'Portal';
 
     public static function form(Schema $schema): Schema
     {
