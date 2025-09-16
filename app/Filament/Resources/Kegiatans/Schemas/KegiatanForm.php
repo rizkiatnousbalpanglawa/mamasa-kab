@@ -1,25 +1,25 @@
 <?php
 
-namespace App\Filament\Resources\Beritas\Schemas;
+namespace App\Filament\Resources\Kegiatans\Schemas;
 
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class BeritaForm
+
+class KegiatanForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
                 TextInput::make('judul')
-                    ->label('Nama Kategori')
+                    ->label('Judul')
                     ->required()
                     ->maxLength(255)
                     ->live(onBlur: true)
@@ -37,7 +37,7 @@ class BeritaForm
                     ->columnSpanFull(),
                 FileUpload::make('gambar')
                     ->image()
-                    ->directory('berita')
+                    ->directory('kegiatan')
                     ->deleteUploadedFileUsing(function ($file) {
                         if ($file && Storage::disk('public')->exists($file)) {
                             Storage::disk('public')->delete($file);
@@ -46,15 +46,14 @@ class BeritaForm
                     ->maxSize(1024)
                     ->columnSpanFull()
                     ->required(),
-                Select::make('kategori_id')
-                    ->relationship('kategori', 'nama_kategori')
+                TextInput::make('kategori_id')
+                    ->required()
+                    ->numeric(),
+                DateTimePicker::make('waktu_mulai')
                     ->required(),
-                Select::make('penulis_id')
-                    ->relationship('penulis', 'nama')
+                DateTimePicker::make('waktu_selesai'),
+                TextInput::make('tempat_kegiatan')
                     ->required(),
-                DateTimePicker::make('tanggal')
-                    ->label('Waktu Buat')
-                    ->default(now()),
             ]);
     }
 }
