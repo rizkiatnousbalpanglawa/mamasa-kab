@@ -2,6 +2,9 @@
 
 namespace App\Livewire;
 
+use App\Models\BerandaInfoKegiatan;
+use App\Models\BerandaSlider;
+use App\Models\BerandaSusunanKegiatan;
 use App\Models\StatistikHarian;
 use App\Models\StatistikOnline;
 use Carbon\Carbon;
@@ -13,7 +16,9 @@ class Home extends Component
 {
     public function render()
     {
-
-        return view('livewire.home');
+        $data['carousels'] = BerandaSlider::get();
+        $data['kegiatan'] = BerandaInfoKegiatan::first();
+        $data['susunanKegiatan'] = BerandaSusunanKegiatan::get();
+        return view('livewire.home', $data);
     }
 }

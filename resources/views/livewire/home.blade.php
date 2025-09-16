@@ -1,75 +1,43 @@
 <main class="main">
     <section id="hero" class="hero section">
-        <div id="carouselExampleIndicators" class="carousel slide shadow overflow-hidden" data-bs-ride="carousel"
+        <div id="carouselIndicators" class="carousel slide shadow overflow-hidden" data-bs-ride="carousel"
             data-aos="fade-up">
 
-            <!-- Indicator (titik navigasi) -->
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+                @foreach ($carousels as $index => $item)
+                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="{{ $index }}"
+                        class="{{ $index == 0 ? 'active' : '' }}" aria-current="{{ $index == 0 ? 'true' : 'false' }}"
+                        aria-label="Slide {{ $index + 1 }}"></button>
+                @endforeach
             </div>
 
-            <!-- Isi Carousel -->
+            <!-- Carousel Items -->
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('front-assets/img/blog/blog-hero-1.webp') }}" class="d-block w-100"
-                        alt="Slide 1">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="{{ asset('front-assets/img/blog/blog-hero-2.webp') }}" class="d-block w-100"
-                        alt="Slide 2">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="{{ asset('front-assets/img/blog/blog-hero-9.webp') }}" class="d-block w-100"
-                        alt="Slide 3">
-                </div>
+                @foreach ($carousels as $index => $item)
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                        <img src="{{ asset(Storage::url($item->image)) }}" class="d-block w-100"
+                            alt="Slide {{ $index + 1 }}">
+                    </div>
+                @endforeach
             </div>
 
             <!-- Tombol Navigasi -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Sebelumnya</span>
+                <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Berikutnya</span>
+                <span class="visually-hidden">Next</span>
             </button>
         </div>
 
 
         <div class="feature-cards-wrapper" data-aos="fade-up" data-aos-delay="300"></div>
 
-        {{-- <div class="upcoming-event" data-aos="fade-up" data-aos-delay="400">
-            <div class="container">
-                <div class="event-content">
-                    <div class="event-date">
-                        <span class="day">15</span>
-                        <span class="month">NOV</span>
-                    </div>
-                    <div class="event-info">
-                        <h3>Upacara Adat</h3>
-                        <p>
-                            Ikuti kemeriahan Upacara Adat Mamasa, nikmati tarian, musik
-                            tradisional, dan keramahan warga setempat.
-                        </p>
-                    </div>
-                    <div class="event-action">
-                        <a href="#" class="btn-event">
-                            <i class="bi bi-geo-alt"></i> Lihat Peta
-                        </a>
-                        <span class="countdown">Mulai dalam 3 Minggu Lagi</span>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
     </section>
 
     <!-- Recent News Section -->
@@ -305,60 +273,34 @@
                 <div class="col-lg-6">
                     <div class="about-content" data-aos="fade-up" data-aos-delay="200">
                         <h3>Agenda & Kegiatan</h3>
-                        <h2>Jangan Lewatkan Momen Spesial dan Festival Budaya</h2>
+                        <h2>{{ $kegiatan->judul ?? '-' }}</h2>
                         <p>
                             Temukan jadwal lengkap kegiatan wisata, festival budaya, dan
                             acara lokal yang memeriahkan Mamasa sepanjang tahun.
                         </p>
 
                         <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>15 Nov 2025 - Upacara Adat Mamasa</h4>
-                                    <p>
-                                        Prosesi budaya dengan tarian tradisional dan musik khas
-                                        pegunungan.
-                                    </p>
-                                </div>
-                            </div>
 
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>20 Des 2025 - Festival Kopi Mamasa</h4>
-                                    <p>Pameran kopi lokal, demo barista, dan bazar UMKM.</p>
+                            @foreach ($susunanKegiatan as $item)
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h4>{{ date('d M Y', strtotime($item->tanggal)) }} - {{ $item->nama }}</h4>
+                                        <p>
+                                            {{ $item->penjelasan }}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
 
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>1 Jan 2026 - Pentas Musik Tahun Baru</h4>
-                                    <p>
-                                        Hiburan musik dan pesta kembang api di alun-alun kota.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="timeline-item">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>5 Des 2026 - Festival Tenun & UMKM Mamasa</h4>
-                                    <p>
-                                        Rayakan karya perajin lokal: demo menenun, bazar produk
-                                        UMKM, kopi pegunungan, dan pertunjukan musik tradisi.
-                                    </p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 d-none d-md-flex">
                     <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="{{ asset('front-assets/img/tari-mamasa.jpg') }}" alt="Campus"
-                            class="img-fluid rounded" />
+                        <img src="{{ !empty($kegiatan->image) ? asset(Storage::url($kegiatan->image)) : asset('front-assets/img/tari-mamasa.jpg') }}"
+                            alt="Kegiatan" class="img-fluid rounded" />
 
                         <div class="mission-vision" data-aos="fade-up" data-aos-delay="400"></div>
                     </div>

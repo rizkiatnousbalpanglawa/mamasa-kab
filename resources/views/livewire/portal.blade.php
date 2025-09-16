@@ -1,18 +1,20 @@
 <div class="">
     <!-- Background Video -->
     <video autoplay muted loop class="video-bg">
-        <source src="{{ asset('front-assets/mamasa-bg.mp4') }}" type="video/mp4">
+        <source
+            src="{{ !empty($portals->background) ? Storage::url($portals->background) : asset('front-assets/mamasa-bg.mp4') }}"
+            type="video/mp4">
         Browser anda tidak mendukung video background.
     </video>
     <div class="overlay"></div>
 
     <!-- Hero Section -->
     <div class="content hero">
-        <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo Kabupaten Mamasa" class="mb-3"
-            style="width:150px; height:auto;">
+        <img src="{{ !empty($portals->logo) ? Storage::url($portals->logo) : asset('front-assets/img/logo-mamasa.png') }}"
+            alt="Logo Kabupaten Mamasa" class="mb-3" style="width:150px; height:auto;">
 
-        <h1 class="display-6 fw-bold">PEMERINTAH KABUPATEN MAMASA</h1>
-        <p class="lead">Informasi | Layanan Publik | Pariwisata | Pengaduan</p>
+        <h1 class="display-6 fw-bold">{{ $portals->judul ?? 'Pemerintah Kab Mamasa' }}</h1>
+        <p class="lead">{{ $portals->subjudul ?? '' }}</p>
 
         <hr class="custom-divider my-4">
 
@@ -30,15 +32,6 @@
                 </div>
 
                 <div class="col-4 col-md-2 mb-4">
-                    <a href="#" class="menu-item">
-                        <div class="icon-circle">
-                            <i class="bi bi-megaphone" style="font-size: 2rem; color: white;"></i>
-                        </div>
-                        <p class="mt-2">Pengumuman</p>
-                    </a>
-                </div>
-
-                <div class="col-4 col-md-2 mb-4">
                     <a href="#" class="menu-item" data-bs-toggle="modal" data-bs-target="#websiteOpd">
                         <div class="icon-circle">
                             <i class="bi bi-globe" style="font-size: 2rem; color: white;"></i>
@@ -47,6 +40,17 @@
                     </a>
 
                 </div>
+
+                @foreach ($menu as $item)
+                    <div class="col-4 col-md-2 mb-4">
+                        <a href="{{ $item->link }}" class="menu-item">
+                            <div class="icon-circle">
+                                <i class="bi bi-{{ $item->icon }}" style="font-size: 2rem; color: white;"></i>
+                            </div>
+                            <p class="mt-2">{{ $item->judul }}</p>
+                        </a>
+                    </div>
+                @endforeach
 
             </div>
         </section>
