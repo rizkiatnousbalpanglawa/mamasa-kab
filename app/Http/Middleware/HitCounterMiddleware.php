@@ -18,28 +18,28 @@ class HitCounterMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // $ip = $request->ip();
-        // $today = Carbon::today()->toDateString();
+        $ip = $request->ip();
+        $today = Carbon::today()->toDateString();
 
-        // // Ambil / buat data harian
-        // $stat = StatistikHarian::firstOrCreate(['tanggal' => $today]);
+        // Ambil / buat data harian
+        $stat = StatistikHarian::firstOrCreate(['tanggal' => $today]);
 
-        // // Tambah hits setiap request
-        // $stat->increment('hits');
+        // Tambah hits setiap request
+        $stat->increment('hits');
 
-        // // Cek di tabel online apakah IP ini sudah tercatat hari ini
-        // $online = StatistikOnline::where('ip_address', $ip)->first();
+        // Cek di tabel online apakah IP ini sudah tercatat hari ini
+        $online = StatistikOnline::where('ip_address', $ip)->first();
 
-        // if (! $online || $online->last_activity->isBefore(Carbon::today())) {
-        //     // Kalau belum ada / belum aktif hari ini → hitung sebagai pengunjung baru
-        //     $stat->increment('pengunjung');
-        // }
+        if (! $online || $online->last_activity->isBefore(Carbon::today())) {
+            // Kalau belum ada / belum aktif hari ini → hitung sebagai pengunjung baru
+            $stat->increment('pengunjung');
+        }
 
-        // // Update last_activity
-        // StatistikOnline::updateOrCreate(
-        //     ['ip_address' => $ip],
-        //     ['last_activity' => Carbon::now()]
-        // );
+        // Update last_activity
+        StatistikOnline::updateOrCreate(
+            ['ip_address' => $ip],
+            ['last_activity' => Carbon::now()]
+        );
 
         return $next($request);
     }

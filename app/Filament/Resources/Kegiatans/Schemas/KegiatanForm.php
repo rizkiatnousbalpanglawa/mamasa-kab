@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Kegiatans\Schemas;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
@@ -46,9 +47,9 @@ class KegiatanForm
                     ->maxSize(1024)
                     ->columnSpanFull()
                     ->required(),
-                TextInput::make('kategori_id')
-                    ->required()
-                    ->numeric(),
+                Select::make('kategori_id')
+                    ->relationship('kategori', 'nama_kategori')
+                    ->required(),
                 DateTimePicker::make('waktu_mulai')
                     ->required(),
                 DateTimePicker::make('waktu_selesai'),
