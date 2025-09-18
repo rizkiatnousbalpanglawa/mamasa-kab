@@ -19,7 +19,7 @@ class BeritaForm
         return $schema
             ->components([
                 TextInput::make('judul')
-                    ->label('Nama Kategori')
+                    ->label('Judul')
                     ->required()
                     ->maxLength(255)
                     ->live(onBlur: true)

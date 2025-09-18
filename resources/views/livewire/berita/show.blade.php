@@ -17,83 +17,71 @@
     <section id="blog-details" class="blog-details section">
         <div class="container" data-aos="fade-up">
 
-            <article class="article">
-                <div class="article-header">
-                    <div class="meta-categories" data-aos="fade-up">
-                        <a href="#" class="category">Technology</a>
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <article class="article">
+                        <div class="article-header">
+                            <div class="meta-categories" data-aos="fade-up">
+                                <a href="#" class="category">{{ $berita->kategori->nama_kategori }}</a>
+                            </div>
 
-                    <h1 class="title" data-aos="fade-up" data-aos-delay="100">The Evolution of User Interface Design:
-                        From Skeuomorphism to Neumorphism</h1>
+                            <h1 class="title" data-aos="fade-up" data-aos-delay="100">
+                                {{ $berita->judul }}
+                            </h1>
 
-                    <div class="article-meta" data-aos="fade-up" data-aos-delay="200">
-                        <div class="author">
-                            <img src="{{ asset('front-assets/img/person/person-m-6.webp') }}" alt="Author"
-                                class="author-img">
-                            <div class="author-info">
-                                <h4>David Wilson</h4>
-                                <span>UI/UX Design Lead</span>
+                            <div class="article-meta" data-aos="fade-up" data-aos-delay="200">
+                                <div class="author">
+                                    <img src="{{ !empty($berita->penulis->foto) ? asset(Storage::url($berita->penulis->foto)) : asset('front-assets/img/person/person-m-6.webp') }}"
+                                        alt="Author" class="author-img">
+                                    <div class="author-info">
+                                        <h4>{{ $berita->penulis->nama }}</h4>
+                                        {{-- <span>UI/UX Design Lead</span> --}}
+                                    </div>
+                                </div>
+                                <div class="post-info">
+                                    <span><i
+                                            class="bi bi-calendar4-week"></i>{{ date('d M Y', strtotime($berita->tanggal)) }}</span>
+                                    <span><i class="bi bi-eye"></i> {{ $berita->views }} kali dibaca</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="post-info">
-                            <span><i class="bi bi-calendar4-week"></i> April 15, 2025</span>
-                            <span><i class="bi bi-chat-square-text"></i> 32x dibaca</span>
+
+                        <div class="mb-4" data-aos="zoom-in">
+                            <img src="{{ asset(Storage::url($berita->gambar)) }}" alt="UI Design Evolution"
+                                class="img-fluid rounded">
                         </div>
-                    </div>
-                </div>
-
-                <div class="article-featured-image" data-aos="zoom-in">
-                    <img src="{{ asset('front-assets/img/blog/blog-hero-1.webp') }}" alt="UI Design Evolution"
-                        class="img-fluid">
-                </div>
 
 
-                <div class="article-content">
-                    <div class="content-section" id="introduction" data-aos="fade-up">
-                        <p class="lead">
-                            The journey of user interface design has been marked by significant shifts in aesthetic
-                            approaches, each era bringing its own unique perspective on how digital interfaces
-                            should look and feel.
-                        </p>
-
-                        <p>
-                            From the early days of graphical user interfaces to today's sophisticated design
-                            systems, the evolution of UI design reflects not just technological advancement, but
-                            also changing user expectations and cultural shifts in how we interact with digital
-                            products.
-                        </p>
-
-                        <div class="highlight-quote">
-                            <blockquote>
-                                <p>Design is not just what it looks like and feels like. Design is how it works.</p>
-                                <cite>Steve Jobs</cite>
-                            </blockquote>
+                        <div class="article-content">
+                            <div class="content-section" id="introduction" data-aos="fade-up">
+                                {!! $berita->konten !!}
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="article-footer" data-aos="fade-up">
-                    <div class="share-article">
-                        <h4>Bagikan artikel ini</h4>
-                        <div class="share-buttons">
-                            {{-- <a href="#" class="share-button twitter">
+                        <div class="article-footer" data-aos="fade-up">
+                            <div class="share-article">
+                                <h4>Bagikan artikel ini</h4>
+                                <div class="share-buttons">
+                                    {{-- <a href="#" class="share-button twitter">
                                 <i class="bi bi-twitter-x"></i>
                                 <span>Share on X</span>
                             </a> --}}
-                            <a href="#" class="share-button facebook">
-                                <i class="bi bi-facebook"></i>
-                                <span>Bagikan di Facebook</span>
-                            </a>
-                            {{-- <a href="#" class="share-button linkedin">
+                                    <a href="#" class="share-button facebook">
+                                        <i class="bi bi-facebook"></i>
+                                        <span>Bagikan di Facebook</span>
+                                    </a>
+                                    {{-- <a href="#" class="share-button linkedin">
                                 <i class="bi bi-linkedin"></i>
                                 <span>Share on LinkedIn</span>
                             </a> --}}
+                                </div>
+                            </div>
+
                         </div>
-                    </div>
 
+                    </article>
                 </div>
-
-            </article>
+            </div>
 
         </div>
     </section><!-- /Blog Details Section -->

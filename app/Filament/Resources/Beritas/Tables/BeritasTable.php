@@ -15,10 +15,7 @@ class BeritasTable
         return $table
             ->columns([
                 TextColumn::make('judul')
-                    ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
-                TextColumn::make('gambar')
+                    ->limit(50)
                     ->searchable(),
                 TextColumn::make('kategori.nama_kategori')
                     ->sortable(),
