@@ -64,6 +64,22 @@
 
                 <!-- Sidebar with Tabs -->
                 <div class="col-lg-4">
+                    <div class="events-extended">
+                        <div class="events-sidebar">
+                            <div class="sidebar-item categories" data-aos="fade-up" data-aos-delay="100">
+                                <h4>Kategori Berita</h4>
+                                <ul class="list-unstyled">
+                                    @forelse ($kategori as $item)
+                                        <li><a href="#">{{ $item->nama_kategori }}
+                                                <span>(12)</span></a></li>
+                                    @empty
+                                    @endforelse
+                                </ul>
+                            </div><!-- End Categories -->
+                        </div>
+
+                    </div>
+
                     <div class="news-tabs" data-aos="fade-up" data-aos-delay="200">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item" role="presentation">
