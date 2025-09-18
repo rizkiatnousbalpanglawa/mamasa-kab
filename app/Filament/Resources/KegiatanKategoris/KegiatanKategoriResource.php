@@ -29,14 +29,14 @@ class KegiatanKategoriResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Kategori';
 
-    protected static ?string $label = 'Kategori';
+    protected static ?string $label = 'Kategori Kegiatan';
 
     public static function form(Schema $schema): Schema
     {
         return $schema
             ->components([
                 TextInput::make('nama_kategori')
-                    ->label('Nama Kategori')
+                    ->label('Kategori Kegiatan')
                     ->required()
                     ->maxLength(255)
                     ->live(onBlur: true)

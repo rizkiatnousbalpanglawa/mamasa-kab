@@ -24,6 +24,7 @@ class BeritasTable
                 TextColumn::make('tanggal')
                     ->dateTime()
                     ->sortable(),
+                TextColumn::make('views'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

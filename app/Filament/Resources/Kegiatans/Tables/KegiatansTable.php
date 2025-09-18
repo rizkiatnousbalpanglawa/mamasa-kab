@@ -15,20 +15,15 @@ class KegiatansTable
         return $table
             ->columns([
                 TextColumn::make('judul')
+                    ->limit(50)
                     ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
-                TextColumn::make('gambar')
-                    ->searchable(),
-                TextColumn::make('kategori_id')
-                    ->numeric()
-                    ->sortable(),
+                TextColumn::make('kategori.nama_kategori'),
                 TextColumn::make('waktu_mulai')
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('waktu_selesai')
                     ->dateTime()
-                    ->sortable(),
+                    ->placeholder('-'),
                 TextColumn::make('tempat_kegiatan')
                     ->searchable(),
                 TextColumn::make('views')
