@@ -26,7 +26,7 @@ class BeritaKategoriResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     protected static ?string $pluralModelLabel = 'Kategori';
-    protected static ?string $label = 'Kategori';
+    protected static ?string $label = 'Kategori Berita';
 
     protected static string|UnitEnum|null $navigationGroup = NavigationGroups::BERITA;
 
@@ -35,7 +35,7 @@ class BeritaKategoriResource extends Resource
         return $schema
             ->components([
                 TextInput::make('nama_kategori')
-                    ->label('Nama Kategori')
+                    ->label('Kategori Berita')
                     ->required()
                     ->maxLength(255)
                     ->live(onBlur: true)
