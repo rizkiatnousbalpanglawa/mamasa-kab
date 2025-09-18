@@ -18,7 +18,8 @@
             <!-- Header -->
             <div class="privacy-header" data-aos="fade-up">
                 <div class="header-content">
-                    <div class="last-updated">Terahir diperbarui: February 27, 2025</div>
+                    <div class="last-updated">Terahir diperbarui:
+                        {{ date('d M Y H:i A', strtotime($info->last()->updated_at)) }}</div>
                     <h1>Informasi</h1>
                     <p class="intro-text">Halaman ini menyajikan berbagai informasi resmi dari Pemerintah Kabupaten
                         Mamasa</p>
@@ -38,12 +39,9 @@
                                     <label for="kategori" class="form-label fw-semibold">Kategori</label>
                                     <select id="kategori" class="form-select shadow-sm border-0">
                                         <option value="">Semua</option>
-                                        <option value="pengumuman">Pengumuman</option>
-                                        <option value="laporan">Realisasi Anggaran</option>
-                                        <option value="kegiatan">Peraturan Daerah</option>
-                                        <option value="kegiatan">Peraturan Bupati</option>
-                                        <option value="kegiatan">Instruksi Bupati</option>
-                                        <option value="kegiatan">Surat Edaran</option>
+                                        @foreach ($kategori as $item)
+                                            <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
 
@@ -52,9 +50,11 @@
                                     <label for="tahun" class="form-label fw-semibold">Tahun</label>
                                     <select id="tahun" class="form-select shadow-sm border-0">
                                         <option value="">Semua</option>
-                                        <option value="2025">2025</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2023">2023</option>
+                                        @foreach ($info as $item)
+                                            <option value="{{ $item->id }}">
+                                                {{ date('Y', strtotime($item->waktu_informasi)) }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
 
@@ -76,71 +76,32 @@
 
                         <div class="row row-cols-1 g-3" id="pdfList">
 
-                            <!-- Card PDF -->
-                            <div class="col">
-                                <div class="card info-card shadow-sm border-0 rounded-4">
-                                    <div class="card-body">
-                                        <div class="mb-2">
-                                            <p class="text-muted small mb-2 d-flex align-items-center ">
+                            @forelse ($info as $item)
+                                <div class="col">
+                                    <div class="card info-card shadow-sm border-0 rounded-4">
+                                        <div class="card-body">
+                                            <div class="mb-2">
+                                                <p class="text-muted small mb-2 d-flex align-items-center ">
 
-                                                <span class="badge bg-accent me-2">Pengumuman</span>
-                                                |
-                                                <i class="ms-2 me-1 bi bi-calendar-event"></i> 20 Maret 2024
+                                                    <span
+                                                        class="badge bg-accent me-2">{{ $item->kategori->nama_kategori }}</span>
+                                                    |
+                                                    <i class="ms-2 me-1 bi bi-calendar-event"></i>
+                                                    {{ date('d M Y', strtotime($item->waktu_informasi)) }}
 
-                                            </p>
-                                            <h5 class="fw-bold mb-0">Pengumuman hasil tes PPPK</h5>
+                                                </p>
+                                                <h5 class="fw-bold mb-0">{{ Str::limit($item->judul, 50, '...') }}</h5>
+                                            </div>
+
+                                            <a href="/storage/pdf/infrastruktur.pdf" target="_blank"
+                                                class="text-dark-blue">
+                                                Lihat <i class="bi bi-arrow-right"></i>
+                                            </a>
                                         </div>
-
-                                        <a href="/storage/pdf/infrastruktur.pdf" target="_blank" class="text-dark-blue">
-                                            Lihat <i class="bi bi-arrow-right"></i>
-                                        </a>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Card PDF -->
-                            <div class="col">
-                                <div class="card info-card shadow-sm border-0 rounded-4">
-                                    <div class="card-body">
-                                        <div class="mb-2">
-                                            <p class="text-muted small mb-2 d-flex align-items-center ">
-
-                                                <span class="badge bg-accent me-2">Realisasi
-                                                    Anggaran</span>
-                                                |
-                                                <i class="ms-2 me-1 bi bi-calendar-event"></i> 20 Maret 2024
-
-                                            </p>
-                                            <h5 class="fw-bold mb-0">Laporan Realisasi Anggaran 2024</h5>
-                                        </div>
-
-                                        <a href="/storage/pdf/infrastruktur.pdf" target="_blank" class="text-dark-blue">
-                                            Lihat <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Card PDF -->
-                            <div class="col">
-                                <div class="card info-card shadow-sm border-0 rounded-4">
-                                    <div class="card-body">
-                                        <div class="mb-2">
-                                            <p class="text-muted small mb-2 d-flex align-items-center ">
-
-                                                <span class="badge bg-accent me-2">Kegiatan</span> |
-                                                <i class="ms-2 me-1 bi bi-calendar-event"></i> 10 Maret 2024
-
-                                            </p>
-                                            <h5 class="fw-bold mb-0">Update Infrastruktur Jalan</h5>
-                                        </div>
-
-                                        <a href="/storage/pdf/infrastruktur.pdf" target="_blank" class="text-dark-blue">
-                                            Lihat <i class="bi bi-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            @empty
+                            @endforelse
 
                         </div>
                     </div>

@@ -57,8 +57,6 @@ class BeritaKategoriResource extends Resource
             ->columns([
                 TextColumn::make('nama_kategori')
                     ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

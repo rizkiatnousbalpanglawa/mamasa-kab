@@ -15,15 +15,15 @@ class InformasisTable
         return $table
             ->columns([
                 TextColumn::make('judul')
+                    ->limit(50)
                     ->searchable(),
-                TextColumn::make('slug')
-                    ->searchable(),
-                TextColumn::make('pdf')
-                    ->searchable(),
-                TextColumn::make('kategori_id')
-                    ->numeric()
+                // TextColumn::make('pdf')
+                //     ->label('Lampiran')
+                //     ->searchable(),
+                TextColumn::make('kategori.nama_kategori')
                     ->sortable(),
                 TextColumn::make('waktu_informasi')
+                    ->label('Waktu')
                     ->date()
                     ->sortable(),
                 TextColumn::make('views')

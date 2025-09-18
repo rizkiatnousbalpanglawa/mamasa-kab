@@ -16,6 +16,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Illuminate\Support\Str;
 use UnitEnum;
 
 class InformasiKategoriResource extends Resource
@@ -28,15 +29,24 @@ class InformasiKategoriResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Kategori';
 
-    protected static ?string $label = 'Kategori';
+    protected static ?string $label = 'Kategori Informasi';
 
     public static function form(Schema $schema): Schema
     {
         return $schema
             ->components([
                 TextInput::make('nama_kategori')
+                    ->label('Kategori Informasi')
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(
+                        fn($state, $set) =>
+                        $set('slug', Str::slug($state)),
+                    )
                     ->required(),
                 TextInput::make('slug')
+                    ->maxLength(255)
+                    ->unique(ignoreRecord: true)
+                    ->hint('Slug digunakan untuk URL')
                     ->required(),
             ]);
     }
@@ -46,8 +56,6 @@ class InformasiKategoriResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('nama_kategori')
-                    ->searchable(),
-                TextColumn::make('slug')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
