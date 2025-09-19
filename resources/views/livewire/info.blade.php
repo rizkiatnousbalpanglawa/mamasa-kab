@@ -50,10 +50,11 @@
                                     <label for="tahun" class="form-label fw-semibold">Tahun</label>
                                     <select id="tahun" class="form-select shadow-sm border-0">
                                         <option value="">Semua</option>
-                                        @foreach ($info as $item)
-                                            <option value="{{ $item->id }}">
-                                                {{ date('Y', strtotime($item->waktu_informasi)) }}
-                                            </option>
+                                        @foreach ($info->unique(fn($item) => date('Y', strtotime($item->waktu_informasi))) as $item)
+                                            @php
+                                                $tahun = date('Y', strtotime($item->waktu_informasi));
+                                            @endphp
+                                            <option value="{{ $tahun }}">{{ $tahun }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -82,7 +83,6 @@
                                         <div class="card-body">
                                             <div class="mb-2">
                                                 <p class="text-muted small mb-2 d-flex align-items-center ">
-
                                                     <span
                                                         class="badge bg-accent me-2">{{ $item->kategori->nama_kategori }}</span>
                                                     |
@@ -93,8 +93,8 @@
                                                 <h5 class="fw-bold mb-0">{{ Str::limit($item->judul, 50, '...') }}</h5>
                                             </div>
 
-                                            <a href="{{ asset(Storage::url($item->pdf)) }}" target="_blank"
-                                                class="text-dark-blue">
+                                            <a href="{{ Str::startsWith($item->pdf, 'informasi') ? asset(Storage::url($item->pdf)) : $item->pdf }}"
+                                                target="_blank" class="text-dark-blue">
                                                 Lihat <i class="bi bi-arrow-right"></i>
                                             </a>
                                         </div>
