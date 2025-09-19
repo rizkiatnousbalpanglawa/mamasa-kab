@@ -65,7 +65,7 @@
                                         <div class="mb-2" style="width:50px; height:3px; background-color:black;">
                                         </div>
                                         <p class="card-text text-muted small">
-                                            {!! Str::limit($item->konten, 100, '...') !!}
+                                            {{ Str::limit(strip_tags($item->konten), 100, '...') }}
                                         </p>
                                     </div>
                                     <div
@@ -111,7 +111,7 @@
                                             <div class="mb-2" style="width:50px; height:3px; background-color:black;">
                                             </div>
                                             <p class="card-text text-muted small">
-                                                {!! Str::limit($item->konten, 100, '...') !!}
+                                                {{ Str::limit(strip_tags($item->konten), 100, '...') }}
                                             </p>
                                         </div>
                                         <div
