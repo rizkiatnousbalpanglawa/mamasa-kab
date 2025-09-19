@@ -36,7 +36,7 @@ class PotensiKategoriResource extends Resource
         return $schema
             ->components([
                 TextInput::make('nama')
-                    ->label('Nama Kegiatan')
+                    ->label('Kategori Potensi')
                     ->required()
                     ->maxLength(255)
                     ->live(onBlur: true)
