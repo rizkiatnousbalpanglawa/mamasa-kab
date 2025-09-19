@@ -4,6 +4,10 @@ namespace App\Livewire;
 
 use App\Models\Informasi;
 use App\Models\InformasiKategori;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 class Info extends Component
