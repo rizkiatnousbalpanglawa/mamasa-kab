@@ -19,6 +19,8 @@ Route::middleware(HitCounterMiddleware::class)->group(function () {
 
     Route::get('/profil', App\Livewire\ProfilKepalaDaerah::class);
 
+    Route::get('/potensi', App\Livewire\Potensi::class);
+
 
     Route::get('/info', App\Livewire\Info::class);
     Route::get('/info/view/{id}', [ViewInformasiController::class, 'view'])->name('informasi.view');

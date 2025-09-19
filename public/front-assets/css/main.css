@@ -9940,3 +9940,56 @@ section,
         padding: 1.5rem;
     }
 }
+
+/* --- Gaya untuk Filter Kategori --- */
+.potential-filters {
+    margin-bottom: 30px;
+}
+.potential-filters li {
+    cursor: pointer;
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: var(--surface-color, #fff);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+}
+.potential-filters li:hover {
+    background-color: color-mix(
+        in srgb,
+        var(--default-color, #010608),
+        transparent 95%
+    );
+}
+.potential-filters li.filter-active {
+    background-color: var(--accent-color, #04415f);
+    color: var(--contrast-color, #fff);
+}
+
+.potential-item .card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.potential-item .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+.potential-item .card-img-container {
+    height: 220px;
+    overflow: hidden;
+}
+.potential-item .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+.potential-item .card:hover .card-img-top {
+    transform: scale(1.05);
+}
+.potential-item .read-more {
+    color: var(--accent-color, #04415f);
+    font-weight: 600;
+    text-decoration: none;
+}
