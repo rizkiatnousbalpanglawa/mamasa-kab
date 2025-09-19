@@ -4,6 +4,7 @@ namespace App\Filament\Resources\ProfilPimpinanDaerahs;
 
 use App\Filament\Resources\ProfilPimpinanDaerahs\Pages\ManageProfilPimpinanDaerahs;
 use App\Models\ProfilPimpinanDaerah;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -21,12 +22,19 @@ use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use UnitEnum;
 
 class ProfilPimpinanDaerahResource extends Resource
 {
     protected static ?string $model = ProfilPimpinanDaerah::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::PROFIL;
+
+    protected static ?string $pluralModelLabel = 'Pimpinan Daerah';
+
+    protected static ?string $label = 'Pimpinan Daerah';
 
     public static function form(Schema $schema): Schema
     {

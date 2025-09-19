@@ -4,6 +4,7 @@ namespace App\Filament\Resources\PotensiKategoris;
 
 use App\Filament\Resources\PotensiKategoris\Pages\ManagePotensiKategoris;
 use App\Models\PotensiKategori;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -16,12 +17,19 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use UnitEnum;
 
 class PotensiKategoriResource extends Resource
 {
     protected static ?string $model = PotensiKategori::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::POTENSI;
+
+    protected static ?string $pluralModelLabel = 'Kategori Potensi';
+
+    protected static ?string $label = 'Kategori Potensi';
 
     public static function form(Schema $schema): Schema
     {
