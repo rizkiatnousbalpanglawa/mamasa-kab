@@ -25,9 +25,9 @@
                                 <a href="#" class="category">{{ $berita->kategori->nama_kategori }}</a>
                             </div>
 
-                            <h1 class="title" data-aos="fade-up" data-aos-delay="100">
+                            <h2 data-aos="fade-up" data-aos-delay="100">
                                 {{ $berita->judul }}
-                            </h1>
+                            </h2>
 
                             <div class="article-meta" data-aos="fade-up" data-aos-delay="200">
                                 <div class="author">
