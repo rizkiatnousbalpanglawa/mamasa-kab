@@ -54,95 +54,31 @@
                 <div class="carousel-inner">
 
                     <!-- Slide 1 -->
-                    <div class="carousel-item active">
-                        <a href="/berita/banjir-luwu-utara" class="text-decoration-none text-dark">
-                            <div class="card news-card border-0 shadow-sm h-100">
-                                <img src="https://picsum.photos/id/1011/600/400" class="card-img-top" alt="Berita 1">
-                                <div class="card-body">
-                                    <h6 class="card-title fw-bold">Atasi Banjir, Bupati Luwu Utara Usulkan 5 Program
-                                        Prioritas</h6>
-                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
-                                    <p class="card-text text-muted small">
-                                        MAKASSAR — Bupati Luwu Utara, Andi Abdullah Rahim menunjukkan keseriusan dalam
-                                        menangani banjir…
-                                    </p>
+                    @foreach ($berita as $item)
+                        <div class="carousel-item active">
+                            <a href="/berita/banjir-luwu-utara" class="text-decoration-none text-dark">
+                                <div class="card news-card border-0 shadow-sm h-100">
+                                    <img src="https://picsum.photos/id/1011/600/400" class="card-img-top"
+                                        alt="Berita 1">
+                                    <div class="card-body">
+                                        <h6 class="card-title fw-bold">{{ $item->judul }}</h6>
+                                        <div class="mb-2" style="width:50px; height:3px; background-color:black;">
+                                        </div>
+                                        <p class="card-text text-muted small">
+                                            {!! Str::limit($item->konten, 100, '...') !!}
+                                        </p>
+                                    </div>
+                                    <div
+                                        class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                        <span><i class="bi bi-calendar-event me-1"></i>
+                                            {{ date('d M Y', strtotime($item->tanggal)) }} </span>
+                                        <span><i class="bi bi-person-circle me-1"></i>{{ $item->penulis->nama }}</span>
+                                    </div>
                                 </div>
-                                <div
-                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
-                                    <span><i class="bi bi-calendar-event me-1"></i>26 Agu 2025</span>
-                                    <span><i class="bi bi-person-circle me-1"></i>Admin</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    @endforeach
 
-                    <!-- Slide 2 -->
-                    <div class="carousel-item">
-                        <a href="/berita/pariwisata-toraja" class="text-decoration-none text-dark">
-                            <div class="card news-card border-0 shadow-sm h-100">
-                                <img src="https://picsum.photos/id/1015/600/400" class="card-img-top" alt="Berita 2">
-                                <div class="card-body">
-                                    <h6 class="card-title fw-bold">Toraja Promosikan Wisata Budaya ke Tingkat
-                                        Internasional</h6>
-                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
-                                    <p class="card-text text-muted small">
-                                        TORAJA — Pemerintah daerah gencar mempromosikan budaya Tongkonan dan upacara
-                                        adat ke mancanegara…
-                                    </p>
-                                </div>
-                                <div
-                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
-                                    <span><i class="bi bi-calendar-event me-1"></i>28 Agu 2025</span>
-                                    <span><i class="bi bi-person-circle me-1"></i>Admin</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="carousel-item">
-                        <a href="/berita/ekonomi-sulsel" class="text-decoration-none text-dark">
-                            <div class="card news-card border-0 shadow-sm h-100">
-                                <img src="https://picsum.photos/id/1021/600/400" class="card-img-top" alt="Berita 3">
-                                <div class="card-body">
-                                    <h6 class="card-title fw-bold">Pertumbuhan Ekonomi Sulsel Naik 5,3% di Kuartal II
-                                    </h6>
-                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
-                                    <p class="card-text text-muted small">
-                                        MAKASSAR — Badan Pusat Statistik mencatat pertumbuhan ekonomi Sulawesi Selatan
-                                        mencapai 5,3%…
-                                    </p>
-                                </div>
-                                <div
-                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
-                                    <span><i class="bi bi-calendar-event me-1"></i>30 Agu 2025</span>
-                                    <span><i class="bi bi-person-circle me-1"></i>Admin</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- Slide 4 -->
-                    <div class="carousel-item">
-                        <a href="/berita/pendidikan-sulbar" class="text-decoration-none text-dark">
-                            <div class="card news-card border-0 shadow-sm h-100">
-                                <img src="https://picsum.photos/id/1025/600/400" class="card-img-top" alt="Berita 4">
-                                <div class="card-body">
-                                    <h6 class="card-title fw-bold">Program Beasiswa Sulbar Jangkau 1.000 Mahasiswa</h6>
-                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
-                                    <p class="card-text text-muted small">
-                                        MAMUJU — Pemerintah Sulawesi Barat meluncurkan program beasiswa untuk
-                                        meningkatkan akses pendidikan tinggi…
-                                    </p>
-                                </div>
-                                <div
-                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
-                                    <span><i class="bi bi-calendar-event me-1"></i>01 Sep 2025</span>
-                                    <span><i class="bi bi-person-circle me-1"></i>Admin</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Navigasi carousel -->
@@ -161,100 +97,34 @@
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
                     <div class="row">
 
-                        <div class="col-md-3">
-                            <a href="/berita/banjir-luwu-utara" class="text-decoration-none text-dark">
-                                <div class="card news-card border-0 shadow-sm h-100">
-                                    <img src="https://picsum.photos/id/1011/600/400" class="card-img-top"
-                                        alt="Berita 1">
-                                    <div class="card-body">
-                                        <h6 class="card-title fw-bold">
-                                            Atasi Banjir, Bupati Luwu Utara Usulkan 5 Program Prioritas
-                                        </h6>
-                                        <div class="mb-2" style="width:50px; height:3px; background-color:black;">
+                        @foreach ($berita as $item)
+                            <div class="col-md-3">
+                                <a href="{{ route('berita.detail', $item->slug) }}"
+                                    class="text-decoration-none text-dark">
+                                    <div class="card news-card border-0 shadow-sm h-100">
+                                        <img src="{{ asset(Storage::url($item->gambar)) }}" class="card-img-top"
+                                            alt="Berita 1">
+                                        <div class="card-body">
+                                            <h6 class="card-title fw-bold">
+                                                {{ $item->judul }}
+                                            </h6>
+                                            <div class="mb-2" style="width:50px; height:3px; background-color:black;">
+                                            </div>
+                                            <p class="card-text text-muted small">
+                                                {!! Str::limit($item->konten, 100, '...') !!}
+                                            </p>
                                         </div>
-                                        <p class="card-text text-muted small">
-                                            MAKASSAR — Bupati Luwu Utara, Andi Abdullah Rahim menunjukkan keseriusan
-                                            dalam
-                                            menangani
-                                            permasalahan banjir dan irigasi…
-                                        </p>
+                                        <div
+                                            class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
+                                            <span><i
+                                                    class="bi bi-calendar-event me-1"></i>{{ date('d M Y', strtotime($item->tanggal)) }}</span>
+                                            <span><i
+                                                    class="bi bi-person-circle me-1"></i>{{ $item->penulis->nama }}</span>
+                                        </div>
                                     </div>
-                                    <div
-                                        class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
-                                        <span><i class="bi bi-calendar-event me-1"></i>26 Agu 2025</span>
-                                        <span><i class="bi bi-person-circle me-1"></i>Admin</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="col-md-3">
-                            <div class="card news-card border-0 shadow-sm h-100">
-                                <img src="https://picsum.photos/id/1005/600/400" class="card-img-top" alt="Berita 2">
-                                <div class="card-body">
-                                    <h6 class="card-title fw-bold">
-                                        DPR Bahas RUU Baru Terkait Perlindungan Data Pribadi
-                                    </h6>
-                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
-                                    <p class="card-text text-muted small">
-                                        JAKARTA — Rancangan Undang-Undang Perlindungan Data Pribadi resmi dibahas dalam
-                                        rapat
-                                        paripurna DPR hari ini…
-                                    </p>
-                                </div>
-                                <div
-                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
-                                    <span><i class="bi bi-calendar-event me-1"></i>25 Agu 2025</span>
-                                    <span><i class="bi bi-person-circle me-1"></i>Redaksi</span>
-                                </div>
+                                </a>
                             </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="col-md-3">
-                            <div class="card news-card border-0 shadow-sm h-100">
-                                <img src="https://picsum.photos/id/1020/600/400" class="card-img-top" alt="Berita 3">
-                                <div class="card-body">
-                                    <h6 class="card-title fw-bold">
-                                        Startup Lokal Rilis Aplikasi AI untuk UMKM
-                                    </h6>
-                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
-                                    <p class="card-text text-muted small">
-                                        BANDUNG — Sebuah startup teknologi lokal meluncurkan aplikasi berbasis AI untuk
-                                        mendukung pertumbuhan UMKM…
-                                    </p>
-                                </div>
-                                <div
-                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
-                                    <span><i class="bi bi-calendar-event me-1"></i>24 Agu 2025</span>
-                                    <span><i class="bi bi-person-circle me-1"></i>Reporter</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="col-md-3">
-                            <div class="card news-card border-0 shadow-sm h-100">
-                                <img src="https://picsum.photos/id/1035/600/400" class="card-img-top" alt="Berita 4">
-                                <div class="card-body">
-                                    <h6 class="card-title fw-bold">
-                                        Timnas U-23 Lolos ke Final Piala Asia
-                                    </h6>
-                                    <div class="mb-2" style="width:50px; height:3px; background-color:black;"></div>
-                                    <p class="card-text text-muted small">
-                                        DOHA — Timnas Indonesia U-23 berhasil menaklukkan lawan berat di semifinal dan
-                                        melaju ke
-                                        final Piala Asia…
-                                    </p>
-                                </div>
-                                <div
-                                    class="card-footer bg-white border-0 d-flex justify-content-between small text-muted">
-                                    <span><i class="bi bi-calendar-event me-1"></i>23 Agu 2025</span>
-                                    <span><i class="bi bi-person-circle me-1"></i>Sport</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
 
