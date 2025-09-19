@@ -18,83 +18,105 @@
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row">
+                {{-- Kolom Utama untuk Daftar Kegiatan --}}
                 <div class="col-lg-8">
-                    <!-- Events List -->
-                    <div class="events-list">
+                    @forelse ($kegiatan as $item)
+                        <div class="card event-card shadow-sm mb-4" data-aos="fade-up">
+                            <div class="card-body p-0 d-flex">
 
-                        @forelse ($kegiatan as $item)
-                            <div class="event-item" data-aos="fade-up">
+                                {{-- Bagian Tanggal (Sebelah Kiri) --}}
                                 <div class="event-date">
-                                    <span class="day">{{ date('d', strtotime($item->waktu_mulai)) }}</span>
-                                    <span class="month">{{ date('M', strtotime($item->waktu_mulai)) }}</span>
-                                    @if ($item->waktu_selesai)
-                                        <div class=""><i class="bi bi-arrow-down"></i></div>
-                                        <span class="day">{{ date('d', strtotime($item->waktu_selesai)) }}</span>
-                                        <span class="month">{{ date('M', strtotime($item->waktu_selesai)) }}</span>
+                                    <span class="day">{{ $item->waktu_mulai->format('d') }}</span>
+                                    <span class="month">{{ $item->waktu_mulai->format('M') }}</span>
+
+                                    {{-- Tampilkan tanggal selesai HANYA JIKA harinya berbeda --}}
+                                    @if ($item->waktu_selesai && !$item->waktu_mulai->isSameDay($item->waktu_selesai))
+                                        <div class="date-separator">
+                                            <i class="bi bi-arrow-down"></i>
+                                        </div>
+                                        <span class="day">{{ $item->waktu_selesai->format('d') }}</span>
+                                        <span class="month">{{ $item->waktu_selesai->format('M') }}</span>
                                     @endif
                                 </div>
+
+                                {{-- Bagian Konten (Sebelah Kanan) --}}
                                 <div class="event-content">
-                                    <h3 class="event-title">{{ Str::limit($item->judul, 110, '...') }}</h3>
+                                    <h3 class="event-title">
+                                        <a
+                                            href="{{ url('kegiatan/show', $item->id) }}">{{ Str::limit($item->judul, 100, '...') }}</a>
+                                    </h3>
                                     <div class="event-meta">
-                                        <span><i class="bi bi-clock"></i>
-                                            {{ date('h:i A', strtotime($item->waktu_mulai)) }}
+                                        <span>
+                                            <i class="bi bi-clock"></i>
+                                            {{-- Tampilkan waktu mulai --}}
+                                            {{ $item->waktu_mulai->format('H:i') }}
+
+                                            {{-- Jika ada waktu selesai, tampilkan sebagai rentang --}}
                                             @if ($item->waktu_selesai)
-                                                - {{ date('h:i A', strtotime($item->waktu_selesai)) }}
+                                                - {{ $item->waktu_selesai->format('H:i') }} WITA
+                                            @else
+                                                WITA
                                             @endif
                                         </span>
                                         <span><i class="bi bi-geo-alt"></i> {{ $item->tempat_kegiatan }}</span>
                                     </div>
                                     <p class="event-description">
-                                        {!! Str::limit($item->konten, '250', '...') !!}
+                                        {{ Str::limit(strip_tags($item->konten), 100, '...') }}
                                     </p>
-                                    <a href="{{ url('kegiatan/show') }}" class="btn-event-details">Selengkapnya <i
+                                    <a href="{{ url('kegiatan/show', $item->id) }}" class="read-more">Selengkapnya <i
                                             class="bi bi-arrow-right"></i></a>
                                 </div>
-                            </div><!-- End Event Item -->
-                        @empty
-                        @endforelse
 
-                        <!-- Pagination -->
-                        <div class="events-pagination" data-aos="fade-up" data-aos-delay="100">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled"><a class="page-link" href="#"><i
-                                            class="bi bi-arrow-left"></i></a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#"><i
-                                            class="bi bi-arrow-right"></i></a></li>
-                            </ul>
+                            </div>
                         </div>
-                    </div><!-- End Events List -->
+                    @empty
+                        <div class="alert alert-secondary text-center">Belum ada kegiatan yang dijadwalkan.</div>
+                    @endforelse
+
+                    {{-- Pagination (Gunakan Paginator bawaan Laravel) --}}
+                    <nav class="events-pagination mt-4" data-aos="fade-up">
+                        {{ $kegiatan->links() }}
+                    </nav>
                 </div>
 
+                {{-- Kolom Sidebar --}}
                 <div class="col-lg-4">
-                    <!-- Sidebar -->
-                    <div class="events-sidebar">
-                        <!-- Search Form -->
-                        <div class="sidebar-item search-form" data-aos="fade-up">
-                            <h4>Pencarian</h4>
-                            <form action="">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Cari kegiatan...">
-                                    <button class="btn" type="submit"><i class="bi bi-search"></i></button>
-                                </div>
-                            </form>
-                        </div><!-- End Search Form -->
+                    <div class="sidebar">
 
-                        <!-- Categories -->
-                        <div class="sidebar-item categories" data-aos="fade-up" data-aos-delay="100">
-                            <h4>Kategori Kegiatan</h4>
-                            <ul class="list-unstyled">
-                                @foreach ($kategori as $item)
-                                    <li><a href="#">{{ $item->nama_kategori }}
-                                            <span>({{ $item->kegiatan->count() }})</span></a></li>
-                                @endforeach
-                            </ul>
-                        </div><!-- End Categories -->
+                        {{-- Card untuk Pencarian --}}
+                        <div class="sidebar-card card shadow-sm mb-4" data-aos="fade-up">
+                            <div class="card-body">
+                                <h4 class="sidebar-title">Pencarian</h4>
+                                <form action="">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Cari kegiatan...">
+                                        <button class="btn btn-dark-blue" type="submit"><i
+                                                class="bi bi-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
 
-                    </div><!-- End Sidebar -->
+                        {{-- Card untuk Kategori --}}
+                        <div class="sidebar-card card shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-body">
+                                <h4 class="sidebar-title">Kategori Kegiatan</h4>
+                                <ul class="list-unstyled category-list">
+                                    @foreach ($kategori as $item)
+                                        <li>
+                                            {{-- Menggunakan flexbox untuk merapikan nama dan jumlah --}}
+                                            <a href="#" class="d-flex justify-content-between align-items-center">
+                                                <span>{{ $item->nama_kategori }}</span>
+                                                <span
+                                                    class="badge bg-light text-dark rounded-pill">{{ $item->kegiatan_count ?? $item->kegiatan->count() }}</span>
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
