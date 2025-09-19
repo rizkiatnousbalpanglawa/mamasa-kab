@@ -13,60 +13,34 @@
         </div>
     </div><!-- End Page Title -->
 
-    <!-- Alumni Section -->
-    <section id="alumni" class="alumni section">
+    <section id="" class="privacy section">
 
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-12 text-center mb-4" data-aos="fade-up" data-aos-delay="200">
-                <h3>Visi & Misi</h3>
-                <p class="text-secondary"> <span class="me-3">
-                        <i class="bi bi-calendar"></i> April 15, 2025
-                    </span>
-                    <span>
-                        <i class="bi bi-eye"></i> 32x dibaca
-                    </span>
-                </p>
-
-            </div>
-
-            <div class="row mb-5">
-                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-                    <div class="alumni-image">
-                        <img src="{{ asset('front-assets/img/education/campus-8.webp') }}" alt="Alumni gathering"
-                            class="img-fluid rounded">
+        <div class="container" data-aos="fade-up">
+            <!-- Header -->
+            <div class="privacy-header mb-4 pb-0" data-aos="fade-up">
+                <div class="header-content">
+                    <div class="text-secondary"> <span class="me-3">
+                            <i class="bi bi-calendar"></i> {{ $visiMisi->updated_at->format('d M Y') }}
+                        </span>
+                        <span>
+                            <i class="bi bi-eye"></i> {{ $visiMisi->views }} kali dibaca
+                        </span>
                     </div>
+                    <h1>Visi & Misi</h1>
                 </div>
             </div>
 
-            <div class="blog-details">
-                <article class="article">
-                    <div class="article-footer" data-aos="fade-up">
-                        <div class="share-article">
-                            <h4>Bagikan di Media Sosial</h4>
-                            <div class="share-buttons">
-                                {{-- <a href="#" class="share-button twitter">
-                                <i class="bi bi-twitter-x"></i>
-                                <span>Share on X</span>
-                            </a> --}}
-                                <a href="#" class="share-button facebook">
-                                    <i class="bi bi-facebook"></i>
-                                    <span>Bagikan di Facebook</span>
-                                </a>
-                                {{-- <a href="#" class="share-button linkedin">
-                                <i class="bi bi-linkedin"></i>
-                                <span>Share on LinkedIn</span>
-                            </a> --}}
-                            </div>
-                        </div>
+            <!-- Main Content -->
+            <div class="privacy-content" data-aos="fade-up">
 
-                    </div>
-                </article>
+                <!-- Information Collection -->
+                <div class="content-section">
+                    <img src="{{ Storage::url($visiMisi->image) }}" class="img-fluid rounded" alt="visi misi">
+                </div>
             </div>
-
-
 
         </div>
 
-    </section><!-- /Alumni Section -->
+    </section><!-- /Privacy Section -->
 
 </main>

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('subjudul');
+            $table->string('image');
             $table->text('konten');
             $table->unsignedInteger('views')->default(0);
             $table->timestamps();

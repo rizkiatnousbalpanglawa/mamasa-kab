@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Lambangs\Schemas;
 
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -17,6 +18,10 @@ class LambangForm
                     ->required(),
                 TextInput::make('subjudul')
                     ->required(),
+                FileUpload::make('image')
+                    ->image()
+                    ->required()
+                    ->columnSpanFull(),
                 RichEditor::make('konten')
                     ->required()
                     ->columnSpanFull(),
