@@ -9825,4 +9825,118 @@ section,
     opacity: 0.8;
 }
 
-/* --- Mengatur Tinggi Carousel di Section Hero --- */
+/* --- Kustomisasi Gaya Tabs Pimpinan Daerah --- */
+
+/* Gaya untuk tombol navigasi tab */
+.nav-pimpinan .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-radius: 12px;
+    background-color: var(--surface-color, #ffffff);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Gaya untuk foto thumbnail di dalam tab */
+.nav-pimpinan .nav-link .nav-thumbnail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Wrapper untuk teks jabatan dan nama */
+.nav-pimpinan .nav-link .nav-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.nav-pimpinan .nav-link .jabatan {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--heading-color, #011e2c);
+}
+
+.nav-pimpinan .nav-link .nama {
+    font-size: 0.85rem;
+    color: color-mix(in srgb, var(--default-color, #010608), transparent 40%);
+}
+
+/* Gaya untuk tab yang sedang aktif */
+.nav-pimpinan .nav-link.active,
+.nav-pimpinan .show > .nav-link {
+    background-color: color-mix(
+        in srgb,
+        var(--accent-color, #04415f),
+        transparent 90%
+    );
+    border-color: var(--accent-color, #04415f);
+    transform: scale(1.03);
+}
+
+/* Kontainer konten tab */
+.tab-content-pimpinan .tab-pane {
+    background-color: var(--surface-color, #ffffff);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* Tata letak konten profil di kanan */
+.profil-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Foto besar di kanan */
+.profil-content .profil-image {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.profil-content .nama-pejabat {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--heading-color, #011e2c);
+    margin-bottom: 0.25rem;
+}
+
+.profil-content .jabatan-pejabat {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent-color, #04415f);
+    margin-bottom: 1.5rem;
+}
+
+.profil-content .deskripsi {
+    line-height: 1.7;
+    color: color-mix(in srgb, var(--default-color, #010608), transparent 25%);
+}
+
+/* Penyesuaian untuk layar mobile */
+@media (max-width: 767px) {
+    .profil-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .profil-content .profil-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; /* Ubah jadi bulat di mobile */
+    }
+    .tab-content-pimpinan .tab-pane {
+        padding: 1.5rem;
+    }
+}

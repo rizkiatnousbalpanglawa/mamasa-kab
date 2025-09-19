@@ -20,11 +20,11 @@
                         <li><a href="{{ url('visi-misi') }}">Visi & Misi</a></li>
                         <li><a href="{{ url('sejarah') }}">Sejarah</a></li>
                         <li><a href="{{ url('lambang') }}">Lambang Daerah</a></li>
-                        <li><a href="">Profil Pimpinan Daerah</a></li>
+                        <li><a href="{{ url('profil') }}">Profil Pimpinan Daerah</a></li>
                     </ul>
                 </li>
 
-                <li class="dropdown">
+                {{-- <li class="dropdown">
                     <a href="#"><span>Potensi</span>
                         <i class="bi bi-chevron-down toggle-dropdown"></i>
                     </a>
@@ -33,7 +33,8 @@
                         <li><a href="">Pertanian</a></li>
                         <li><a href="">Tambang</a></li>
                     </ul>
-                </li>
+                </li> --}}
+                <x-nav-link :active="request()->is('potensi')" href="/potensi">Potensi</x-nav-link>
                 <x-nav-link :active="request()->is('info')" href="/info">Informasi</x-nav-link>
                 {{-- <x-nav-link :active="request()->is('opd')" href="/web-opd">Web OPD</x-nav-link> --}}
 

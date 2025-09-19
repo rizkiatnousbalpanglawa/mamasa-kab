@@ -16,6 +16,10 @@ Route::middleware(HitCounterMiddleware::class)->group(function () {
     Route::get('/visi-misi', App\Livewire\Visimisi::class);
     Route::get('/sejarah', App\Livewire\Sejarah::class);
     Route::get('/lambang', App\Livewire\Lambang::class);
+
+    Route::get('/profil', App\Livewire\ProfilKepalaDaerah::class);
+
+
     Route::get('/info', App\Livewire\Info::class);
     Route::get('/info/view/{id}', [ViewInformasiController::class, 'view'])->name('informasi.view');
 });
