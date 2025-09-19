@@ -9549,21 +9549,57 @@ section,
 .form-control:focus {
     box-shadow: none;
 }
-/* ==== Gaya untuk Item Daftar (Lebih Spesifik) ==== */
+/* Wrapper untuk memastikan spesifisitas tanpa merusak style lain */
+.custom-content-area {
+    /* Anda bisa menambahkan variabel font kustom di sini jika diperlukan */
+    font-family: var(--default-font);
+}
+
+/* Kustomisasi Komponen Filter */
+.custom-content-area .filter-btn {
+    border-radius: 12px !important;
+    font-weight: 500;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--contrast-color);
+    transition: background-color 0.2s ease;
+}
+
+.custom-content-area .filter-btn:hover {
+    background-color: color-mix(in srgb, var(--accent-color), #000 15%);
+    border-color: color-mix(in srgb, var(--accent-color), #000 15%);
+}
+
+.custom-content-area .form-select {
+    border-radius: 12px;
+    border-color: color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.custom-content-area .form-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem
+        color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.custom-content-area .search-bar {
+    border-radius: 12px !important;
+}
+
+/* Gaya untuk Item Daftar Informasi */
 .custom-content-area .info-list-item {
     display: flex;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--surface-color);
     padding: 1rem 1.25rem;
     margin-bottom: 0.75rem;
-    border: 1px solid #eaecf0;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
     border-radius: 12px;
     box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
     transition: all 0.2s ease-in-out;
 }
 
 .custom-content-area .info-list-item:hover {
-    border-color: #d0d5dd;
+    border-color: color-mix(in srgb, var(--default-color), transparent 80%);
     box-shadow: 0 4px 6px -1px rgba(16, 24, 40, 0.1),
         0 2px 4px -2px rgba(16, 24, 40, 0.06);
     transform: translateY(-2px);
@@ -9575,21 +9611,21 @@ section,
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f2f4f7;
+    background-color: color-mix(in srgb, var(--default-color), transparent 95%);
     border-radius: 8px;
     font-size: 1.25rem;
-    color: #475467;
+    color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
 .custom-content-area .info-title {
     font-size: 1rem;
     font-weight: 600;
-    color: #04415f;
+    color: var(--accent-color);
 }
 
 .custom-content-area .info-subtitle {
     font-size: 0.875rem;
-    color: #667085;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
 .custom-content-area .info-badge {
@@ -9598,9 +9634,9 @@ section,
     padding: 2px 10px;
     border-radius: 16px;
     white-space: nowrap;
-    background-color: #e6f1f6;
-    color: #04415f;
-    border: 1px solid #b3d1de;
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    color: var(--accent-color);
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
 .custom-content-area .info-meta-wrapper {
@@ -9609,30 +9645,31 @@ section,
 
 .custom-content-area .info-views {
     font-size: 0.875rem;
-    color: #344054;
+    color: var(--heading-color);
     margin-bottom: 4px;
 }
 
 .custom-content-area .info-date {
     font-size: 0.8125rem;
-    color: #667085;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
 }
 
-/* ==== Gaya untuk Halaman Kegiatan (Lebih Spesifik) ==== */
+/* Gaya untuk Halaman Kegiatan */
 .custom-content-area .event-card {
     border: none;
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    background-color: var(--surface-color);
 }
 .custom-content-area .event-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Dihapus !important */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .custom-content-area .event-date {
-    background-color: #04415f;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
     padding: 1.5rem 1rem;
     text-align: center;
     display: flex;
@@ -9661,17 +9698,17 @@ section,
     margin-bottom: 0.75rem;
 }
 .custom-content-area .event-title a {
-    color: #212529;
+    color: var(--heading-color);
     text-decoration: none;
     transition: color 0.3s;
 }
 .custom-content-area .event-title a:hover {
-    color: #04415f;
+    color: var(--accent-color);
 }
 
 .custom-content-area .event-meta {
     font-size: 0.875rem;
-    color: #6c757d;
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
     margin-bottom: 1rem;
 }
 .custom-content-area .event-meta span {
@@ -9679,15 +9716,15 @@ section,
 }
 .custom-content-area .event-meta i {
     margin-right: 0.5rem;
-    color: #04415f;
+    color: var(--accent-color);
 }
 
 .custom-content-area .event-description {
-    color: #495057;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
     margin-bottom: 1.25rem;
 }
 .custom-content-area .read-more {
-    color: #04415f;
+    color: var(--accent-color);
     font-weight: 600;
     text-decoration: none;
     transition: letter-spacing 0.3s;
@@ -9696,10 +9733,11 @@ section,
     letter-spacing: 0.5px;
 }
 
-/* --- Sidebar (Lebih Spesifik) --- */
+/* Sidebar untuk Kegiatan */
 .custom-content-area .sidebar-card {
     border: none;
     border-radius: 12px;
+    background-color: var(--surface-color);
 }
 .custom-content-area .sidebar-title {
     font-size: 1.1rem;
@@ -9707,6 +9745,7 @@ section,
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     position: relative;
+    color: var(--heading-color);
 }
 .custom-content-area .sidebar-title::after {
     content: "";
@@ -9715,35 +9754,26 @@ section,
     left: 0;
     width: 40px;
     height: 3px;
-    background-color: #04415f;
+    background-color: var(--accent-color);
     border-radius: 2px;
 }
 
-.custom-content-area .sidebar-card .form-control {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-color: #ced4da;
-}
-.custom-content-area .sidebar-card .form-control:focus {
-    box-shadow: none;
-    border-color: #04415f;
-}
 .custom-content-area .btn-dark-blue {
-    background-color: #04415f;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 .custom-content-area .btn-dark-blue:hover {
-    background-color: #03334c;
-    color: #fff;
+    background-color: color-mix(in srgb, var(--accent-color), #000 15%);
+    color: var(--contrast-color);
 }
 
 .custom-content-area .category-list li {
     margin-bottom: 0.5rem;
 }
 .custom-content-area .category-list a {
-    color: #495057;
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
     text-decoration: none;
     transition: color 0.3s, background-color 0.3s;
     padding: 0.5rem 0.75rem;
@@ -9751,14 +9781,14 @@ section,
     display: flex;
 }
 .custom-content-area .category-list a:hover {
-    color: #04415f;
-    background-color: #e6f1f6;
+    color: var(--accent-color);
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
 }
 
-/* --- Pagination (Lebih Spesifik) --- */
+/* Pagination untuk Kegiatan */
 .custom-content-area .events-pagination .pagination .page-item .page-link {
-    border: 1px solid #dee2e6;
-    color: #6c757d;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+    color: color-mix(in srgb, var(--default-color), transparent 40%);
     margin: 0 4px;
     border-radius: 8px;
 }
@@ -9767,27 +9797,27 @@ section,
     .pagination
     .page-item.active
     .page-link {
-    background-color: #04415f;
-    border-color: #04415f;
-    color: #fff;
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--contrast-color);
 }
 .custom-content-area
     .events-pagination
     .pagination
     .page-item.disabled
     .page-link {
-    background-color: #e9ecef;
-    border-color: #dee2e6;
+    background-color: color-mix(in srgb, var(--default-color), transparent 92%);
+    border-color: color-mix(in srgb, var(--default-color), transparent 85%);
 }
 .custom-content-area
     .events-pagination
     .pagination
     .page-item:not(.active)
     .page-link:hover {
-    background-color: #f1f1f1;
+    background-color: color-mix(in srgb, var(--default-color), transparent 95%);
 }
 
-/* Pemisah tanggal (Lebih Spesifik) */
+/* Pemisah tanggal */
 .custom-content-area .event-date .date-separator {
     margin: 0.5rem 0;
     line-height: 1;
