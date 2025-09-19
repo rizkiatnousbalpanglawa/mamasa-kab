@@ -21,7 +21,7 @@
             <div class="row justify-content-between">
                 <div class="col-lg-7">
                     <div class="event-image mb-4" data-aos="fade-up">
-                        <img src="{{ asset('front-assets/img/education/events-9.webp') }}" alt="Event"
+                        <img src="{{ asset(Storage::url($kegiatan->gambar)) }}" alt="Event"
                             class="img-fluid rounded">
                     </div>
 
