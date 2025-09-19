@@ -77,56 +77,41 @@
 
                         <div class="row row-cols-1 g-3" id="pdfList">
 
-                            {{-- Looping through the information items --}}
-                            @forelse ($info as $item)
-                                <div class="col">
+                            <div class="list-wrapper">
+                                @forelse ($info as $item)
+                                    <a href="{{ route('informasi.view', $item->id) }}" target="_blank"
+                                        rel="noopener noreferrer" class="info-list-item text-decoration-none">
 
-                                    <div
-                                        class="card info-card info-card-hover shadow-sm border-0 rounded-4 h-100 position-relative">
-                                        <div class="card-body d-flex flex-column">
+                                        <div class="info-icon-wrapper flex-shrink-0">
+                                            <i class="bi bi-file-earmark-text"></i>
+                                        </div>
 
-                                            <div class="mb-2 d-flex align-items-center justify-content-between">
-                                                <span
-                                                    class="badge bg-accent">{{ $item->kategori->nama_kategori }}</span>
-                                                <small class="text-muted">
-                                                    <i class="bi bi-calendar-event me-1"></i>
-
-                                                    {{ $item->waktu_informasi->format('d M Y') }}
-                                                </small>
+                                        <div class="info-details-wrapper flex-grow-1 mx-3">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="info-title mb-0 me-3">{{ $item->judul }}</h6>
+                                                <span class="info-badge">{{ $item->kategori->nama_kategori }}</span>
                                             </div>
+                                            <p class="info-subtitle mb-0">
+                                                {{ Str::limit($item->deskripsi ?? 'Klik untuk detail selengkapnya', 70, '...') }}
+                                            </p>
+                                        </div>
 
-                                            <a href="{{ route('informasi.view', $item->id) }}" target="_blank"
-                                                rel="noopener noreferrer" class="stretched-link">
-                                                <h5 class="fw-bold mb-1 text-dark">
-                                                    {{ Str::limit($item->judul, 50, '...') }}</h5>
-                                            </a>
-
-                                            @if (!empty($item->deskripsi))
-                                                <p class="text-muted small mb-2">
-                                                    {{ Str::limit($item->deskripsi, 100, '...') }}
-                                                </p>
-                                            @endif
-
-
-                                            <div class="d-flex align-items-center justify-content-between mt-auto">
-                                                <span class="text-dark-blue fw-semibold small">
-                                                    <i class="bi bi-file-earmark-text me-1"></i> Lihat Dokumen
-                                                </span>
-                                                <small class="text-muted">
-                                                    <i class="bi bi-eye me-1"></i>{{ $item->views }}
-                                                </small>
+                                        <div class="info-meta-wrapper flex-shrink-0 text-end">
+                                            <div class="info-views fw-semibold"><span class="fw-normal"><i
+                                                        class="bi bi-eye"></i></span> {{ $item->views }} </div>
+                                            <div class="info-date">
+                                                {{ $item->waktu_informasi->diffForHumans() }}
                                             </div>
-
+                                        </div>
+                                    </a>
+                                @empty
+                                    <div class="col-12">
+                                        <div class="alert alert-secondary text-center" role="alert">
+                                            Belum ada informasi yang tersedia saat ini.
                                         </div>
                                     </div>
-                                </div>
-                            @empty
-                                <div class="col-12">
-                                    <div class="alert alert-secondary text-center" role="alert">
-                                        Belum ada informasi yang tersedia saat ini.
-                                    </div>
-                                </div>
-                            @endforelse
+                                @endforelse
+                            </div>
 
                         </div>
                     </div>
@@ -136,6 +121,5 @@
         </div>
 
     </section><!-- /Privacy Section -->
-
 
 </main>
