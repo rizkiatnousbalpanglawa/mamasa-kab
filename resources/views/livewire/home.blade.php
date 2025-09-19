@@ -56,9 +56,9 @@
                     <!-- Slide 1 -->
                     @foreach ($berita as $item)
                         <div class="carousel-item active">
-                            <a href="/berita/banjir-luwu-utara" class="text-decoration-none text-dark">
+                            <a href="{{ route('berita.detail', $item->slug) }}" class="text-decoration-none text-dark">
                                 <div class="card news-card border-0 shadow-sm h-100">
-                                    <img src="https://picsum.photos/id/1011/600/400" class="card-img-top"
+                                    <img src="{{ asset(Storage::url($item->gambar)) }}" class="card-img-top"
                                         alt="Berita 1">
                                     <div class="card-body">
                                         <h6 class="card-title fw-bold">{{ $item->judul }}</h6>
