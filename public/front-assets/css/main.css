@@ -9390,8 +9390,7 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-}
+
 .btn-accent {
     background: var(--accent-color);
     color: var(--contrast-color);
