@@ -10,5 +10,6 @@ enum NavigationGroups: string
     case BERANDA = 'Beranda';
     case BERITA = 'Berita';
     case KEGIATAN = 'Kegiatan';
+    case PROFIL = 'Profil';
     case INFORMASI = 'Informasi';
 }
