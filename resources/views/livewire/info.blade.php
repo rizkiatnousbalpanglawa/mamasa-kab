@@ -27,7 +27,7 @@
             </div>
 
             <div class="container my-4 my-lg-5">
-                <div class="row">
+                <div class="row custom-content-area">
                     <div class="col-lg-4 mb-4">
                         <div class="card shadow-sm border-0 rounded-4">
                             <div class="card-body p-4">
