@@ -54,7 +54,7 @@
 
                         <div class="article-content">
                             <div class="content-section" id="introduction" data-aos="fade-up">
-                                {{ strip_tags($berita->konten) }}
+                                {!! $berita->konten !!}
                             </div>
                         </div>
 
