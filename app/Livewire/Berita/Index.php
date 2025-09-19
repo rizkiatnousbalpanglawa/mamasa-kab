@@ -15,7 +15,7 @@ class Index extends Component
         $data['berita'] = Berita::with(['penulis', 'kategori'])->paginate(4);
         $data['terpopuler'] = Berita::with(['penulis', 'kategori'])->orderByDesc('views')->limit(5)->get();
         $data['terbaru'] = Berita::with(['penulis', 'kategori'])->latest()->limit(5)->get();
-        $data['kategori'] = BeritaKategori::get();
+        $data['kategori'] = BeritaKategori::with(['berita'])->get();
         return view('livewire.berita.index', $data);
     }
 }

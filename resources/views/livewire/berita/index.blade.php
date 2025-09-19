@@ -71,7 +71,7 @@
                                 <ul class="list-unstyled">
                                     @forelse ($kategori as $item)
                                         <li><a href="#">{{ $item->nama_kategori }}
-                                                <span>(12)</span></a></li>
+                                                <span>({{ $item->berita->count() }})</span></a></li>
                                     @empty
                                     @endforelse
                                 </ul>
