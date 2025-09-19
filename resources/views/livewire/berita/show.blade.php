@@ -54,7 +54,7 @@
 
                         <div class="article-content">
                             <div class="content-section" id="introduction" data-aos="fade-up">
-                                {{ Str::limit(strip_tags($berita->konten), 100, '...') }}
+                                {{ strip_tags($berita->konten) }}
                             </div>
                         </div>
 
