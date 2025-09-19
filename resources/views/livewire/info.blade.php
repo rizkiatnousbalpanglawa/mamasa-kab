@@ -93,7 +93,7 @@
                                                 <h5 class="fw-bold mb-0">{{ Str::limit($item->judul, 50, '...') }}</h5>
                                             </div>
 
-                                            <a href="/storage/pdf/infrastruktur.pdf" target="_blank"
+                                            <a href="{{ asset(Storage::url($item->pdf)) }}" target="_blank"
                                                 class="text-dark-blue">
                                                 Lihat <i class="bi bi-arrow-right"></i>
                                             </a>
