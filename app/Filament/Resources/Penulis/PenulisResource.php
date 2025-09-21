@@ -15,6 +15,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Storage;
@@ -56,7 +57,7 @@ class PenulisResource extends Resource
             ->columns([
                 TextColumn::make('nama')
                     ->searchable(),
-                TextColumn::make('foto'),
+                ImageColumn::make('foto'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
