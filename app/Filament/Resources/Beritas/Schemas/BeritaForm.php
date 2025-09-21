@@ -11,6 +11,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Normalizer;
 
 class BeritaForm
 {
@@ -23,13 +24,19 @@ class BeritaForm
                     ->required()
                     ->maxLength(255)
                     ->live(onBlur: true)
-                    ->afterStateUpdated(
-                        fn($state, $set) =>
-                        $set('slug', Str::slug($state))
-                    ),
+                    ->afterStateUpdated(function (string $state, callable $set) {
+                        // Normalisasi karakter fancy → ASCII
+                        $normalized = Normalizer::normalize($state, Normalizer::FORM_KD);
+                        $plain = preg_replace('/[^\p{L}\p{N}\s]/u', '', $normalized);
+
+                        // Generate slug
+                        $set('slug', Str::slug($plain));
+                    }),
+
                 TextInput::make('slug')
+                    ->label('Slug')
                     ->required()
-                    ->unique(ignoreRecord: true)
+                    ->unique(ignoreRecord: true) // pastikan kolom slug di DB unik
                     ->maxLength(255)
                     ->hint('Slug digunakan untuk URL'),
                 RichEditor::make('konten')
