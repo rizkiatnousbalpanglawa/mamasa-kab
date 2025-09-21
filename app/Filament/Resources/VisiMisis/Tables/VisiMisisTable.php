@@ -5,7 +5,6 @@ namespace App\Filament\Resources\VisiMisis\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -15,7 +14,10 @@ class VisiMisisTable
     {
         return $table
             ->columns([
-                ImageColumn::make('image'),
+                TextColumn::make('judul')
+                    ->searchable(),
+                TextColumn::make('subjudul')
+                    ->searchable(),
                 TextColumn::make('views')
                     ->numeric()
                     ->sortable(),

@@ -17,7 +17,7 @@
 
         <div class="container" data-aos="fade-up">
             <!-- Header -->
-            <div class="privacy-header mb-4 pb-0" data-aos="fade-up">
+            <div class="privacy-header mb-4 pb-2" data-aos="fade-up">
                 <div class="header-content">
                     <div class="text-secondary"> <span class="me-3">
                             <i class="bi bi-calendar"></i> {{ $visiMisi->updated_at->format('d M Y') }}
@@ -26,7 +26,8 @@
                             <i class="bi bi-eye"></i> {{ $visiMisi->views }} kali dibaca
                         </span>
                     </div>
-                    <h1>Visi & Misi</h1>
+                    <h1 class="mb-2">{{ $visiMisi->judul }}</h1>
+                    <p class="intro-text">{{ $visiMisi->subjudul }}</p>
                 </div>
             </div>
 
@@ -35,7 +36,7 @@
 
                 <!-- Information Collection -->
                 <div class="content-section">
-                    <img src="{{ Storage::url($visiMisi->image) }}" class="img-fluid rounded" alt="visi misi">
+                    {!! $visiMisi->konten !!}
                 </div>
             </div>
 

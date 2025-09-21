@@ -17,10 +17,10 @@
 
         <div class="container" data-aos="fade-up">
             <!-- Header -->
-            <div class="privacy-header" data-aos="fade-up">
+            <div class="privacy-header mb-4 pb-2" data-aos="fade-up">
                 <div class="header-content">
-                    <div class="last-updated">Terahir Diperbarui: {{ $sejarah->updated_at->format('d M Y') }}</div>
-                    <h1>{{ $sejarah->judul }}</h1>
+                    <div class="last-updated mb-2">Terahir Diperbarui: {{ $sejarah->updated_at->format('d M Y') }}</div>
+                    <h1 class="mb-2">{{ $sejarah->judul }}</h1>
                     <p class="intro-text">{{ $sejarah->subjudul }}</p>
                 </div>
             </div>

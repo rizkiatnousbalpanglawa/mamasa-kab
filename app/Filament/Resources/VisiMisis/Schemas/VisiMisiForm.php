@@ -2,10 +2,10 @@
 
 namespace App\Filament\Resources\VisiMisis\Schemas;
 
-use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
-use Illuminate\Support\Facades\Storage;
 
 class VisiMisiForm
 {
@@ -13,17 +13,13 @@ class VisiMisiForm
     {
         return $schema
             ->components([
-                FileUpload::make('image')
-                    ->label('Lampiran')
-                    ->image()
-                    ->directory('profil')
-                    ->deleteUploadedFileUsing(function ($file) {
-                        if ($file && Storage::disk('public')->exists($file)) {
-                            Storage::disk('public')->delete($file);
-                        }
-                    })
-                    ->maxSize(1024)
-                    ->columnSpanFull()
+                TextInput::make('judul')
+                    ->required(),
+                TextInput::make('subjudul')
+                    ->required(),
+                RichEditor::make('konten')
+                    ->required()
+                    ->columnSpanFull(),
             ]);
     }
 }
