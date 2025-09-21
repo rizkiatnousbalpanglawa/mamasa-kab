@@ -82,7 +82,6 @@
 
                         <div class="list-wrapper">
                             @forelse ($info as $item)
-                                {{-- Tambahkan data-kategori dan data-tahun untuk filtering via JS --}}
                                 <a href="{{ route('informasi.view', $item->id) }}" target="_blank"
                                     rel="noopener noreferrer" class="info-list-item text-decoration-none"
                                     data-kategori="{{ $item->kategori->id }}"
@@ -100,15 +99,22 @@
                                         <p class="info-subtitle mb-0">
                                             {{ Str::limit($item->deskripsi ?? 'Klik untuk detail selengkapnya', 70, '...') }}
                                         </p>
+                                        <div class="d-none d-sm-block d-md-none d-block d-sm-none">
+                                            <span class="info-views"><i class="bi bi-eye me-1"></i>{{ $item->views }}
+                                            </span> |
+                                            <span class="info-date">
+                                                {{ $item->waktu_informasi->diffForHumans() }}
+                                            </span>
+                                        </div>
                                     </div>
 
-                                    <div class="info-meta-wrapper flex-shrink-0 text-end">
-                                        {{-- Disesuaikan dengan screenshot (hanya ikon + angka) --}}
+                                    <div class="info-meta-wrapper flex-shrink-0 text-end d-sm-none d-md-block">
                                         <div class="info-views"><i class="bi bi-eye me-1"></i>{{ $item->views }}</div>
                                         <div class="info-date">
                                             {{ $item->waktu_informasi->diffForHumans() }}
                                         </div>
                                     </div>
+
                                 </a>
                             @empty
                                 <div class="alert alert-secondary text-center">
