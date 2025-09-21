@@ -99,7 +99,7 @@
                                         <p class="info-subtitle mb-0">
                                             {{ Str::limit($item->deskripsi ?? 'Klik untuk detail selengkapnya', 70, '...') }}
                                         </p>
-                                        <div class="d-none d-sm-block d-md-none d-block d-sm-none">
+                                        <div class="d-block d-sm-none">
                                             <span class="info-views"><i class="bi bi-eye me-1"></i>{{ $item->views }}
                                             </span> |
                                             <span class="info-date">
@@ -108,7 +108,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="info-meta-wrapper flex-shrink-0 text-end d-sm-none d-md-block">
+                                    <div class="info-meta-wrapper flex-shrink-0 text-end d-none d-sm-block">
                                         <div class="info-views"><i class="bi bi-eye me-1"></i>{{ $item->views }}</div>
                                         <div class="info-date">
                                             {{ $item->waktu_informasi->diffForHumans() }}
