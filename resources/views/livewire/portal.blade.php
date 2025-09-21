@@ -22,7 +22,7 @@
         <section id="menu" class="container py-5 text-center">
             <div class="row justify-content-center">
 
-                <div class="col-4 col-md-2 mb-4">
+                <div class="col-4 mb-4">
                     <a href="{{ url('/beranda') }}" class="menu-item">
                         <div class="icon-circle">
                             <i class="bi bi-house-door" style="font-size: 2rem; color: white;"></i>
@@ -31,7 +31,7 @@
                     </a>
                 </div>
 
-                <div class="col-4 col-md-2 mb-4">
+                <div class="col-4 mb-4">
                     <a href="#" class="menu-item" data-bs-toggle="modal" data-bs-target="#websiteOpd">
                         <div class="icon-circle">
                             <i class="bi bi-globe" style="font-size: 2rem; color: white;"></i>
@@ -42,7 +42,7 @@
                 </div>
 
                 @foreach ($menu as $item)
-                    <div class="col-4 col-md-2 mb-4">
+                    <div class="col-4 mb-4">
                         <a href="{{ $item->link }}" class="menu-item">
                             <div class="icon-circle">
                                 <i class="bi bi-{{ $item->icon }}" style="font-size: 2rem; color: white;"></i>
