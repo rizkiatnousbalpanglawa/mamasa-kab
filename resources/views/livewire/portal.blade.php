@@ -80,29 +80,11 @@
                                         width="25">
                                 </div>
                                 <div class="col">
-                                    <a href="https://bkpsdm.mamasakab.go.id"
+                                    <a href="https://mamasa-opd.usbal.xyz/"
                                         class="link-dark fw-bold text-decoration-none">
-                                        BKPSDM
+                                        KOMINFO
                                         <div class="small fw-normal text-black-50 fst-italic">
-                                            https://bkpsdm.mamasakab.go.id
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="row align-items-center opd-item">
-                                <div class="col-1">
-                                    <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo OPD"
-                                        width="25">
-                                </div>
-                                <div class="col">
-                                    <a href="https://bpkad.mamasakab.go.id"
-                                        class="link-dark fw-bold text-decoration-none">
-                                        BPKAD
-                                        <div class="small fw-normal text-black-50 fst-italic">
-                                            https://bpkad.mamasakab.go.id
+                                            https://kominfo.mamasakab.go.id/
                                         </div>
                                     </a>
                                 </div>
