@@ -6,7 +6,7 @@
             <nav class="breadcrumbs">
                 <ol>
                     <li class="">Potensi</li>
-                    <li class="current">asdasdsa</li>
+                    <li class="current">{{ $potensi->nama }}</li>
                 </ol>
             </nav>
         </div>
@@ -17,13 +17,16 @@
 
             <div class="row">
                 <div class="col-lg-8 justify-content-center">
-                    <div class="">
+                    <div class="h3 text-center">{{ $potensi->nama }}</div>
+                    <div class="mb-3">
                         <img src="{{ asset(Storage::url($potensi->image)) }}" class="card-img-top"
                             alt="{{ $potensi->nama }}">
+
                     </div>
                     <div class="">
                         {!! $potensi->deskripsi !!}
                     </div>
+
                 </div>
             </div>
 
