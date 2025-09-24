@@ -17,9 +17,9 @@
 
             <div class="row">
                 <div class="col-lg-8 justify-content-center">
-                    <div class="h3 text-center">{{ $potensi->nama }}</div>
+                    <div class="h3 text-center mb-3">{{ $potensi->nama }}</div>
                     <div class="mb-3">
-                        <img src="{{ asset(Storage::url($potensi->image)) }}" class="card-img-top"
+                        <img src="{{ asset(Storage::url($potensi->image)) }}" class="rounded-2 img-fluid"
                             alt="{{ $potensi->nama }}">
 
                     </div>
