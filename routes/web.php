@@ -20,6 +20,7 @@ Route::middleware(HitCounterMiddleware::class)->group(function () {
     Route::get('/profil', App\Livewire\ProfilKepalaDaerah::class);
 
     Route::get('/potensi', App\Livewire\Potensi::class);
+    Route::get('/potensi/detail/{slug}', App\Livewire\PotensiDetail::class)->name('potensi.detail');
 
 
     Route::get('/info', App\Livewire\Info::class);

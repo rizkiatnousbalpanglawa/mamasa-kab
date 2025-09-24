@@ -49,7 +49,7 @@
                                 <h5 class="card-title fw-bold">{{ $potensi->nama }}</h5>
                                 <p class="card-text">{{ Str::limit(strip_tags($potensi->deskripsi), 100, '...') }}
                                 </p>
-                                <a href="#" class="read-more stretched-link">
+                                <a href="{{ route('potensi.detail', $potensi->slug) }}" class="read-more stretched-link">
                                     Lihat Detail <i class="bi bi-arrow-right"></i>
                                 </a>
                             </div>
