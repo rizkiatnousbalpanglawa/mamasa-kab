@@ -16,10 +16,11 @@
         <div class="container">
 
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="text-muted mb-4">Ditambahkan: {{ $potensi->created_at->format('d M Y H:i') }} WITA</div>
-                    <div class="h3 mb-3">{{ $potensi->nama }}</div>
-                    <div class="mb-3">
+                <div class="col-lg-8">
+                    <div class=" text-center text-muted mb-4">Ditambahkan:
+                        {{ $potensi->created_at->format('d M Y H:i') }} WITA</div>
+                    <div class=" text-center h3 mb-3">{{ $potensi->nama }}</div>
+                    <div class=" text-center mb-3">
                         <img src="{{ asset(Storage::url($potensi->image)) }}" class="rounded-2 img-fluid"
                             alt="{{ $potensi->nama }}">
 
