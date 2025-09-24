@@ -21,11 +21,11 @@
                         {{ $potensi->created_at->format('d M Y H:i') }} WITA</div>
                     <div class=" text-center h3 mb-3">{{ $potensi->nama }}</div>
                     <div class=" text-center mb-4">
-                        <img src="{{ asset(Storage::url($potensi->image)) }}" class="rounded-2 img-responsive"
+                        <img src="{{ asset(Storage::url($potensi->image)) }}" class="rounded-2 img-fluid"
                             alt="{{ $potensi->nama }}">
-
                     </div>
-                    <div class="">
+                    <hr>
+                    <div class="mt-2">
                         {!! $potensi->deskripsi !!}
                     </div>
 
