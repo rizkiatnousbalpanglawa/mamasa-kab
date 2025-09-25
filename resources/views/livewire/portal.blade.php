@@ -83,7 +83,7 @@
                     </div> --}}
                     <div class="row g-3">
                         @forelse ($webOpd as $item)
-                            <div class="col-lg-12 mb-3">
+                            <div class="col-lg-12 mb-1">
                                 <div class="card shadow-sm">
                                     <div class="card-body">
                                         <div class="row align-items-center">
