@@ -74,7 +74,7 @@
 
                     <div class="row g-3">
                         @forelse ($webOpd as $item)
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 mb-3">
                                 <div class="row align-items-center opd-item">
                                     <div class="col-1">
                                         <img src="{{ $item && $item->image ? asset(Storage::url($item->image)) : asset('front-assets/img/logo-mamasa.png') }}"
