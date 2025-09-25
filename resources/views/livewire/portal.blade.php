@@ -56,8 +56,8 @@
         </section>
     </div>
 
-    <div class="modal modal-lg fade" id="websiteOpd" tabindex="-1" aria-labelledby="websiteOpdLabel"
-        aria-hidden="true">
+    <div class="modal modal-lg fade" id="websiteOpd" tabindex="-1" aria-labelledby="websiteOpdLabel" aria-hidden="true"
+        wire:ignore.self>
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -68,17 +68,26 @@
 
                 <div class="modal-body p-4">
                     <div class="">
-                        <h2 class="h3 fw-semibold mb-3">Website Organisasi Perangkat Daerah</h2>
+                        <h2 class="h3 fw-semibold text-center mb-3">Website Organisasi Perangkat Daerah</h2>
                     </div>
-                    {{-- <hr class="custom-divider-2 my-4"> --}}
-
+                    <hr class="custom-divider-2 my-4">
+                    {{-- <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="bi bi-search"></i>
+                        </span>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="opdSearchInput" wire:model.defer="pencarian"
+                                placeholder="Cari">
+                            <label for="opdSearchInput">Cari</label>
+                        </div>
+                    </div> --}}
                     <div class="row g-3">
                         @forelse ($webOpd as $item)
                             <div class="col-lg-12 mb-3">
-                                <div class="card">
+                                <div class="card shadow-sm">
                                     <div class="card-body">
-                                        <div class="row align-items-center opd-item">
-                                            <div class="col-2">
+                                        <div class="row align-items-center">
+                                            <div class="col-1 d-flex justify-content-center">
                                                 <img src="{{ $item && $item->image ? asset(Storage::url($item->image)) : asset('front-assets/img/logo-mamasa.png') }}"
                                                     alt="Logo OPD" width="25">
                                             </div>
@@ -103,4 +112,12 @@
             </div>
         </div>
     </div>
+    <script>
+        // Autofocus input saat modal dibuka
+        document.addEventListener('shown.bs.modal', function(e) {
+            if (e.target.id === 'websiteOpd') {
+                document.getElementById('opdSearchInput')?.focus();
+            }
+        });
+    </script>
 </div>
