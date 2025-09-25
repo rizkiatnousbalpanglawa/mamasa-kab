@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class FooterSosmed extends Model
+class Identitas extends Model
 {
-    protected $guarded=['id'];
-    
+    protected $guarded = ['id'];
 }

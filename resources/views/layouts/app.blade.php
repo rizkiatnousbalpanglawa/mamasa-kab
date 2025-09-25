@@ -36,47 +36,51 @@
 
     {{ $slot }}
 
+    @php
+        $today = \Carbon\Carbon::today();
+        $statToday = \App\Models\StatistikHarian::where('tanggal', $today)->first();
+
+        $pengunjungHariIni = $statToday->pengunjung ?? 0;
+        $hitsHariIni = $statToday->hits ?? 0;
+
+        $totalPengunjung = \App\Models\StatistikHarian::sum('pengunjung');
+        $totalHits = \App\Models\StatistikHarian::sum('hits');
+
+        $pengunjungOnline = \App\Models\StatistikOnline::where(
+            'last_activity',
+            '>=',
+            \Carbon\Carbon::now()->subMinutes(5),
+        )->count();
+
+        $opd = \App\Models\Identitas::first();
+
+    @endphp
+
     <footer id="footer" class="footer position-relative light-background">
         <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-6 footer-about">
-                    <a href="{{ url('/') }}" class="logo ">
-                        <img src="{{ asset('front-assets/img/logo-website.png') }}" class="img-fluid"
+            <div class="row gy-4 text-center">
+                <div class="col-lg-5 footer-about">
+                    <a href="{{ url('/') }}" class="logo">
+                        <img src="{{ $opd ? asset(Storage::url($opd->image)) : '' }}" class="img-fluid"
                             alt="Logo Website" />
+
                     </a>
-                    <div class="footer-contact pt-3">
-                        <p>Jalan Poros Mamasa</p>
-                        <p>Kecamatan Osango, Kabupaten Mamasa, Sulawesi Barat, Indonesia</p>
-                        <p> <strong>Phone:</strong> <span>(0411) 402237 </span> <strong>Email:</strong>
-                            <span>admin@mamasakab.go.id</span>
-                        </p>
+                    <h5 class="mt-3">{{ $opd->nama ?? '' }}</h5>
+                    <hr>
+                    <div class="footer-contact">
+                        {!! $opd->alamat ?? '' !!}
                     </div>
-                    <div class="social-links d-flex  mt-4">
-                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-linkedin"></i></a>
+                    <div class="social-links d-flex justify-content-center mt-4">
+                        <a href="{{ $opd->twitter ?? '' }}"><i class="bi bi-twitter-x"></i></a>
+                        <a href="{{ $opd->facebook ?? '' }}"><i class="bi bi-facebook"></i></a>
+                        <a href="{{ $opd->instagram ?? '' }}"><i class="bi bi-instagram"></i></a>
+                        <a href="{{ $opd->youtube ?? '' }}"><i class="bi bi-youtube"></i></a>
+                        <a href="{{ $opd->tiktok ?? '' }}"><i class="bi bi-tiktok"></i></a>
                     </div>
                 </div>
 
-                <div class="col-lg-4">
+                <div class="col-lg-3 align-self-center">
                     <div class="statistik">
-                        @php
-                            $today = \Carbon\Carbon::today();
-                            $statToday = \App\Models\StatistikHarian::where('tanggal', $today)->first();
-
-                            $pengunjungHariIni = $statToday->pengunjung ?? 0;
-                            $hitsHariIni = $statToday->hits ?? 0;
-
-                            $totalPengunjung = \App\Models\StatistikHarian::sum('pengunjung');
-                            $totalHits = \App\Models\StatistikHarian::sum('hits');
-
-                            $pengunjungOnline = \App\Models\StatistikOnline::where(
-                                'last_activity',
-                                '>=',
-                                \Carbon\Carbon::now()->subMinutes(5),
-                            )->count();
-                        @endphp
                         <h5>Statistik</h5>
                         <h1 class="fw-bold"> {{ number_format($totalHits) }}</h1>
                         <div class="">Pengunjung Hari ini: <span class="fw-bold">{{ $pengunjungHariIni }}</span>
@@ -88,6 +92,13 @@
                     </div>
                 </div>
 
+                <div class="col-lg-4 align-self-center">
+                    <iframe class="w-full h-70 border-0 rounded"
+                        src="https://www.google.com/maps?q={{ $opd->latitude ?? '' }},{{ $opd->longitude ?? '' }}&hl=id&z=18&output=embed"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
             </div>
         </div>
 
@@ -95,6 +106,7 @@
 
         </div>
     </footer>
+
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>

@@ -15,7 +15,6 @@ use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Storage;
@@ -37,30 +36,27 @@ class PortalResource extends Resource
     {
         return $schema
             ->components([
+                TextInput::make('judul'),
+                TextInput::make('subjudul'),
                 FileUpload::make('logo')
                     ->image()
+                    ->maxSize(2048)
                     ->directory('portal')
                     ->deleteUploadedFileUsing(function ($file) {
                         if ($file && Storage::disk('public')->exists($file)) {
                             Storage::disk('public')->delete($file);
                         }
-                    })
-                    ->maxSize(1024)
-                    ->required(),
+                    }),
                 FileUpload::make('background')
-                    // ->acceptedFileTypes(['video/mp4', 'video/webm'])
-                    ->maxSize(5120)
                     ->directory('portal')
+                    ->maxSize(5120) // 100 MB (102400 KB)
+                    ->acceptedFileTypes(['video/mp4', 'video/avi', 'video/mkv'])
                     ->deleteUploadedFileUsing(function ($file) {
                         if ($file && Storage::disk('public')->exists($file)) {
                             Storage::disk('public')->delete($file);
                         }
-                    })
-                    ->required(),
-                TextInput::make('judul')
-                    ->required(),
-                TextInput::make('subjudul')
-                    ->required(),
+                    }),
+
 
             ]);
     }
@@ -69,11 +65,6 @@ class PortalResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('logo'),
-                TextColumn::make('judul')
-                    ->searchable(),
-                TextColumn::make('subjudul')
-                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -82,6 +73,14 @@ class PortalResource extends Resource
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                TextColumn::make('logo')
+                    ->searchable(),
+                TextColumn::make('judul')
+                    ->searchable(),
+                TextColumn::make('subjudul')
+                    ->searchable(),
+                TextColumn::make('background')
+                    ->searchable(),
             ])
             ->filters([
                 //
