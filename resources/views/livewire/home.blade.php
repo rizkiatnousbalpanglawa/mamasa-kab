@@ -189,79 +189,19 @@
         <!-- End Section Title -->
 
         <div class="container">
-            <div class="row g-1">
+            <div class="row g-1 mb-5">
 
                 <!-- Foto 1 -->
-                <div class="col-6 col-md-3">
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/id/1015/400/300"
-                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 1" data-bs-toggle="modal"
-                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1015/1200/800">
+                @forelse ($galeri as $item)
+                    <div class="col-6 col-md-3">
+                        <div class="gallery-item">
+                            <img src="{{ asset(Storage::url($item->image)) }}"
+                                class="img-fluid rounded shadow-sm gallery-img" alt="Foto 1" data-bs-toggle="modal"
+                                data-bs-target="#photoModal" data-bs-src="{{ asset(Storage::url($item->image)) }}">
+                        </div>
                     </div>
-                </div>
-
-                <!-- Foto 2 -->
-                <div class="col-6 col-md-3">
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/id/1025/400/300"
-                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 2" data-bs-toggle="modal"
-                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1025/1200/800">
-                    </div>
-                </div>
-
-                <!-- Foto 3 -->
-                <div class="col-6 col-md-3">
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/id/1035/400/300"
-                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 3" data-bs-toggle="modal"
-                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1035/1200/800">
-                    </div>
-                </div>
-
-                <!-- Foto 4 -->
-                <div class="col-6 col-md-3">
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/id/1045/400/300"
-                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 4" data-bs-toggle="modal"
-                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1045/1200/800">
-                    </div>
-                </div>
-
-                <!-- Foto 5 -->
-                <div class="col-6 col-md-3">
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/id/1055/400/300"
-                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 5" data-bs-toggle="modal"
-                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1055/1200/800">
-                    </div>
-                </div>
-
-                <!-- Foto 6 -->
-                <div class="col-6 col-md-3">
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/id/1065/400/300"
-                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 6" data-bs-toggle="modal"
-                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1065/1200/800">
-                    </div>
-                </div>
-
-                <!-- Foto 7 -->
-                <div class="col-6 col-md-3">
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/id/1075/400/300"
-                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 7" data-bs-toggle="modal"
-                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/id/1075/1200/800">
-                    </div>
-                </div>
-
-                <!-- Foto 8 -->
-                <div class="col-6 col-md-3">
-                    <div class="gallery-item">
-                        <img src="https://picsum.photos/400/300?random=8"
-                            class="img-fluid rounded shadow-sm gallery-img" alt="Foto 8" data-bs-toggle="modal"
-                            data-bs-target="#photoModal" data-bs-src="https://picsum.photos/1200/800?random=8">
-                    </div>
-                </div>
+                @empty
+                @endforelse
 
             </div>
         </div>

@@ -6,6 +6,7 @@ use App\Models\BerandaInfoKegiatan;
 use App\Models\BerandaSlider;
 use App\Models\BerandaSusunanKegiatan;
 use App\Models\Berita;
+use App\Models\Galeri;
 use App\Models\StatistikHarian;
 use App\Models\StatistikOnline;
 use Carbon\Carbon;
@@ -21,6 +22,7 @@ class Home extends Component
         $data['kegiatan'] = BerandaInfoKegiatan::first();
         $data['susunanKegiatan'] = BerandaSusunanKegiatan::get();
         $data['berita'] = Berita::with(['penulis'])->get();
+        $data['galeri'] = Galeri::paginate(10);
         return view('livewire.home', $data);
     }
 }

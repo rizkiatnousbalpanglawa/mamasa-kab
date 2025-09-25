@@ -13,4 +13,5 @@ enum NavigationGroups: string
     case PROFIL = 'Profil';
     case POTENSI = 'Potensi';
     case INFORMASI = 'Informasi';
+    case GALERI = 'Galeri';
 }
