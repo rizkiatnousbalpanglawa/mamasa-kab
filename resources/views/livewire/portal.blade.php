@@ -73,23 +73,25 @@
                     {{-- <hr class="custom-divider-2 my-4"> --}}
 
                     <div class="row g-3">
-                        <div class="col-lg-6">
-                            <div class="row align-items-center opd-item">
-                                <div class="col-1">
-                                    <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="Logo OPD"
-                                        width="25">
-                                </div>
-                                <div class="col">
-                                    <a href="https://mamasa-opd.usbal.xyz/"
-                                        class="link-dark fw-bold text-decoration-none">
-                                        KOMINFO
-                                        <div class="small fw-normal text-black-50 fst-italic">
-                                            https://kominfo.mamasakab.go.id/
-                                        </div>
-                                    </a>
+                        @forelse ($webOpd as $item)
+                            <div class="col-lg-6">
+                                <div class="row align-items-center opd-item">
+                                    <div class="col-1">
+                                        <img src="{{ $item && $item->image ? asset(Storage::url($item->image)) : asset('front-assets/img/logo-mamasa.png') }}"
+                                            alt="Logo OPD" width="25">
+                                    </div>
+                                    <div class="col">
+                                        <a href="{{ $item->url }}" class="link-dark fw-bold text-decoration-none">
+                                            {{ $item->nama }}
+                                            <div class="small fw-normal text-black-50 fst-italic">
+                                                {{ $item->subnama }}
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @empty
+                        @endforelse
                     </div>
 
                 </div>
