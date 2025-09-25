@@ -74,11 +74,11 @@
 
                     <div class="row g-3">
                         @forelse ($webOpd as $item)
-                            <div class="col-lg-6 mb-3">
+                            <div class="col-lg-12 mb-3">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row align-items-center opd-item">
-                                            <div class="col-1">
+                                            <div class="col-2">
                                                 <img src="{{ $item && $item->image ? asset(Storage::url($item->image)) : asset('front-assets/img/logo-mamasa.png') }}"
                                                     alt="Logo OPD" width="25">
                                             </div>
