@@ -14,12 +14,10 @@
 
     <section id="sejarah" class="privacy section">
 
-        <div class="container" data-aos="fade-up">
+        <div class="container">
             <!-- Header -->
-            <div class="privacy-header" data-aos="fade-up">
+            <div class="privacy-header">
                 <div class="header-content">
-                    <div class="last-updated">Terahir diperbarui:
-                        {{ date('d M Y H:i A', strtotime($info->last()->updated_at)) }}</div>
                     <h1>Informasi</h1>
                     <p class="intro-text">Halaman ini menyajikan berbagai informasi resmi dari Pemerintah Kabupaten
                         Mamasa</p>
@@ -36,8 +34,8 @@
 
                                 <div class="mb-3">
                                     <label for="filter-kategori" class="form-label fw-semibold">Kategori</label>
-                                    <select id="filter-kategori" class="form-select">
-                                        <option value="semua">Semua</option>
+                                    <select id="filter-kategori" class="form-select" wire:model.live='kategoriTerpilih'>
+                                        <option value="">Semua</option>
                                         @foreach ($kategori as $item)
                                             <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
                                         @endforeach
@@ -63,8 +61,8 @@
                                     </select>
                                 </div>
 
-                                <button id="apply-filter-btn" class="btn btn-dark w-100 py-2 filter-btn">Terapkan
-                                    Filter</button>
+                                {{-- <button id="apply-filter-btn" class="btn btn-dark w-100 py-2 filter-btn">Terapkan
+                                    Filter</button> --}}
                             </div>
                         </div>
                     </div>
@@ -76,7 +74,7 @@
                                         class="bi bi-search"></i></span>
                                 <input type="text" id="search-input"
                                     class="form-control bg-white border-0 shadow-none"
-                                    placeholder="Cari judul dokumen...">
+                                    placeholder="Cari judul dokumen..." wire:model.live="pencarian">
                             </div>
                         </div>
 
@@ -118,7 +116,7 @@
                                 </a>
                             @empty
                                 <div class="alert alert-secondary text-center">
-                                    Belum ada informasi yang tersedia saat ini.
+                                    Tidak ada informasi yang ditemukan!.
                                 </div>
                             @endforelse
 

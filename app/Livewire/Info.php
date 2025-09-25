@@ -12,9 +12,20 @@ use Livewire\Component;
 
 class Info extends Component
 {
+    public $pencarian = '', $kategoriTerpilih = '';
+
+
     public function render()
     {
-        $data['info'] = Informasi::with(['kategori'])->paginate(10);
+        $query = Informasi::with(['kategori']);
+        if ($this->pencarian) {
+            $query->where('judul', 'LIKE', '%' . $this->pencarian . '%');
+        };
+        if ($this->kategoriTerpilih) {
+            $query->where('kategori_id', $this->kategoriTerpilih);
+        };
+
+        $data['info'] = $query->paginate(10);
         $data['kategori'] = InformasiKategori::with(['informasi'])->get();
         return view('livewire.info', $data);
     }
