@@ -4,6 +4,7 @@ namespace App\Filament\Resources\WebOpds;
 
 use App\Filament\Resources\WebOpds\Pages\ManageWebOpds;
 use App\Models\WebOpd;
+use App\NavigationGroups;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -18,12 +19,19 @@ use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Support\Facades\Storage;
+use UnitEnum;
 
 class WebOpdResource extends Resource
 {
     protected static ?string $model = WebOpd::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static string|UnitEnum|null $navigationGroup = NavigationGroups::PORTAL;
+
+    protected static ?string $pluralModelLabel = 'Web OPD';
+
+    protected static ?string $label = 'Web OPD';
 
     public static function form(Schema $schema): Schema
     {
