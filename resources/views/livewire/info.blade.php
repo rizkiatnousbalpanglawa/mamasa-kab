@@ -74,7 +74,7 @@
                                         class="bi bi-search"></i></span>
                                 <input type="text" id="search-input"
                                     class="form-control bg-white border-0 shadow-none"
-                                    placeholder="Cari judul dokumen..." wire:model.live="pencarian">
+                                    placeholder="Cari judul dokumen..." wire:model.live.debounce.300ms="pencarian">
                             </div>
                         </div>
 
