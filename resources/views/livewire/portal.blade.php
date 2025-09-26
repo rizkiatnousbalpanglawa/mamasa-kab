@@ -20,7 +20,7 @@
             <hr class="custom-divider my-4">
 
 
-            <section id="menu" class="container  text-center">
+            <section id="menu" class="container text-center">
                 <div class="row justify-content-center">
 
                     <div class="col-4 col-md-2 mb-4">
