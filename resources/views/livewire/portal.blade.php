@@ -2,7 +2,7 @@
     <!-- Background Video -->
     <video autoplay muted loop class="video-bg">
         <source
-            src="{{ !empty($portals->background) ? Storage::url($portals->background) : asset('front-assets/new-bg.mp4') }}"
+            src="{{ !empty($portals->background) ? Storage::url($portals->background) : asset('front-assets/bg-uncompressed.mp4') }}"
             type="video/mp4">
         Browser anda tidak mendukung video background.
     </video>
