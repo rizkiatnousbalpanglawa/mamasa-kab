@@ -15,7 +15,7 @@
                 alt="Logo Kabupaten Mamasa" class="my-3" style="width:150px; height:auto;">
 
             <h1 class="display-6 fw-bold">{{ $portals->judul ?? 'Pemerintah Kab Mamasa' }}</h1>
-            <p class="lead">{{ $portals->subjudul ?? '' }}</p>
+            <p class="fw-bold h3">{{ $portals->subjudul ?? '' }}</p>
 
             <hr class="custom-divider my-4">
 
