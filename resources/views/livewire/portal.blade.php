@@ -6,7 +6,7 @@
             type="video/mp4">
         Browser anda tidak mendukung video background.
     </video>
-    <div class="overlay"></div>
+    {{-- <div class="overlay"></div> --}}
 
 
     <div class="content d-flex flex-column justify-content-center align-items-center text-center min-vh-100">
