@@ -36,6 +36,18 @@
             z-index: 0;
         }
 
+        .text-outline {
+            color: white;
+            /* warna isi teks */
+            text-shadow:
+                -2px -2px 2px black,
+                2px -2px 2px black,
+                -2px 2px 2px black,
+                2px 2px 2px black,
+                0px 0px 4px black;
+            /* tambahan blur halus */
+        }
+
         .content {
             position: relative;
             z-index: 1;
