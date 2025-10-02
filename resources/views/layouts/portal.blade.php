@@ -7,7 +7,12 @@
     <title>Portal Kabupaten</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Roboto', Helvetica, Arial, sans-serif;
+        }
+
         .video-bg {
             position: fixed;
             right: 0;
@@ -17,9 +22,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Tidak terpotong */
             background: black;
-            /* atau pakai warna lain / background-image */
             z-index: -1;
         }
 
@@ -174,21 +177,6 @@
             color: #fff;
             transform: rotate(90deg) scale(1.1);
         }
-
-        /* Card device */
-        /* .device-item {
-            background: #fff;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .device-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        } */
 
         /* Ikon */
         .device-icon img {
