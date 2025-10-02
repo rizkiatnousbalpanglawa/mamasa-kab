@@ -28,7 +28,7 @@
                             <div class="icon-circle">
                                 <i class="bi bi-house-door" style="font-size: 2rem; color: white;"></i>
                             </div>
-                            <p class="mt-2">Beranda</p>
+                            <p class="mt-2 text-outline-1">Beranda</p>
                         </a>
                     </div>
 
@@ -37,7 +37,7 @@
                             <div class="icon-circle">
                                 <i class="bi bi-globe" style="font-size: 2rem; color: white;"></i>
                             </div>
-                            <p class="mt-2">Website</p>
+                            <p class="mt-2 text-outline-1">Website</p>
                         </a>
 
                     </div>
@@ -48,7 +48,7 @@
                                 <div class="icon-circle">
                                     <i class="bi bi-{{ $item->icon }}" style="font-size: 2rem; color: white;"></i>
                                 </div>
-                                <p class="mt-2">{{ $item->judul }}</p>
+                                <p class="mt-2 text-outline-1">{{ $item->judul }}</p>
                             </a>
                         </div>
                     @endforeach

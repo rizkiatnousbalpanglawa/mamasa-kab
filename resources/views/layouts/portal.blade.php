@@ -48,6 +48,18 @@
             /* tambahan blur halus */
         }
 
+        .text-outline-1 {
+            color: white;
+            /* warna isi teks */
+            text-shadow:
+                -1px -1px 1px black,
+                1px -1px 1px black,
+                -1px 1px 1px black,
+                1px 1px 1px black,
+                0px 0px 4px black;
+            /* tambahan blur halus */
+        }
+
         .content {
             position: relative;
             z-index: 1;
