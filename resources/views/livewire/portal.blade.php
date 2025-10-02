@@ -1,6 +1,6 @@
 <div class="">
     <!-- Background Video -->
-    <video autoplay muted loop class="video-bg">
+    <video muted autoplay loop playsinline webkit-playsinline preload="auto" class="video-bg">
         <source
             src="{{ !empty($portals->background) ? Storage::url($portals->background) : asset('front-assets/bg-bupati.mp4') }}"
             type="video/mp4">
