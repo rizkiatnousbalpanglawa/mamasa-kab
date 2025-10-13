@@ -101,7 +101,7 @@
                                             <span class="info-views"><i class="bi bi-eye me-1"></i>{{ $item->views }}
                                             </span> |
                                             <span class="info-date">
-                                                {{ $item->waktu_informasi->diffForHumans() }}
+                                                {{ $item->waktu_informasi->format('d M Y') }}
                                             </span>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                     <div class="info-meta-wrapper flex-shrink-0 text-end d-none d-sm-block">
                                         <div class="info-views"><i class="bi bi-eye me-1"></i>{{ $item->views }}</div>
                                         <div class="info-date">
-                                            {{ $item->waktu_informasi->diffForHumans() }}
+                                            {{ $item->waktu_informasi->format('d M Y') }}
                                         </div>
                                     </div>
 
