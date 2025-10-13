@@ -103,7 +103,8 @@
         </div>
 
         <div class="container copyright text-center mt-4">
-
+            <p>© <span>2025</span> <strong class="px-1 sitename">Diskominfo-San</strong> <span>All Rights
+                    Reserved</span></p>
         </div>
     </footer>
 
