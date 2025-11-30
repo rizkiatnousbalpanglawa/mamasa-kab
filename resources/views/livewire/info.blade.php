@@ -44,18 +44,10 @@
 
                                 <div class="mb-4">
                                     <label for="filter-tahun" class="form-label fw-semibold">Tahun</label>
-                                    <select id="filter-tahun" class="form-select">
-                                        <option value="semua">Semua</option>
-                                        {{-- Praktik terbaik adalah menyiapkan daftar tahun ini di Controller --}}
-                                        @php
-                                            $uniqueYears = $info
-                                                ->map(function ($item) {
-                                                    return $item->waktu_informasi->format('Y');
-                                                })
-                                                ->unique()
-                                                ->sortDesc();
-                                        @endphp
-                                        @foreach ($uniqueYears as $tahun)
+                                    <select id="filter-tahun" wire:model.live="tahun" class="form-select">
+                                        <option value="">Semua</option>
+
+                                        @foreach ($tahunInformasi as $tahun)
                                             <option value="{{ $tahun }}">{{ $tahun }}</option>
                                         @endforeach
                                     </select>

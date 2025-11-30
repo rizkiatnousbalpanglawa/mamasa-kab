@@ -12,7 +12,7 @@ use Livewire\Component;
 
 class Info extends Component
 {
-    public $pencarian = '', $kategoriTerpilih = '';
+    public $pencarian = '', $kategoriTerpilih = '', $tahun = '';
 
 
     public function render()
@@ -25,7 +25,14 @@ class Info extends Component
             $query->where('kategori_id', $this->kategoriTerpilih);
         };
 
+        if ($this->tahun) {
+            $query->whereYear('waktu_informasi', $this->tahun);
+        };
+
         $data['info'] = $query->paginate(10);
+        $data['tahunInformasi'] = Informasi::selectRaw('YEAR(waktu_informasi) as tahun')
+            ->distinct()
+            ->pluck('tahun');
         $data['kategori'] = InformasiKategori::with(['informasi'])->get();
         return view('livewire.info', $data);
     }
