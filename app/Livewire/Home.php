@@ -21,7 +21,7 @@ class Home extends Component
         $data['carousels'] = BerandaSlider::get();
         $data['kegiatan'] = BerandaInfoKegiatan::first();
         $data['susunanKegiatan'] = BerandaSusunanKegiatan::get();
-        $data['berita'] = Berita::with(['penulis'])->get();
+        $data['berita'] = Berita::with(['penulis'])->latest()->limit(4)->get();
         $data['galeri'] = Galeri::paginate(10);
         return view('livewire.home', $data);
     }

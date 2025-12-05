@@ -136,50 +136,6 @@
     </section>
     <!-- /Recent News Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <div class="container my-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <div class="about-content" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Agenda & Kegiatan</h3>
-                        <h2>{{ $kegiatan->judul ?? '-' }}</h2>
-                        <p>
-                            Temukan jadwal lengkap kegiatan wisata, festival budaya, dan
-                            acara lokal yang memeriahkan Mamasa sepanjang tahun.
-                        </p>
-
-                        <div class="timeline">
-
-                            @foreach ($susunanKegiatan as $item)
-                                <div class="timeline-item">
-                                    <div class="timeline-dot"></div>
-                                    <div class="timeline-content">
-                                        <h4>{{ date('d M Y', strtotime($item->tanggal)) }} - {{ $item->nama }}</h4>
-                                        <p>
-                                            {{ $item->penjelasan }}
-                                        </p>
-                                    </div>
-                                </div>
-                            @endforeach
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 d-none d-md-flex">
-                    <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="{{ !empty($kegiatan->image) ? asset(Storage::url($kegiatan->image)) : asset('front-assets/img/tari-mamasa.jpg') }}"
-                            alt="Kegiatan" class="img-fluid rounded" />
-
-                        <div class="mission-vision" data-aos="fade-up" data-aos-delay="400"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /About Section -->
-
     <!-- Gallery -->
     <section>
         <!-- Section Title -->
