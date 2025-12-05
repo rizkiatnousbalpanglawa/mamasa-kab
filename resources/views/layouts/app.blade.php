@@ -4,30 +4,63 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
     <title>{{ $title ?? config('app.name') }}</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
     <!-- Favicons -->
-    <link href="{{ asset('front-assets/img/logo.png') }}" rel="icon" />
-    <link href="{{ asset('front-assets/img/logo.png') }}" rel="apple-touch-icon" />
+    <link rel="icon" href="{{ asset('front-assets/img/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('front-assets/img/logo.png') }}">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+    <!-- ============================= -->
+    <!-- OPTIMIZED GOOGLE FONTS -->
+    <!-- ============================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Vendor CSS Files -->
-    <link href="{{ asset('front-assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('front-assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet" />
-    <link href="{{ asset('front-assets/vendor/aos/aos.css') }}" rel="stylesheet" />
-    <link href="{{ asset('front-assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
-    <link href="{{ asset('front-assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet" />
+    <!-- Preload Google Fonts CSS -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        as="style" onload="this.rel='stylesheet'">
 
-    <!-- Main CSS File -->
-    <link href="{{ asset('front-assets/css/main.css') }}" rel="stylesheet" />
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    </noscript>
+
+    <!-- ============================= -->
+    <!-- MAIN CSS (PRELOAD + NON-BLOCKING) -->
+    <!-- ============================= -->
+    <link rel="preload" href="{{ asset('front-assets/css/main.css') }}" as="style" onload="this.rel='stylesheet'">
+
+    <noscript>
+        <link rel="stylesheet" href="{{ asset('front-assets/css/main.css') }}">
+    </noscript>
+
+    <!-- ============================= -->
+    <!-- VENDOR CSS (ASYNC LOAD) -->
+    <!-- ============================= -->
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ asset('front-assets/vendor/bootstrap/css/bootstrap.min.css') }}" media="print"
+        onload="this.media='all'">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="{{ asset('front-assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" media="print"
+        onload="this.media='all'">
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="{{ asset('front-assets/vendor/aos/aos.css') }}" media="print"
+        onload="this.media='all'">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="{{ asset('front-assets/vendor/swiper/swiper-bundle.min.css') }}" media="print"
+        onload="this.media='all'">
+
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="{{ asset('front-assets/vendor/glightbox/css/glightbox.min.css') }}" media="print"
+        onload="this.media='all'">
 
 </head>
 
