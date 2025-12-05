@@ -34,9 +34,7 @@
     <!-- ============================= -->
     <link rel="preload" href="{{ asset('front-assets/css/main.css') }}" as="style" onload="this.rel='stylesheet'">
 
-    <noscript>
-        <link rel="stylesheet" href="{{ asset('front-assets/css/main.css') }}">
-    </noscript>
+    <link rel="stylesheet" href="{{ asset('front-assets/css/main.css') }}">
 
     <!-- ============================= -->
     <!-- VENDOR CSS (ASYNC LOAD) -->
