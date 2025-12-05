@@ -9,10 +9,17 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Info extends Component
 {
+    use WithPagination;
     public $pencarian = '', $kategoriTerpilih = '', $tahun = '';
+    protected $paginationTheme = 'bootstrap';
+    public function updated()
+    {
+        $this->resetPage();
+    }
 
 
     public function render()
@@ -29,7 +36,7 @@ class Info extends Component
             $query->whereYear('waktu_informasi', $this->tahun);
         };
 
-        $data['info'] = $query->paginate(10);
+        $data['info'] = $query->paginate(5);
         $data['tahunInformasi'] = Informasi::selectRaw('YEAR(waktu_informasi) as tahun')
             ->distinct()
             ->pluck('tahun');

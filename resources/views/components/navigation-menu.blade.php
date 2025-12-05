@@ -11,7 +11,7 @@
             <ul>
                 <x-nav-link :active="request()->is('beranda/*')" href="/beranda">Beranda</x-nav-link>
                 <x-nav-link :active="request()->is(['berita/*', 'berita'])" href="/berita">Berita</x-nav-link>
-                <x-nav-link :active="request()->is(['kegiatan/*', 'kegiatan'])" href="/kegiatan">Kegiatan</x-nav-link>
+                <x-nav-link :active="request()->is(['pengumuman/*', 'pengumuman'])" href="/pengumuman">Pengumuman</x-nav-link>
                 <li class="dropdown">
                     <a href="#"><span>Profil</span>
                         <i class="bi bi-chevron-down toggle-dropdown"></i>

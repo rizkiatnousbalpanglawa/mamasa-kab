@@ -59,6 +59,14 @@
                             </div>
                         @empty
                         @endforelse
+                        <section id="pagination-2" class="pagination-2 section">
+
+                            <div class="container">
+
+                                {{ $terbaru->links() }}
+                            </div>
+
+                        </section>
                     </div>
                 </div><!-- End Main Content Area -->
 
@@ -132,6 +140,7 @@
                                     </article>
                                 @empty
                                 @endforelse
+
                             </div>
 
                             <!-- Latest News Tab -->
@@ -173,6 +182,7 @@
                                     </article>
                                 @empty
                                 @endforelse
+
                             </div>
                         </div>
                     </div>
@@ -181,37 +191,6 @@
         </div>
     </section><!-- /News Hero Section -->
 
-    <!-- Pagination 2 Section -->
-    <section id="pagination-2" class="pagination-2 section">
 
-        <div class="container">
-            <nav class="d-flex justify-content-center" aria-label="Page navigation">
-                <ul>
-                    <li>
-                        <a href="#" aria-label="Previous page">
-                            <i class="bi bi-arrow-left"></i>
-                            <span class="d-none d-sm-inline">Previous</span>
-                        </a>
-                    </li>
-
-                    <li><a href="#" class="active">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li class="ellipsis">...</li>
-                    <li><a href="#">8</a></li>
-                    <li><a href="#">9</a></li>
-                    <li><a href="#">10</a></li>
-
-                    <li>
-                        <a href="#" aria-label="Next page">
-                            <span class="d-none d-sm-inline">Next</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-    </section><!-- /Pagination 2 Section -->
 
 </main>

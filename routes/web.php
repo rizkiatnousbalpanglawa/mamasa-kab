@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ViewInformasiController;
+use App\Http\Controllers\ViewPengumumanController;
 use App\Http\Middleware\HitCounterMiddleware;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +13,10 @@ Route::middleware(HitCounterMiddleware::class)->group(function () {
 
     Route::get('/kegiatan', App\Livewire\Kegiatan\Index::class);
     Route::get('/kegiatan/{slug}', App\Livewire\Kegiatan\Show::class)->name('kegiatan.detail');
+
+    Route::get('/pengumuman', App\Livewire\Pengumuman\Index::class);
+    Route::get('/pengumuman/view/{id}', [ViewPengumumanController::class, 'view'])->name('pengumuman.view');
+
 
     Route::get('/visi-misi', App\Livewire\Visimisi::class);
     Route::get('/sejarah', App\Livewire\Sejarah::class);
