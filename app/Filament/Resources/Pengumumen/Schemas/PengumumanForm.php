@@ -55,6 +55,10 @@ class PengumumanForm
                     ->columnSpanFull()
                     ->label('Lampiran Maksimal: 5 MB')
                     ->visible(fn(Get $get): bool => $get('tipe') === 'file'),
+                TextInput::make('pdf')
+                    ->label('Link')
+                    ->url()
+                    ->visible(fn($get) => $get('tipe') === 'link'),
                 DatePicker::make('tanggal')
                     ->required(),
             ]);
