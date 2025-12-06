@@ -21,6 +21,7 @@
                         <li><a href="{{ url('sejarah') }}">Sejarah</a></li>
                         <li><a href="{{ url('lambang') }}">Lambang Daerah</a></li>
                         <li><a href="{{ url('profil') }}">Profil Pimpinan Daerah</a></li>
+                        <li><a href="{{ url('pemerintahan') }}">Pemerintahan</a></li>
                     </ul>
                 </li>
 
