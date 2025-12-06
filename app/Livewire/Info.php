@@ -36,7 +36,7 @@ class Info extends Component
             $query->whereYear('waktu_informasi', $this->tahun);
         };
 
-        $data['info'] = $query->paginate(5);
+        $data['info'] = $query->latest()->paginate(5);
         $data['tahunInformasi'] = Informasi::selectRaw('YEAR(waktu_informasi) as tahun')
             ->distinct()
             ->pluck('tahun');
