@@ -103,14 +103,16 @@
                                     class="text-decoration-none text-dark">
                                     <div class="card news-card border-0 shadow-sm h-100">
                                         <img src="{{ asset(Storage::url($item->gambar)) }}" class="card-img-top"
-                                            alt="Berita 1">
-                                        <div class="card-body">
-                                            <h6 class="card-title fw-bold">
+                                            alt="{{ $item->judul }}"
+                                            style="height: 200px; object-fit: cover; width: 100%;">
+
+                                        <div class="card-body d-flex flex-column">
+                                            <h6 class="card-title fw-bold text-truncate-2">
                                                 {{ $item->judul }}
                                             </h6>
                                             <div class="mb-2" style="width:50px; height:3px; background-color:black;">
                                             </div>
-                                            <p class="card-text text-muted small">
+                                            <p class="card-text text-muted small flex-grow-1">
                                                 {{ Str::limit(strip_tags($item->konten), 100, '...') }}
                                             </p>
                                         </div>
