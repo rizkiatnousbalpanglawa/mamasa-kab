@@ -55,7 +55,7 @@ class PengumumanForm
                     ->columnSpanFull()
                     ->label('Lampiran Maksimal: 5 MB')
                     ->visible(fn(Get $get): bool => $get('tipe') === 'file'),
-                TextInput::make('pdf')
+                TextInput::make('image')
                     ->label('Link')
                     ->url()
                     ->visible(fn($get) => $get('tipe') === 'link'),
