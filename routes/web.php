@@ -21,6 +21,7 @@ Route::middleware(HitCounterMiddleware::class)->group(function () {
     Route::get('/visi-misi', App\Livewire\Visimisi::class);
     Route::get('/sejarah', App\Livewire\Sejarah::class);
     Route::get('/lambang', App\Livewire\Lambang::class);
+    Route::get('/pemerintahan', App\Livewire\Pemerintahan::class);
 
     Route::get('/profil', App\Livewire\ProfilKepalaDaerah::class);
 
