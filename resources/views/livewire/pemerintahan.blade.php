@@ -33,10 +33,10 @@
 
                     <!-- Information Collection -->
                     <div class="content-section ">
-                        <div class="d-flex justify-content-center">
+                        {{-- <div class="d-flex justify-content-center">
                             <img src="{{ asset(Storage::url($pemerintahan->image)) }}" class="img-fluid rounded"
                                 alt="pemerintahan" style="max-width: 250px">
-                        </div>
+                        </div> --}}
                         {!! $pemerintahan->konten !!}
                     </div>
                 </div>

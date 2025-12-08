@@ -24,6 +24,11 @@ class PemerintahResource extends Resource
 
     protected static string|UnitEnum|null $navigationGroup = NavigationGroups::PROFIL;
 
+    protected static ?string $pluralModelLabel = 'Pemerintahan';
+
+    protected static ?string $label = 'Pemerintahan';
+
+
     public static function form(Schema $schema): Schema
     {
         return PemerintahForm::configure($schema);
