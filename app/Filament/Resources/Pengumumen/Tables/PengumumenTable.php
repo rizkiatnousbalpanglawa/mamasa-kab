@@ -17,8 +17,6 @@ class PengumumenTable
             ->columns([
                 TextColumn::make('judul')
                     ->searchable(),
-
-                ImageColumn::make('image'),
                 TextColumn::make('tanggal')
                     ->date()
                     ->sortable(),
