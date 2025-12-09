@@ -10019,6 +10019,10 @@ section,
     text-transform: uppercase;
 }
 
-.konten-pemerintahan p {
+.konten-pemerintahan table p {
+    margin: 0;
+}
+
+.konten-pemerintahan table td {
     margin: 0;
 }
