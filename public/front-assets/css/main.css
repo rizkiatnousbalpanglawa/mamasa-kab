@@ -9993,3 +9993,32 @@ section,
     font-weight: 600;
     text-decoration: none;
 }
+.konten-pemerintahan table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+}
+
+.konten-pemerintahan table th,
+.konten-pemerintahan table td {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.konten-pemerintahan table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+.konten-pemerintahan table tr:hover {
+    background: #f1f1f1;
+}
+
+.konten-pemerintahan table th {
+    background: #f0f3f5;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.konten-pemerintahan p {
+    margin: 0;
+}

@@ -32,11 +32,7 @@
                 <div class="privacy-content" data-aos="fade-up">
 
                     <!-- Information Collection -->
-                    <div class="content-section ">
-                        {{-- <div class="d-flex justify-content-center">
-                            <img src="{{ asset(Storage::url($pemerintahan->image)) }}" class="img-fluid rounded"
-                                alt="pemerintahan" style="max-width: 250px">
-                        </div> --}}
+                    <div class="konten-pemerintahan">
                         {!! $pemerintahan->konten !!}
                     </div>
                 </div>
