@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(HitCounterMiddleware::class)->group(function () {
     Route::get('/beranda', App\Livewire\Home::class);
 
-    Route::get('/berita', App\Livewire\Berita\Index::class);
+    Route::get('/berita', App\Livewire\Berita\Index::class)->name('berita.index');
     Route::get('/berita/{slug}', App\Livewire\Berita\Show::class)->name('berita.detail');
+    Route::get('/berita/kategori/{slug}', App\Livewire\Berita\Kategori::class)->name('berita.kategori');
 
     Route::get('/kegiatan', App\Livewire\Kegiatan\Index::class);
     Route::get('/kegiatan/{slug}', App\Livewire\Kegiatan\Show::class)->name('kegiatan.detail');

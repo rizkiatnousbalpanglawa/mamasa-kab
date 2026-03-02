@@ -1,3 +1,15 @@
+@section('meta-title', $berita->judul)
+
+@section('meta-description',
+    \Illuminate\Support\Str::limit(strip_tags($berita->konten), 150)
+)
+
+@section('meta-image',
+    url(\Illuminate\Support\Facades\Storage::url($berita->gambar))
+)
+
+@section('meta-url', url()->current())
+
 <main class="main">
 
     <!-- Page Title -->
@@ -22,7 +34,7 @@
                     <article class="article">
                         <div class="article-header">
                             <div class="meta-categories" data-aos="fade-up">
-                                <a href="#" class="category">{{ $berita->kategori->nama_kategori }}</a>
+                                <a href="{{ url('berita/kategori/' . $berita->kategori->slug) }}" class="category">{{ $berita->kategori->nama_kategori }}</a>
                             </div>
 
                             <h2 data-aos="fade-up" data-aos-delay="100">
@@ -47,7 +59,7 @@
                         </div>
 
                         <div class="mb-4" data-aos="zoom-in">
-                            <img src="{{ asset(Storage::url($berita->gambar)) }}" alt="UI Design Evolution"
+                            <img src="{{ asset(Storage::url($berita->gambar)) }}" alt="{{ $berita->judul }}"
                                 class="img-fluid rounded">
                         </div>
 
@@ -62,18 +74,14 @@
                             <div class="share-article">
                                 <h4>Bagikan artikel ini</h4>
                                 <div class="share-buttons">
-                                    {{-- <a href="#" class="share-button twitter">
-                                <i class="bi bi-twitter-x"></i>
-                                <span>Share on X</span>
-                            </a> --}}
-                                    <a href="#" class="share-button facebook">
+                             
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
+                                        onclick="window.open(this.href,'facebook-share','width=600,height=400'); return false;"
+                                        class="share-button facebook">
                                         <i class="bi bi-facebook"></i>
                                         <span>Bagikan di Facebook</span>
                                     </a>
-                                    {{-- <a href="#" class="share-button linkedin">
-                                <i class="bi bi-linkedin"></i>
-                                <span>Share on LinkedIn</span>
-                            </a> --}}
+                                 
                                 </div>
                             </div>
 

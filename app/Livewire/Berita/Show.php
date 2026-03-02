@@ -21,7 +21,6 @@ class Show extends Component
 
     public function render()
     {
-        $data['berita'] = Berita::with(['kategori', 'penulis'])->firstWhere('slug', $this->slug);
-        return view('livewire.berita.show', $data);
+        return view('livewire.berita.show');
     }
 }

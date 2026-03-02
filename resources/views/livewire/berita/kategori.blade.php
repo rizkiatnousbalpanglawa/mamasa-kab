@@ -17,6 +17,8 @@
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
+            <h4 class="mb-4">Kategori {{ $kategoriTerpilih->nama_kategori }}</h4>
+
             <div class="row g-4">
                 <!-- Main Content Area -->
                 <div class="col-lg-8">
@@ -65,11 +67,11 @@
                                     </div>
 
                                     <h4 class="fw-bold mb-3">
-                                        Belum Ada Berita yang Tersedia
+                                        Belum Ada Berita di Kategori Ini
                                     </h4>
 
                                     <p class="text-muted mb-4">
-                                        Saat ini belum tersedia berita.
+                                        Saat ini belum tersedia berita untuk kategori ini.
                                         Silakan cek kembali beberapa waktu ke depan atau lihat berita terbaru lainnya.
                                     </p>
                                 </div>

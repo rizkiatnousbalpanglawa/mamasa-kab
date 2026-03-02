@@ -29,6 +29,14 @@
     <!-- Main CSS File -->
     <link href="{{ asset('front-assets/css/main.css') }}" rel="stylesheet" />
 
+    {{-- Open Graph --}}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="@yield('meta-title', config('app.name'))">
+    <meta property="og:description" content="@yield('meta-description', 'Website Resmi PEMKAB Mamasa')">
+    <meta property="og:image" content="@yield('meta-image', asset('default.jpg'))">
+    <meta property="og:url" content="@yield('meta-url', url()->current())">
+    <meta property="og:site_name" content="Website Resmi PEMKAB Mamasa">
+
 </head>
 
 <body class="index-page">
