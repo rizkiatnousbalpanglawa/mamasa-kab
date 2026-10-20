@@ -9,20 +9,39 @@ use Livewire\Component;
 
 class Portal extends Component
 {
-    public $portals, $menu, $webOpd, $pencarian = "";
+    public $portals;
+
+    public $menu;
+
+    public $webOpd;
+
+    public $pencarian = '';
 
     public function mount()
     {
         $this->portals = ModelsPortal::first();
         $this->menu = PortalMenu::get();
+        $this->loadWebOpd();
+    }
 
-        $query = WebOpd::query();
+    public function updatedPencarian(): void
+    {
+        $this->loadWebOpd();
+    }
 
-        if ($this->pencarian) {
-            $query->where('nama', 'LIKE', '%' . $this->pencarian . '%');
-        }
+    protected function loadWebOpd(): void
+    {
+        $keyword = trim((string) $this->pencarian);
 
-        $this->webOpd = WebOpd::get();
+        $this->webOpd = WebOpd::query()
+            ->when(
+                $keyword !== '',
+                fn ($query) => $query
+                    ->where('nama', 'LIKE', "%{$keyword}%")
+                    ->orWhere('subnama', 'LIKE', "%{$keyword}%")
+            )
+            ->orderBy('nama')
+            ->get();
     }
 
     public function render()

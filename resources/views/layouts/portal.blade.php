@@ -354,79 +354,7 @@
             pointer-events: none;
         }
 
-        /* ---------- Preloader ---------- */
-        #preloader {
-            position: fixed;
-            inset: 0;
-            background: radial-gradient(100% 100% at 50% 20%, #0a3529 0%, #04120e 70%);
-            display: flex;
-            flex-direction: column;
-            gap: 1.1rem;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-        }
-
-        #preloader.fade-out {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        #preloader img {
-            width: 76px;
-            height: auto;
-            animation: logoPulse 1.6s ease-in-out infinite;
-        }
-
-        @keyframes logoPulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: scale(1.08);
-                opacity: 0.85;
-            }
-        }
-
-        #preloader .load-bar {
-            width: 168px;
-            height: 3px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.14);
-            overflow: hidden;
-        }
-
-        #preloader .load-bar span {
-            display: block;
-            height: 100%;
-            width: 40%;
-            border-radius: 999px;
-            background: linear-gradient(to right, var(--portal-gold-soft), var(--portal-gold));
-            animation: loadSlide 1.1s ease-in-out infinite;
-        }
-
-        @keyframes loadSlide {
-            0% {
-                transform: translateX(-110%);
-            }
-
-            100% {
-                transform: translateX(430%);
-            }
-        }
-
-        #preloader small {
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 0.28em;
-            font-size: 0.68rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
+        /* ---------- Preloader: lihat components/preloader ---------- */
 
         /* ---------- Modal Website OPD ---------- */
         .modal-backdrop.show {
@@ -446,16 +374,132 @@
             overflow-y: auto;
         }
 
-        #websiteOpd .card {
-            border: 1px solid rgba(6, 35, 28, 0.08) !important;
-            border-radius: 1rem !important;
+        /* ---------- Pencarian OPD ---------- */
+        .opd-search .input-group-text {
+            background: #fff;
+            border-color: rgba(6, 35, 28, 0.14);
+            color: var(--portal-deep-2);
+            border-radius: 0.9rem 0 0 0.9rem;
+        }
+
+        .opd-search .form-control {
+            border-color: rgba(6, 35, 28, 0.14);
+            border-radius: 0 0.9rem 0.9rem 0;
+            padding: 0.65rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .opd-search .form-control:focus {
+            border-color: var(--portal-gold);
+            box-shadow: 0 0 0 0.2rem rgba(232, 185, 74, 0.22);
+        }
+
+        .opd-count {
+            font-size: 0.78rem;
+        }
+
+        /* ---------- Kartu OPD ---------- */
+        .opd-card {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            height: 100%;
+            padding: 0.85rem 0.95rem;
+            background: #fff;
+            border: 1px solid rgba(6, 35, 28, 0.1);
+            border-radius: 1rem;
+            text-decoration: none;
             transition: transform 0.25s var(--portal-ease), box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
-        #websiteOpd .card:hover {
+        .opd-card:hover,
+        .opd-card:focus-visible {
             transform: translateY(-4px);
-            border-color: rgba(232, 185, 74, 0.6) !important;
-            box-shadow: 0 14px 30px rgba(6, 35, 28, 0.14) !important;
+            border-color: rgba(232, 185, 74, 0.65);
+            box-shadow: 0 14px 30px rgba(6, 35, 28, 0.14);
+            outline: none;
+        }
+
+        .opd-card:focus-visible {
+            box-shadow: 0 0 0 3px rgba(232, 185, 74, 0.5), 0 14px 30px rgba(6, 35, 28, 0.14);
+        }
+
+        .opd-logo {
+            flex: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(150deg, rgba(10, 53, 41, 0.1), rgba(232, 185, 74, 0.22));
+            border: 1px solid rgba(6, 35, 28, 0.08);
+        }
+
+        .opd-logo img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        .opd-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .opd-name {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-weight: 700;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: #15211d;
+        }
+
+        .opd-sub {
+            display: block;
+            margin-top: 0.15rem;
+            font-size: 0.7rem;
+            font-style: italic;
+            color: #6c757d;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .opd-go {
+            flex: none;
+            font-size: 0.95rem;
+            color: var(--portal-deep-2);
+            opacity: 0.35;
+            transition: opacity 0.25s ease, transform 0.25s var(--portal-ease);
+        }
+
+        .opd-card:hover .opd-go,
+        .opd-card:focus-visible .opd-go {
+            opacity: 1;
+            transform: translate(2px, -2px);
+            color: #9a7414;
+        }
+
+        .opd-empty {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 2.5rem 1rem;
+            border: 1px dashed rgba(6, 35, 28, 0.25);
+            border-radius: 1rem;
+            color: #5b6b65;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .opd-empty i {
+            font-size: 1.8rem;
+            opacity: 0.5;
         }
 
         .btn-close-custom {
@@ -521,12 +565,7 @@
 
     <a class="skip-link" href="#menu">Lewati ke menu layanan</a>
 
-    <!-- Preloader -->
-    <div id="preloader" role="status" aria-label="Memuat portal">
-        <img src="{{ asset('front-assets/img/logo-mamasa.png') }}" alt="">
-        <div class="load-bar" aria-hidden="true"><span></span></div>
-        <small>Memuat Portal</small>
-    </div>
+    <x-preloader text="Memuat Portal" />
 
     {{ $slot }}
 
@@ -535,25 +574,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        (function() {
-            var hidePreloader = function() {
-                var preloader = document.getElementById("preloader");
-                if (preloader) preloader.classList.add("fade-out");
-            };
-
-            window.addEventListener("load", hidePreloader);
-            // Pengaman: jangan biarkan preloader menggantung lebih dari 5 detik
-            setTimeout(hidePreloader, 5000);
-
-            // Hormati preferensi kurangi gerak: jeda video latar
-            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-                document.querySelectorAll("video.video-bg").forEach(function(v) {
-                    v.pause();
-                });
-            }
-        })();
-    </script>
 </body>
 
 </html>

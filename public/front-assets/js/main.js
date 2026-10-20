@@ -75,7 +75,10 @@
      */
     function removePreloader() {
         const el = document.querySelector("#preloader");
-        if (el) el.remove();
+        if (!el || el.dataset.done) return;
+        el.dataset.done = "1";
+        el.classList.add("fade-out");
+        setTimeout(() => el.remove(), 600);
     }
 
     // Jika halaman sudah selesai load (mis. script di-append belakangan)

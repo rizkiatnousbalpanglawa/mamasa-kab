@@ -73,43 +73,50 @@
 
                 <div class="modal-body p-4">
                     <div class="">
-                        <h2 class="h3 fw-semibold text-center mb-3">Website Organisasi Perangkat Daerah</h2>
+                        <h2 class="h3 fw-semibold text-center mb-1" id="websiteOpdLabel">Website Organisasi Perangkat
+                            Daerah</h2>
+                        <p class="text-center text-muted small mb-0">Pilih instansi untuk membuka website resminya di tab
+                            baru</p>
                     </div>
                     <hr class="custom-divider-2 my-4">
-                    {{-- <div class="input-group mb-3">
-                        <span class="input-group-text">
-                            <i class="bi bi-search"></i>
-                        </span>
-                        <div class="form-floating">
-                            <input type="text" class="form-control" id="opdSearchInput" wire:model.defer="pencarian"
-                                placeholder="Cari">
-                            <label for="opdSearchInput">Cari</label>
-                        </div>
-                    </div> --}}
+                    <div class="input-group opd-search mb-2">
+                        <span class="input-group-text" id="opdSearchIcon"><i class="bi bi-search"></i></span>
+                        <input type="search" class="form-control" id="opdSearchInput"
+                            placeholder="Cari dinas, badan, kecamatan, kelurahan…" aria-label="Cari perangkat daerah"
+                            aria-describedby="opdSearchIcon" autocomplete="off"
+                            wire:model.live.debounce.300ms="pencarian">
+                    </div>
+                    <p class="opd-count small text-muted mb-3" aria-live="polite">
+                        Menampilkan {{ $webOpd->count() }} instansi
+                    </p>
                     <div class="row g-3">
                         @forelse ($webOpd as $item)
-                            <div class="col-lg-4 mb-1">
-                                <div class="card shadow-sm">
-                                    <div class="card-body">
-                                        <div class="row align-items-center">
-                                            <div class="col-2 d-flex justify-content-center">
-                                                <img src="{{ $item && $item->image ? asset(Storage::url($item->image)) : asset('front-assets/img/logo-mamasa.png') }}"
-                                                    alt="Logo OPD" width="25">
-                                            </div>
-                                            <div class="col small">
-                                                <a href="{{ $item->url }}"
-                                                    class="link-dark fw-bold text-decoration-none">
-                                                    {{ $item->nama }}
-                                                    <div class="small fw-normal text-black-50 fst-italic">
-                                                        {{ $item->subnama }}
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="col-12 col-sm-6 col-lg-4">
+                                <a href="{{ $item->url }}" target="_blank" rel="noopener" class="opd-card">
+                                    <span class="opd-logo" aria-hidden="true">
+                                        @if (!empty($item->image))
+                                            <img src="{{ asset(Storage::url($item->image)) }}"
+                                                alt="Logo {{ $item->nama }}" loading="lazy">
+                                        @else
+                                            <img src="{{ asset('front-assets/img/logo-mamasa.png') }}"
+                                                alt="Logo {{ $item->nama }}" loading="lazy">
+                                        @endif
+                                    </span>
+                                    <span class="opd-text">
+                                        <span class="opd-name">{{ $item->nama }}</span>
+                                        <span class="opd-sub">{{ $item->subnama }}</span>
+                                    </span>
+                                    <i class="bi bi-box-arrow-up-right opd-go" aria-hidden="true"></i>
+                                </a>
                             </div>
                         @empty
+                            <div class="col-12">
+                                <div class="opd-empty">
+                                    <i class="bi bi-search" aria-hidden="true"></i>
+                                    <p class="mb-0">Tidak ada instansi yang cocok dengan &ldquo;{{ $pencarian }}&rdquo;.
+                                    </p>
+                                </div>
+                            </div>
                         @endforelse
                     </div>
 
