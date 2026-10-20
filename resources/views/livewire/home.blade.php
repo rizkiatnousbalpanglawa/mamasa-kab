@@ -1,7 +1,6 @@
 <main class="main">
     <section id="hero" class="hero section">
-        <div id="carouselIndicators" class="carousel slide shadow overflow-hidden" data-bs-ride="carousel"
-            data-aos="fade-up">
+        <div class="carousel slide shadow overflow-hidden" data-bs-ride="carousel" data-bs-wrap="true" data-aos="fade-up">
 
             <div class="carousel-indicators">
                 @foreach ($carousels as $index => $item)
@@ -36,7 +35,7 @@
         </div>
 
 
-        <div class="feature-cards-wrapper" data-aos="fade-up" data-aos-delay="300"></div>
+        <div class="feature-cards-wrapper" data-aos="fade-up" data-aos-delay="100"></div>
 
     </section>
 
