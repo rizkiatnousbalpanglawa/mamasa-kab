@@ -11,8 +11,11 @@
 
     <div class="content d-flex flex-column justify-content-center align-items-center text-center min-vh-100">
         <div class="">
-            <img src="{{ !empty($portals->logo) ? Storage::url($portals->logo) : asset('front-assets/img/logo-mamasa.png') }}"
-                alt="Logo Kabupaten Mamasa" class="my-3" style="width:150px; height:auto;">
+            <span class="portal-eyebrow">Kabupaten Mamasa &middot; Sulawesi Barat</span>
+            <div>
+                <img src="{{ !empty($portals->logo) ? Storage::url($portals->logo) : asset('front-assets/img/logo-mamasa.png') }}"
+                    alt="Logo Kabupaten Mamasa" class="portal-logo my-3">
+            </div>
 
             <h1 class="display-6 fw-bold text-outline">{{ $portals->judul ?? 'Pemerintah Kab Mamasa' }}</h1>
             <p class="fw-bold h3 text-outline">{{ $portals->subjudul ?? '' }}</p>
