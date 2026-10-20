@@ -1,3 +1,5 @@
+@section('meta-description', 'Kumpulan berita terkini Pemerintah Kabupaten Mamasa — kegiatan pemerintahan, pembangunan, dan peristiwa daerah.')
+
 <main class="main">
 
     <!-- Page Title -->
@@ -25,7 +27,7 @@
                             <div class="col-md-6">
                                 <article class="secondary-post" data-aos="fade-up">
                                     <div class="post-image">
-                                        <img src="{{ asset(Storage::url($item->gambar)) }}" alt="Post"
+                                        <img src="{{ asset(Storage::url($item->gambar)) }}" alt="{{ $item->judul }}" loading="lazy"
                                             class="img-fluid">
                                     </div>
                                     <div class="post-content">
@@ -124,7 +126,7 @@
                                     <article class="tab-post">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-4">
-                                                <img src="{{ asset(Storage::url($item->gambar)) }}" alt="Post"
+                                                <img src="{{ asset(Storage::url($item->gambar)) }}" alt="{{ $item->judul }}" loading="lazy"
                                                     class="img-fluid">
                                             </div>
                                             <div class="col-8">
@@ -165,7 +167,7 @@
                                     <article class="tab-post">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-4">
-                                                <img src="{{ asset(Storage::url($item->gambar)) }}" alt="Post"
+                                                <img src="{{ asset(Storage::url($item->gambar)) }}" alt="{{ $item->judul }}" loading="lazy"
                                                     class="img-fluid">
                                             </div>
                                             <div class="col-8">

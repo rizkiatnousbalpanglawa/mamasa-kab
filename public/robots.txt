@@ -1,2 +1,4 @@
 User-agent: *
 Disallow:
+
+Sitemap: https://mamasakab.go.id/sitemap.xml

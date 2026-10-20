@@ -1,9 +1,11 @@
+@section('meta-description', 'Visi dan misi Pemerintah Kabupaten Mamasa — arah pembangunan daerah.')
+
 <main class="main">
 
     <!-- Page Title -->
     <div class="page-title light-background">
         <div class="container d-lg-flex justify-content-between align-items-center">
-            <h1 class="mb-2 mb-lg-0">Visi & Misi</h1>
+            <p class="h1 mb-2 mb-lg-0">Visi & Misi</p>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="#">Profil</a></li>

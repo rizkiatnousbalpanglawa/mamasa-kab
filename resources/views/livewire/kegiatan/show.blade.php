@@ -1,9 +1,14 @@
+@section('meta-title', $kegiatan->judul . ' | Website Resmi PEMKAB Mamasa')
+@section('meta-description', \Illuminate\Support\Str::limit(strip_tags($kegiatan->konten), 150))
+@section('og-type', 'article')
+@section('meta-image', url(\Illuminate\Support\Facades\Storage::url($kegiatan->gambar)))
+
 <main class="main">
 
     <!-- Page Title -->
     <div class="page-title light-background">
         <div class="container d-lg-flex justify-content-between align-items-center">
-            <h1 class="mb-2 mb-lg-0">Rincian Kegiatan</h1>
+            <p class="h1 mb-2 mb-lg-0">Rincian Kegiatan</p>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="{{ url('kegiatan') }}">Kegiatan</a></li>
@@ -21,8 +26,8 @@
             <div class="row justify-content-between">
                 <div class="col-lg-7">
                     <div class="event-image mb-4" data-aos="fade-up">
-                        <img src="{{ asset(Storage::url($kegiatan->gambar)) }}" alt="Event"
-                            class="img-fluid rounded">
+                        <img src="{{ asset(Storage::url($kegiatan->gambar)) }}" alt="{{ $kegiatan->judul }}"
+                            class="img-fluid rounded" fetchpriority="high">
                     </div>
 
                     <div class="event-meta mb-4" data-aos="fade-up" data-aos-delay="100">
@@ -49,7 +54,7 @@
                     </div>
 
                     <div class="event-content" data-aos="fade-up" data-aos-delay="200">
-                        <h2>{{ $kegiatan->judul }}</h2>
+                        <h1>{{ $kegiatan->judul }}</h1>
                         {!! $kegiatan->konten !!}
 
 

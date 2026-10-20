@@ -3,8 +3,10 @@
 namespace App\Livewire;
 
 use App\Models\Lambang as ModelsLambang;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Title('Lambang Daerah | Website Resmi PEMKAB Mamasa')]
 class Lambang extends Component
 {
     public $lambang;
@@ -13,10 +15,11 @@ class Lambang extends Component
     {
         $data['lambang'] = ModelsLambang::first();
         $this->lambang = ModelsLambang::first();
-        if (!session()->has('viewed_' . $this->lambang->id)) {
+        if (! session()->has('viewed_'.$this->lambang->id)) {
             $this->lambang->increment('views');
-            session()->put('viewed_' . $this->lambang->id, true);
+            session()->put('viewed_'.$this->lambang->id, true);
         }
+
         return view('livewire.lambang', $data);
     }
 }

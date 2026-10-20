@@ -1,9 +1,11 @@
+@section('meta-description', 'Lambang daerah Kabupaten Mamasa — makna dan filosofi setiap unsur lambang.')
+
 <main class="main">
 
     <!-- Page Title -->
     <div class="page-title light-background">
         <div class="container d-lg-flex justify-content-between align-items-center">
-            <h1 class="mb-2 mb-lg-0">Lambang Daerah</h1>
+            <p class="h1 mb-2 mb-lg-0">Lambang Daerah</p>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="#">Profil</a></li>
@@ -31,7 +33,7 @@
                 <!-- Information Collection -->
                 <div class="content-section ">
                     <div class="d-flex justify-content-center">
-                        <img src="{{ asset(Storage::url($lambang->image)) }}" class="img-fluid rounded" alt="Lambang"
+                        <img src="{{ asset(Storage::url($lambang->image)) }}" class="img-fluid rounded" alt="{{ $lambang->judul ?? 'Lambang Daerah Kabupaten Mamasa' }}"
                             style="max-width: 250px">
                     </div>
                     {!! $lambang->konten !!}

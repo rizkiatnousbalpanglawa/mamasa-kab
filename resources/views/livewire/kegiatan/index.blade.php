@@ -1,3 +1,5 @@
+@section('meta-description', 'Agenda dan kegiatan Pemerintah Kabupaten Mamasa — festival budaya, wisata, dan acara daerah sepanjang tahun.')
+
 <main class="main">
 
     <!-- Page Title -->

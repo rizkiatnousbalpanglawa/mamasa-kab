@@ -1,3 +1,5 @@
+@section('meta-description', 'Potensi daerah Kabupaten Mamasa — pariwisata, pertanian, budaya, dan peluang investasi.')
+
 <main class="main">
 
     <div class="page-title light-background">

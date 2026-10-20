@@ -4,9 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>{{ $title ?? config('app.name') }}</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title>@yield('meta-title', $title ?? 'Website Resmi Pemerintah Kabupaten Mamasa')</title>
+    <meta name="description"
+        content="@yield('meta-description', 'Portal resmi Pemerintah Kabupaten Mamasa, Sulawesi Barat — berita terkini, pengumuman, kegiatan, potensi daerah, dan layanan informasi publik.')" />
+    <meta name="keywords"
+        content="@yield('meta-keywords', 'Pemkab Mamasa, Kabupaten Mamasa, Sulawesi Barat, berita Mamasa, pengumuman, potensi daerah, pemerintahan')" />
+    <link rel="canonical" href="@yield('canonical', url()->current())" />
 
     <!-- Favicons -->
     <link href="{{ asset('front-assets/img/logo.png') }}" rel="icon" />
@@ -30,12 +33,38 @@
     <link href="{{ asset('front-assets/css/main.css') }}" rel="stylesheet" />
 
     {{-- Open Graph --}}
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="@yield('meta-title', config('app.name'))">
-    <meta property="og:description" content="@yield('meta-description', 'Website Resmi PEMKAB Mamasa')">
-    <meta property="og:image" content="@yield('meta-image', asset('default.jpg'))">
+    <meta property="og:type" content="@yield('og-type', 'website')">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="@yield('meta-title', $title ?? 'Website Resmi Pemerintah Kabupaten Mamasa')">
+    <meta property="og:description"
+        content="@yield('meta-description', 'Portal resmi Pemerintah Kabupaten Mamasa, Sulawesi Barat — berita terkini, pengumuman, kegiatan, potensi daerah, dan layanan informasi publik.')">
+    <meta property="og:image" content="@yield('meta-image', asset('front-assets/img/logo-website.png'))">
     <meta property="og:url" content="@yield('meta-url', url()->current())">
     <meta property="og:site_name" content="Website Resmi PEMKAB Mamasa">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('meta-title', $title ?? 'Website Resmi Pemerintah Kabupaten Mamasa')">
+    <meta name="twitter:description"
+        content="@yield('meta-description', 'Portal resmi Pemerintah Kabupaten Mamasa, Sulawesi Barat — berita terkini, pengumuman, kegiatan, potensi daerah, dan layanan informasi publik.')">
+    <meta name="twitter:image" content="@yield('meta-image', asset('front-assets/img/logo-website.png'))">
+
+    {{-- Structured data: organisasi penerbit --}}
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@type": "GovernmentOrganization",
+        "name": "Pemerintah Kabupaten Mamasa",
+        "url": "{{ url('/') }}",
+        "logo": "{{ asset('front-assets/img/logo-website.png') }}",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mamasa",
+            "addressRegion": "Sulawesi Barat",
+            "addressCountry": "ID"
+        }
+    }
+    </script>
 
 </head>
 
@@ -90,7 +119,7 @@
                 <div class="col-lg-3 align-self-center">
                     <div class="statistik">
                         <h5>Statistik</h5>
-                        <h1 class="fw-bold"> {{ number_format($totalHits) }}</h1>
+                        <p class="h1 fw-bold"> {{ number_format($totalHits) }}</p>
                         <div class="">Pengunjung Hari ini: <span class="fw-bold">{{ $pengunjungHariIni }}</span>
                         </div>
                         <div class="">Total Pengunjung: <span class="fw-bold">{{ $totalPengunjung }}</span></div>

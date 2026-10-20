@@ -1,4 +1,7 @@
+@section('meta-description', 'Beranda resmi Pemerintah Kabupaten Mamasa — berita terbaru, agenda kegiatan, galeri foto, dan informasi layanan publik Kabupaten Mamasa, Sulawesi Barat.')
+
 <main class="main">
+    <h1 class="visually-hidden">Pemerintah Kabupaten Mamasa — Portal Resmi Berita, Kegiatan, dan Layanan Publik</h1>
     <section id="hero" class="hero section">
         <div class="carousel slide shadow overflow-hidden" data-bs-ride="carousel" data-bs-wrap="true" data-aos="fade-up">
 
@@ -15,7 +18,8 @@
                 @foreach ($carousels as $index => $item)
                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                         <img src="{{ asset(Storage::url($item->image)) }}" class="d-block w-100"
-                            alt="Slide {{ $index + 1 }}">
+                            alt="Spanduk informasi Pemerintah Kabupaten Mamasa"
+                            @if ($index == 0) fetchpriority="high" @else loading="lazy" @endif>
                     </div>
                 @endforeach
             </div>
@@ -53,12 +57,12 @@
                 <div class="carousel-inner">
 
                     <!-- Slide 1 -->
-                    @foreach ($berita as $item)
-                        <div class="carousel-item active">
+                    @foreach ($berita as $index => $item)
+                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                             <a href="{{ route('berita.detail', $item->slug) }}" class="text-decoration-none text-dark">
                                 <div class="card news-card border-0 shadow-sm h-100">
                                     <img src="{{ asset(Storage::url($item->gambar)) }}" class="card-img-top"
-                                        alt="Berita 1">
+                                        alt="{{ $item->judul }}" loading="lazy">
                                     <div class="card-body">
                                         <h6 class="card-title fw-bold">{{ $item->judul }}</h6>
                                         <div class="mb-2" style="width:50px; height:3px; background-color:black;">
@@ -102,7 +106,7 @@
                                     class="text-decoration-none text-dark">
                                     <div class="card news-card border-0 shadow-sm h-100">
                                         <img src="{{ asset(Storage::url($item->gambar)) }}" class="card-img-top"
-                                            alt="{{ $item->judul }}"
+                                            alt="{{ $item->judul }}" loading="lazy"
                                             style="height: 200px; object-fit: cover; width: 100%;">
 
                                         <div class="card-body d-flex flex-column">
@@ -170,7 +174,8 @@
                 <div class="col-lg-6 d-none d-md-flex">
                     <div class="about-image" data-aos="zoom-in" data-aos-delay="300">
                         <img src="{{ !empty($kegiatan->image) ? asset(Storage::url($kegiatan->image)) : asset('front-assets/img/tari-mamasa.jpg') }}"
-                            alt="Kegiatan" class="img-fluid rounded" />
+                            alt="{{ $kegiatan->judul ?? 'Kegiatan Pemerintah Kabupaten Mamasa' }}"
+                            class="img-fluid rounded" loading="lazy" />
 
                         <div class="mission-vision" data-aos="fade-up" data-aos-delay="400"></div>
                     </div>
@@ -195,7 +200,8 @@
                     <div class="col-6 col-md-3">
                         <div class="gallery-item">
                             <img src="{{ asset(Storage::url($item->image)) }}"
-                                class="img-fluid rounded shadow-sm gallery-img" alt="Foto 1" data-bs-toggle="modal"
+                                class="img-fluid rounded shadow-sm gallery-img" alt="{{ $item->judul }}"
+                                loading="lazy" data-bs-toggle="modal"
                                 data-bs-target="#photoModal" data-bs-src="{{ asset(Storage::url($item->image)) }}">
                         </div>
                     </div>

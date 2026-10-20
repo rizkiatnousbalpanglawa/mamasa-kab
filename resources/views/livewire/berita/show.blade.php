@@ -15,7 +15,7 @@
     <!-- Page Title -->
     <div class="page-title light-background">
         <div class="container d-lg-flex justify-content-between align-items-center">
-            <h1 class="mb-2 mb-lg-0">Berita Lengkap</h1>
+            <p class="h1 mb-2 mb-lg-0">Berita Lengkap</p>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="{{ url('berita') }}">Berita</a></li>
@@ -37,14 +37,14 @@
                                 <a href="{{ url('berita/kategori/' . $berita->kategori->slug) }}" class="category">{{ $berita->kategori->nama_kategori }}</a>
                             </div>
 
-                            <h2 data-aos="fade-up" data-aos-delay="100">
+                            <h1 data-aos="fade-up" data-aos-delay="100">
                                 {{ $berita->judul }}
-                            </h2>
+                            </h1>
 
                             <div class="article-meta" data-aos="fade-up" data-aos-delay="200">
                                 <div class="author">
                                     <img src="{{ !empty($berita->penulis->foto) ? asset(Storage::url($berita->penulis->foto)) : asset('front-assets/img/person/person-m-6.webp') }}"
-                                        alt="Author" class="author-img">
+                                        alt="{{ $berita->penulis->nama }}" class="author-img">
                                     <div class="author-info">
                                         <h4>{{ $berita->penulis->nama }}</h4>
                                         {{-- <span>UI/UX Design Lead</span> --}}
@@ -93,5 +93,28 @@
 
         </div>
     </section><!-- /Blog Details Section -->
+
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": {!! json_encode($berita->judul) !!},
+        "image": "{{ url(Storage::url($berita->gambar)) }}",
+        "datePublished": "{{ date('Y-m-d', strtotime($berita->tanggal ?? $berita->created_at)) }}",
+        "dateModified": "{{ $berita->updated_at->format('Y-m-d') }}",
+        "author": {
+            "@type": "Person",
+            "name": {!! json_encode($berita->penulis->nama) !!}
+        },
+        "publisher": {
+            "@type": "GovernmentOrganization",
+            "name": "Pemerintah Kabupaten Mamasa",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ asset('front-assets/img/logo-website.png') }}"
+            }
+        }
+    }
+    </script>
 
 </main>

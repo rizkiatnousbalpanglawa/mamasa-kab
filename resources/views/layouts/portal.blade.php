@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Kabupaten</title>
+    <title>Portal Resmi Pemerintah Kabupaten Mamasa</title>
+    <meta name="description"
+        content="Portal resmi Pemerintah Kabupaten Mamasa — pintu masuk layanan website OPD, berita, pengumuman, dan informasi publik Kabupaten Mamasa.">
+    <link rel="canonical" href="{{ url('/') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">

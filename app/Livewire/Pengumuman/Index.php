@@ -3,14 +3,21 @@
 namespace App\Livewire\Pengumuman;
 
 use App\Models\Pengumuman;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithPagination;
 
+#[Title('Pengumuman | Website Resmi PEMKAB Mamasa')]
 class Index extends Component
 {
     use WithPagination;
-    public $pencarian = '', $tahun = '';
+
+    public $pencarian = '';
+
+    public $tahun = '';
+
     protected $paginationTheme = 'bootstrap';
+
     public function updated()
     {
         $this->resetPage();
@@ -20,12 +27,12 @@ class Index extends Component
     {
         $query = Pengumuman::query();
         if ($this->pencarian) {
-            $query->where('judul', 'LIKE', '%' . $this->pencarian . '%');
-        };
+            $query->where('judul', 'LIKE', '%'.$this->pencarian.'%');
+        }
 
         if ($this->tahun) {
             $query->whereYear('tanggal', $this->tahun);
-        };
+        }
 
         $data['pengumuman'] = $query->paginate(5);
 

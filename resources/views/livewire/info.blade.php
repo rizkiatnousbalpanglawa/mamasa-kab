@@ -1,3 +1,5 @@
+@section('meta-description', 'Informasi resmi Pemerintah Kabupaten Mamasa untuk masyarakat.')
+
 <main class="main">
 
     <!-- Page Title -->
@@ -18,7 +20,7 @@
             <!-- Header -->
             <div class="privacy-header">
                 <div class="header-content">
-                    <h1>Informasi</h1>
+                    <h2>Informasi</h2>
                     <p class="intro-text">Halaman ini menyajikan berbagai informasi resmi dari Pemerintah Kabupaten
                         Mamasa</p>
                 </div>

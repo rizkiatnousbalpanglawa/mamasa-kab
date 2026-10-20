@@ -4,8 +4,10 @@ namespace App\Livewire;
 
 use App\Models\Potensi as ModelsPotensi;
 use App\Models\PotensiKategori;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
+#[Title('Potensi Daerah | Website Resmi PEMKAB Mamasa')]
 class Potensi extends Component
 {
     public $filterKategoriId = null;
@@ -29,9 +31,9 @@ class Potensi extends Component
         $semuaPotensi = $query->get();
 
         return view('livewire.potensi', [
-            'semuaPotensi'    => $semuaPotensi,
+            'semuaPotensi' => $semuaPotensi,
             'kategoriPotensi' => $kategoriPotensi,
-            'filterAktif'     => $this->filterKategoriId,
+            'filterAktif' => $this->filterKategoriId,
         ]);
     }
 }

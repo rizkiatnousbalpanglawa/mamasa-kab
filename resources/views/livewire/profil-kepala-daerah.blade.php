@@ -1,3 +1,5 @@
+@section('meta-description', 'Profil pimpinan daerah Kabupaten Mamasa — Bupati dan Wakil Bupati beserta riwayat pengabdian.')
+
 <main class="main">
 
     <div class="page-title light-background">
