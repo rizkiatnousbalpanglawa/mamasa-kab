@@ -3,10 +3,12 @@
 <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
-        <div class="container d-lg-flex justify-content-between align-items-center">
-            <h1 class="mb-2 mb-lg-0">Informasi</h1>
-            <nav class="breadcrumbs">
+    <div class="page-hero">
+        <div class="container page-hero__inner">
+            <div class="page-hero__text">
+                <h1 class="page-hero__title">Informasi</h1>
+            </div>
+            <nav class="page-hero__crumbs" aria-label="breadcrumb">
                 <ol>
                     <li class="current">Informasi</li>
                 </ol>
@@ -29,35 +31,53 @@
             <div class="container my-4 my-lg-5">
                 <div class="row custom-content-area">
                     <div class="col-lg-4 mb-4">
-                        <div class="card shadow-sm border-0 rounded-4">
-                            <div class="card-body p-4">
-                                <h5 class="fw-bold mb-4 d-flex align-items-center"><i class="bi bi-gear fs-5 me-2"></i>
-                                    Filter</h5>
+                        <button
+                            class="btn w-100 d-lg-none mb-3 filter-mobile-toggle {{ $filterOpen ? 'is-open' : '' }}"
+                            type="button"
+                            wire:click="$toggle('filterOpen')"
+                            aria-expanded="{{ $filterOpen ? 'true' : 'false' }}">
+                            <i class="bi bi-funnel me-2"></i>Filter
+                            @if ($this->hasActiveFilter)
+                                <span class="filter-dot"></span>
+                            @endif
+                            <i class="bi bi-chevron-down ms-auto filter-mobile-toggle__chev"></i>
+                        </button>
 
-                                <div class="mb-3">
-                                    <label for="filter-kategori" class="form-label fw-semibold">Kategori</label>
-                                    <select id="filter-kategori" class="form-select" wire:model.live='kategoriTerpilih'>
-                                        <option value="">Semua</option>
-                                        @foreach ($kategori as $item)
-                                            <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
-                                        @endforeach
-                                    </select>
+                        <div class="filter-collapse {{ $filterOpen ? 'is-open' : '' }}">
+                            <aside class="filter-sidebar">
+                                <div class="filter-sidebar__header">
+                                    <h5 class="filter-sidebar__title"><i class="bi bi-funnel me-2"></i>Filter</h5>
+                                    @if ($this->hasActiveFilter)
+                                        <button type="button" wire:click="resetFilter" class="filter-sidebar__reset">
+                                            Hapus
+                                        </button>
+                                    @endif
                                 </div>
 
-                                <div class="mb-4">
-                                    <label for="filter-tahun" class="form-label fw-semibold">Tahun</label>
-                                    <select id="filter-tahun" wire:model.live="tahun" class="form-select">
-                                        <option value="">Semua</option>
+                                <div class="filter-sidebar__body">
+                                    <div class="filter-group">
+                                        <label for="filter-kategori" class="filter-group__label">Kategori</label>
+                                        <select id="filter-kategori" class="filter-select" wire:model.live="kategoriTerpilih">
+                                            <option value="">Semua</option>
+                                            @foreach ($kategori as $item)
+                                                <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
 
-                                        @foreach ($tahunInformasi->sortDesc() as $tahun)
-                                            <option value="{{ $tahun }}">{{ $tahun }}</option>
-                                        @endforeach
-                                    </select>
+                                    <div class="filter-group">
+                                        <label for="filter-tahun" class="filter-group__label">Tahun</label>
+                                        <select id="filter-tahun" class="filter-select" wire:model.live="tahun">
+                                            <option value="">Semua</option>
+                                            @foreach ($tahunInformasi->sortDesc() as $thn)
+                                                <option value="{{ $thn }}">{{ $thn }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <p class="filter-sidebar__meta">{{ $info->total() }} dokumen</p>
                                 </div>
-
-                                {{-- <button id="apply-filter-btn" class="btn btn-dark w-100 py-2 filter-btn">Terapkan
-                                    Filter</button> --}}
-                            </div>
+                            </aside>
                         </div>
                     </div>
 

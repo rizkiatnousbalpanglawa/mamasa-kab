@@ -4,13 +4,15 @@
 
 <main class="main">
 
-    <div class="page-title light-background">
-        <div class="container d-lg-flex justify-content-between align-items-center">
-            <p class="h1 mb-2 mb-lg-0">Potensi Daerah</p>
-            <nav class="breadcrumbs">
+    <div class="page-hero">
+        <div class="container page-hero__inner">
+            <div class="page-hero__text">
+                <p class="page-hero__title">Potensi Daerah</p>
+            </div>
+            <nav class="page-hero__crumbs" aria-label="breadcrumb">
                 <ol>
                     <li class="">Potensi</li>
-                    <li class="current">{{ $potensi->nama }}</li>
+                    <li class="current" aria-current="page">{{ $potensi->nama }}</li>
                 </ol>
             </nav>
         </div>

@@ -19,11 +19,24 @@ class Info extends Component
 
     public $tahun = '';
 
+    public $filterOpen = false;
+
     protected $paginationTheme = 'bootstrap';
 
     public function updated()
     {
         $this->resetPage();
+    }
+
+    public function resetFilter()
+    {
+        $this->reset(['pencarian', 'kategoriTerpilih', 'tahun']);
+        $this->resetPage();
+    }
+
+    public function getHasActiveFilterProperty()
+    {
+        return filled($this->pencarian) || filled($this->kategoriTerpilih) || filled($this->tahun);
     }
 
     public function render()

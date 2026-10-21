@@ -13,13 +13,15 @@
 <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
-        <div class="container d-lg-flex justify-content-between align-items-center">
-            <p class="h1 mb-2 mb-lg-0">Berita Lengkap</p>
-            <nav class="breadcrumbs">
+    <div class="page-hero">
+        <div class="container page-hero__inner">
+            <div class="page-hero__text">
+                <p class="page-hero__title">Berita Lengkap</p>
+            </div>
+            <nav class="page-hero__crumbs" aria-label="breadcrumb">
                 <ol>
-                    <li><a href="{{ url('berita') }}">Berita</a></li>
-                    <li class="current">Detail</li>
+                    <li><a href="{{ url('berita') }}"><i class="bi bi-house"></i> Berita</a></li>
+                    <li class="current" aria-current="page">Detail</li>
                 </ol>
             </nav>
         </div>

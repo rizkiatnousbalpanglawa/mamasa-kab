@@ -16,11 +16,24 @@ class Index extends Component
 
     public $tahun = '';
 
+    public $filterOpen = false;
+
     protected $paginationTheme = 'bootstrap';
 
     public function updated()
     {
         $this->resetPage();
+    }
+
+    public function resetFilter()
+    {
+        $this->reset(['pencarian', 'tahun']);
+        $this->resetPage();
+    }
+
+    public function getHasActiveFilterProperty()
+    {
+        return filled($this->pencarian) || filled($this->tahun);
     }
 
     public function render()

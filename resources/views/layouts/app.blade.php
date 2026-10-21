@@ -164,6 +164,19 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('front-assets/js/main.js') }}"></script>
+
+    {{-- Refresh animasi AOS setiap Livewire selesai me-render ulang (mis. ganti halaman pagination),
+        agar konten baru tidak tertahan opacity:0 dan terlihat kosong.
+        Pakai refreshHard (bukan refresh) agar node [data-aos] yang baru ikut dipindai ulang. --}}
+    <script>
+        document.addEventListener('livewire:init', () => {
+            Livewire.hook('morph.updated', () => {
+                if (window.AOS) {
+                    window.AOS.refreshHard();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

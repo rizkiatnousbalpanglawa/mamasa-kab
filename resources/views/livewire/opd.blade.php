@@ -1,10 +1,12 @@
 <main class="main">
 
     <!-- Page Title -->
-    <div class="page-title light-background">
-        <div class="container d-lg-flex justify-content-between align-items-center">
-            <h1 class="mb-2 mb-lg-0">OPD</h1>
-            <nav class="breadcrumbs">
+    <div class="page-hero">
+        <div class="container page-hero__inner">
+            <div class="page-hero__text">
+                <h1 class="page-hero__title">OPD</h1>
+            </div>
+            <nav class="page-hero__crumbs" aria-label="breadcrumb">
                 <ol>
                     <li class="current">Organisasi Perangkat Daerah</li>
                 </ol>
